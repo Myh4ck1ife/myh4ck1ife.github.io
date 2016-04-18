@@ -1,0 +1,743 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="shell," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="shell脚本的执行方式echo输出命令命令语法
+echo &amp;quot;&amp;quot;
+其中如果输出的内容中有空格，则需要加双引号，否则可以省略。
+我们用hello world！演示时候发现报错了
+
+这是因为！在shell中有着特殊作用，我们要想输出它就要先抹去他的作用，改成单引号。    echo ‘’">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell基础-脚本执行方式">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/shell基础-脚本执行方式/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="shell脚本的执行方式echo输出命令命令语法
+echo &amp;quot;&amp;quot;
+其中如果输出的内容中有空格，则需要加双引号，否则可以省略。
+我们用hello world！演示时候发现报错了
+
+这是因为！在shell中有着特殊作用，我们要想输出它就要先抹去他的作用，改成单引号。    echo ‘’">
+<meta property="og:image" content="http://i.imgur.com/qrNQqez.png">
+<meta property="og:image" content="http://i.imgur.com/VFJAKM5.png">
+<meta property="og:image" content="http://i.imgur.com/umjiYap.png">
+<meta property="og:image" content="http://i.imgur.com/12qPB3b.png">
+<meta property="og:image" content="http://i.imgur.com/5ytq2oW.png">
+<meta property="og:image" content="http://i.imgur.com/uuORDSQ.png">
+<meta property="og:image" content="http://i.imgur.com/drDNxKH.png">
+<meta property="og:image" content="http://i.imgur.com/7ObySes.png">
+<meta property="og:image" content="http://i.imgur.com/9S09c6x.png">
+<meta property="og:image" content="http://i.imgur.com/aQTgIJF.png">
+<meta property="og:image" content="http://i.imgur.com/7vWKDFG.png">
+<meta property="og:image" content="http://i.imgur.com/e6mwUcR.png">
+<meta property="og:image" content="http://i.imgur.com/oQtf45s.png">
+<meta property="og:image" content="http://i.imgur.com/jx9pt91.png">
+<meta property="og:image" content="http://i.imgur.com/ICpiOyI.png">
+<meta property="og:image" content="http://i.imgur.com/KRO6d8Y.png">
+<meta property="og:image" content="http://i.imgur.com/IRJkwmC.png">
+<meta property="og:image" content="http://i.imgur.com/YTzn5oF.png">
+<meta property="og:image" content="http://i.imgur.com/3tRtntD.png">
+<meta property="og:image" content="http://i.imgur.com/NsiPlvy.png">
+<meta property="og:updated_time" content="2016-04-18T14:29:31.102Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="shell基础-脚本执行方式">
+<meta name="twitter:description" content="shell脚本的执行方式echo输出命令命令语法
+echo &amp;quot;&amp;quot;
+其中如果输出的内容中有空格，则需要加双引号，否则可以省略。
+我们用hello world！演示时候发现报错了
+
+这是因为！在shell中有着特殊作用，我们要想输出它就要先抹去他的作用，改成单引号。    echo ‘’">
+<meta name="twitter:image" content="http://i.imgur.com/qrNQqez.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> shell基础-脚本执行方式 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                shell基础-脚本执行方式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-18T20:27:12+08:00" content="2016-04-18">
+              2016-04-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/linux-study/" itemprop="url" rel="index">
+                    <span itemprop="name">linux_study</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/18/shell基础-脚本执行方式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/shell基础-脚本执行方式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="shell脚本的执行方式"><a href="#shell脚本的执行方式" class="headerlink" title="shell脚本的执行方式"></a>shell脚本的执行方式</h1><h2 id="echo输出命令"><a href="#echo输出命令" class="headerlink" title="echo输出命令"></a>echo输出命令</h2><p>命令语法</p>
+<pre><code>echo &quot;&quot;
+</code></pre><p>其中如果输出的内容中有空格，则需要加双引号，否则可以省略。</p>
+<p>我们用hello world！演示时候发现报错了</p>
+<p><img src="http://i.imgur.com/qrNQqez.png" alt=""></p>
+<p>这是因为！在shell中有着特殊作用，我们要想输出它就要先抹去他的作用，改成单引号。<br>    echo ‘’</p>
+<p><img src="http://i.imgur.com/VFJAKM5.png" alt=""></p>
+<a id="more"></a>
+<p>具体单双引号的区别我们之后会在运算符详细解释，我们要注意，echo命令是有选项的：</p>
+<blockquote>
+<p>-e  支持反斜线控制的字符转换</p>
+</blockquote>
+<p>内容如下：</p>
+<p><img src="http://i.imgur.com/umjiYap.png" alt=""></p>
+<p>我们来举两个例子</p>
+<h3 id="b-退格键删除左侧字符"><a href="#b-退格键删除左侧字符" class="headerlink" title="/b 退格键删除左侧字符"></a>/b 退格键删除左侧字符</h3><pre><code>echo &quot;abc&quot;
+echo -e &quot;ab/bc&quot;
+</code></pre><p><img src="http://i.imgur.com/12qPB3b.png" alt=""></p>
+<p>我们发现第一条命令输出了abc，而第二条命令输出了退格键，删除了字符b，剩下了ac。</p>
+<h3 id="制表符与换行符"><a href="#制表符与换行符" class="headerlink" title="制表符与换行符"></a>制表符与换行符</h3><pre><code>echo -e &quot;a\tb\tc\nd\te\tf&quot;
+</code></pre><p><img src="http://i.imgur.com/5ytq2oW.png" alt=""></p>
+<p>我们发现ab之间加了tab，而cd之间加了换行符。</p>
+<h3 id="按照十六进制ASCII输出"><a href="#按照十六进制ASCII输出" class="headerlink" title="按照十六进制ASCII输出"></a>按照十六进制ASCII输出</h3><pre><code>echo -e &quot;\x61\t\x62\t\x63\n\x64\t\x65\t\x66&quot;
+</code></pre><p><img src="http://i.imgur.com/uuORDSQ.png" alt=""></p>
+<h3 id="输出颜色"><a href="#输出颜色" class="headerlink" title="输出颜色"></a>输出颜色</h3><pre><code>echo -e &quot;\e[1;31m abcd\e[0m&quot;
+</code></pre><p><img src="http://i.imgur.com/drDNxKH.png" alt=""></p>
+<p>我们发现abcd用红色输出了，这里解释一下</p>
+<blockquote>
+<p>-e 是用来支持特殊符号</p>
+<p>\e[1是用来代表开启颜色输出</p>
+<p>\e0m是用来代表终止颜色输出</p>
+<p>中间的31m abcd是指用红色输出abcd</p>
+<p>这里支持的颜色有</p>
+<p>30m = 黑色</p>
+<p>31m = 红色</p>
+<p>32m = 绿色</p>
+<p>33m = 黄色</p>
+<p>34m = 蓝色</p>
+<p>35m = 洋红</p>
+<p>36m = 青色</p>
+<p>37m = 白色</p>
+</blockquote>
+<h2 id="第一个脚本"><a href="#第一个脚本" class="headerlink" title="第一个脚本"></a>第一个脚本</h2><blockquote>
+<p>#vi hello.sh</p>
+<p>#!/bin/Bash</p>
+<p>#The first program</p>
+<p>#Author:Myh4ck1ife</p>
+<p>echo -e “Mr.Myh4ck1ife is the most honest man in the world”</p>
+</blockquote>
+<p>Linux虽然是没有扩展名一说的，但是这里是为了让我们自己意识到这是一个shell脚本，所以建议加上。<br>#的所用是注释，但是我们shell中的第一句：#!/bin/Bash并不是注释的意思，这里的作用是为了表示下面是一个脚本，如果我们是一个很简单的脚本，这一句写不写都行，但是如果脚本中嵌入了其他语句，就有可能出错，所以所有的脚本我们还是写上这句，不可或缺。剩下的#后面就都是注释了，随着我们之后shell的复杂化，我们要做好注释。</p>
+<h3 id="创建sh目录"><a href="#创建sh目录" class="headerlink" title="创建sh目录"></a>创建sh目录</h3><pre><code>mkdir sh
+</code></pre><p><img src="http://i.imgur.com/7ObySes.png" alt=""></p>
+<p>这样我们把所有的脚本都放在这个目录，比较整齐规范，且便于管理。</p>
+<h3 id="切换到sh目录"><a href="#切换到sh目录" class="headerlink" title="切换到sh目录"></a>切换到sh目录</h3><pre><code>cd sh
+</code></pre><h3 id="写入脚本"><a href="#写入脚本" class="headerlink" title="写入脚本"></a>写入脚本</h3><pre><code>vim hello.sh
+</code></pre><p><img src="http://i.imgur.com/9S09c6x.png" alt=""></p>
+<h3 id="保存退出"><a href="#保存退出" class="headerlink" title="保存退出"></a>保存退出</h3><pre><code>：wq
+</code></pre><p>这里我们的shell脚本就写完了</p>
+<h2 id="脚本执行"><a href="#脚本执行" class="headerlink" title="脚本执行"></a>脚本执行</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><h4 id="赋予执行权限，直接运行"><a href="#赋予执行权限，直接运行" class="headerlink" title="赋予执行权限，直接运行"></a>赋予执行权限，直接运行</h4><pre><code>chmod 755 hello.sh
+./hello.sh
+</code></pre><p><img src="http://i.imgur.com/aQTgIJF.png" alt=""></p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><h4 id="通过bash调用执行脚本"><a href="#通过bash调用执行脚本" class="headerlink" title="通过bash调用执行脚本"></a>通过bash调用执行脚本</h4><pre><code>bash hello.sh
+</code></pre><p><img src="http://i.imgur.com/7vWKDFG.png" alt=""></p>
+<p>我们用bash调用的时候，甚至不用赋予执行权限，但我们最习惯的方法其实还是方法一。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>cat命令我们很熟悉了，它有一个选项是</p>
+<blockquote>
+<p>-A 显示所有内容</p>
+</blockquote>
+<p>会将其中隐藏的符号有所显现，比如回车符显示为 $</p>
+<p><img src="http://i.imgur.com/e6mwUcR.png" alt=""></p>
+<p>但是如果我们在windows下编写一个相同的脚本看看的话</p>
+<p><img src="http://i.imgur.com/oQtf45s.png" alt=""></p>
+<p>我们用WinSCP传一下</p>
+<p><img src="http://i.imgur.com/jx9pt91.png" alt=""></p>
+<p>这里的hellp是linux下编写的，hello是win下编写的，我们在cat一下看看</p>
+<p><img src="http://i.imgur.com/ICpiOyI.png" alt=""></p>
+<p>这里我们发现回车符发生变化，这是因为linux下和windows下的回车符不相同，这样也就是说会不匹配，我们运行一下会报错。</p>
+<p><img src="http://i.imgur.com/KRO6d8Y.png" alt=""></p>
+<p>所以我们要对它做一个转换，让他从windows转换成linux<br>我们用到如下命令</p>
+<pre><code>dos2unix 文件名
+</code></pre><p>即从dos到unix的转换，我们用之前先安装上这个命令。</p>
+<h3 id="dos2unix的安装"><a href="#dos2unix的安装" class="headerlink" title="dos2unix的安装"></a>dos2unix的安装</h3><pre><code>yum -y install dos2unix
+</code></pre><p>我们这里却报错了</p>
+<p><img src="http://i.imgur.com/IRJkwmC.png" alt=""></p>
+<p>我们百度查询到输入以下命令即可解决</p>
+<pre><code>yum clean all
+yum makecache
+</code></pre><p>可是我们又遇到了新问题</p>
+<p><img src="http://i.imgur.com/YTzn5oF.png" alt=""></p>
+<p>继续百度解决问题</p>
+<p>原来是我们上次学rpm包安装的时候yum源中的地址发生了改动，我们改一下即可。</p>
+<pre><code>cd /etc/
+ls
+cd yum.repos.d
+vim CentOS-Media.repo
+</code></pre><p>更改即可</p>
+<p><img src="http://i.imgur.com/3tRtntD.png" alt=""></p>
+<p>我们重新安装，发现又有报错。</p>
+<p><img src="http://i.imgur.com/NsiPlvy.png" alt=""></p>
+<p>暂时先停在这里</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/一次收到”中奖短信“后的XSS测试/" rel="next" title="一次收到”中奖短信“后的XSS测试">
+                <i class="fa fa-chevron-left"></i> 一次收到”中奖短信“后的XSS测试
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/18/shell基础-脚本执行方式/"
+           data-title="shell基础-脚本执行方式" data-url="http://yoursite.com/2016/04/18/shell基础-脚本执行方式/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shell脚本的执行方式"><span class="nav-number">1.</span> <span class="nav-text">shell脚本的执行方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echo输出命令"><span class="nav-number">1.1.</span> <span class="nav-text">echo输出命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#b-退格键删除左侧字符"><span class="nav-number">1.1.1.</span> <span class="nav-text">/b 退格键删除左侧字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制表符与换行符"><span class="nav-number">1.1.2.</span> <span class="nav-text">制表符与换行符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照十六进制ASCII输出"><span class="nav-number">1.1.3.</span> <span class="nav-text">按照十六进制ASCII输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出颜色"><span class="nav-number">1.1.4.</span> <span class="nav-text">输出颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个脚本"><span class="nav-number">1.2.</span> <span class="nav-text">第一个脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建sh目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建sh目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到sh目录"><span class="nav-number">1.2.2.</span> <span class="nav-text">切换到sh目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入脚本"><span class="nav-number">1.2.3.</span> <span class="nav-text">写入脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存退出"><span class="nav-number">1.2.4.</span> <span class="nav-text">保存退出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本执行"><span class="nav-number">1.3.</span> <span class="nav-text">脚本执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#赋予执行权限，直接运行"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">赋予执行权限，直接运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过bash调用执行脚本"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">通过bash调用执行脚本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.4.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dos2unix的安装"><span class="nav-number">1.4.1.</span> <span class="nav-text">dos2unix的安装</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
