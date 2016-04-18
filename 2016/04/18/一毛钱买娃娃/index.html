@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="逻辑支付漏洞," />
 
 
 
@@ -80,22 +80,54 @@
 
 
 
-<meta name="description" content="由于以前博客忘记续费域名，域名进入删除期，无法赎回，所以现在利用github和hexo重新搭建了一个博客，用于自己的笔记记录和总结学习。
-一些都将重新开始！加油！
-2016/4/17 星期日 13:58:01">
+<meta name="description" content="前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。
+目标我们先来看一下本次的目标
+
+过程改包
+首先我们先抓包，找到支付金额的地方，改一下包，把金额改成一毛。
+
+
+##支付##
+我们按照要求支付一毛钱
+
+结果
+最后想说本文只做个人技术总结，并无宣扬对厂商造">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新的开始">
-<meta property="og:url" content="http://yoursite.com/2016/04/17/新的开始/index.html">
+<meta property="og:title" content="一毛钱买娃娃">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/一毛钱买娃娃/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
-<meta property="og:description" content="由于以前博客忘记续费域名，域名进入删除期，无法赎回，所以现在利用github和hexo重新搭建了一个博客，用于自己的笔记记录和总结学习。
-一些都将重新开始！加油！
-2016/4/17 星期日 13:58:01">
-<meta property="og:updated_time" content="2016-04-17T05:58:10.155Z">
+<meta property="og:description" content="前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。
+目标我们先来看一下本次的目标
+
+过程改包
+首先我们先抓包，找到支付金额的地方，改一下包，把金额改成一毛。
+
+
+##支付##
+我们按照要求支付一毛钱
+
+结果
+最后想说本文只做个人技术总结，并无宣扬对厂商造">
+<meta property="og:image" content="http://i.imgur.com/8efpSvz.png">
+<meta property="og:image" content="http://i.imgur.com/26OBEtk.png">
+<meta property="og:image" content="http://i.imgur.com/2srBAtu.png">
+<meta property="og:image" content="http://i.imgur.com/G06cUdH.png">
+<meta property="og:updated_time" content="2016-04-18T10:17:27.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新的开始">
-<meta name="twitter:description" content="由于以前博客忘记续费域名，域名进入删除期，无法赎回，所以现在利用github和hexo重新搭建了一个博客，用于自己的笔记记录和总结学习。
-一些都将重新开始！加油！
-2016/4/17 星期日 13:58:01">
+<meta name="twitter:title" content="一毛钱买娃娃">
+<meta name="twitter:description" content="前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。
+目标我们先来看一下本次的目标
+
+过程改包
+首先我们先抓包，找到支付金额的地方，改一下包，把金额改成一毛。
+
+
+##支付##
+我们按照要求支付一毛钱
+
+结果
+最后想说本文只做个人技术总结，并无宣扬对厂商造">
+<meta name="twitter:image" content="http://i.imgur.com/8efpSvz.png">
 
 
 
@@ -113,7 +145,7 @@
   };
 </script>
 
-  <title> 新的开始 | Myh4ck1ife </title>
+  <title> 一毛钱买娃娃 | Myh4ck1ife </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -243,7 +275,7 @@
             
             
               
-                新的开始
+                一毛钱买娃娃
               
             
           </h1>
@@ -255,19 +287,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-17T13:55:16+08:00" content="2016-04-17">
-              2016-04-17
+            <time itemprop="dateCreated" datetime="2016-04-18T17:59:36+08:00" content="2016-04-18">
+              2016-04-18
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hack-life/" itemprop="url" rel="index">
+                    <span itemprop="name">hack_life</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/17/新的开始/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/17/新的开始/" itemprop="commentsCount"></span>
+                <a href="/2016/04/18/一毛钱买娃娃/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/一毛钱买娃娃/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -290,9 +341,22 @@
       
 
       
-        <p>由于以前博客忘记续费域名，域名进入删除期，无法赎回，所以现在利用github和hexo重新搭建了一个博客，用于自己的笔记记录和总结学习。</p>
-<p><strong>一些都将重新开始！加油！</strong></p>
-<p>2016/4/17 星期日 13:58:01 </p>
+        <p>前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。</p>
+<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>我们先来看一下本次的目标</p>
+<p><img src="http://i.imgur.com/8efpSvz.png" alt=""></p>
+<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="改包"><a href="#改包" class="headerlink" title="改包"></a>改包</h2><blockquote>
+<p>首先我们先抓包，找到支付金额的地方，改一下包，把金额改成一毛。</p>
+</blockquote>
+<p><img src="http://i.imgur.com/26OBEtk.png" alt=""></p>
+<p>##支付##</p>
+<p>我们按照要求支付一毛钱</p>
+<p><img src="http://i.imgur.com/2srBAtu.png" alt=""></p>
+<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://i.imgur.com/G06cUdH.png" alt=""></p>
+<h1 id="最后想说"><a href="#最后想说" class="headerlink" title="最后想说"></a>最后想说</h1><p>本文只做个人技术总结，并无宣扬对厂商造成破坏之意，且本漏洞已提交至乌云并已公开：</p>
+<blockquote>
+<p><a href="http://www.wooyun.org/bugs/wooyun-2016-0173411" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2016-0173411</a></p>
+</blockquote>
+<p>如有不妥之处，请联系我，必将配合删除，至此告之。</p>
 
       
     </div>
@@ -311,18 +375,24 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/逻辑支付漏洞/" rel="tag">#逻辑支付漏洞</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/17/新的开始/" rel="next" title="新的开始">
+                <i class="fa fa-chevron-left"></i> 新的开始
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/18/一毛钱买娃娃/" rel="prev" title="一毛钱买娃娃">
-                一毛钱买娃娃 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -348,8 +418,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/17/新的开始/"
-           data-title="新的开始" data-url="http://yoursite.com/2016/04/17/新的开始/">
+      <div class="ds-thread" data-thread-key="2016/04/18/一毛钱买娃娃/"
+           data-title="一毛钱买娃娃" data-url="http://yoursite.com/2016/04/18/一毛钱买娃娃/">
       </div>
     
   </div>
@@ -440,7 +510,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#改包"><span class="nav-number">2.1.</span> <span class="nav-text">改包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结果"><span class="nav-number">3.</span> <span class="nav-text">结果</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后想说"><span class="nav-number">4.</span> <span class="nav-text">最后想说</span></a></li></ol></div>
             
           </div>
         </section>
