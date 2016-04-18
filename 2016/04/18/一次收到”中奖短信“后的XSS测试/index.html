@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="存储型xss," />
 
 
 
@@ -80,15 +80,47 @@
 
 
 
-<meta name="description" content="学习总结 思考感悟 知识管理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Myh4ck1ife">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="起因 前几天上课的时候，忽然收到一条短信
+
+ 打开网址如下：
+
+ 既然我有如此“运气”，就让我看看葫芦里卖的什么药吧！
+过程测试 随手x了一句
+&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;
+ 发现报错了，我以为是对“script整个标签”进行了过滤（后来发现仅仅是对script进行过滤），然后就进行继续尝试。
+&amp;lt;scr&amp;lt;script&amp;gt;ipt&amp;gt;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次收到”中奖短信“后的XSS测试">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/一次收到”中奖短信“后的XSS测试/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
-<meta property="og:description" content="学习总结 思考感悟 知识管理">
+<meta property="og:description" content="起因 前几天上课的时候，忽然收到一条短信
+
+ 打开网址如下：
+
+ 既然我有如此“运气”，就让我看看葫芦里卖的什么药吧！
+过程测试 随手x了一句
+&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;
+ 发现报错了，我以为是对“script整个标签”进行了过滤（后来发现仅仅是对script进行过滤），然后就进行继续尝试。
+&amp;lt;scr&amp;lt;script&amp;gt;ipt&amp;gt;a">
+<meta property="og:image" content="http://i.imgur.com/y3VFOAV.png">
+<meta property="og:image" content="http://i.imgur.com/WlRIEj7.png">
+<meta property="og:image" content="http://i.imgur.com/0mP4BSq.png">
+<meta property="og:image" content="http://i.imgur.com/MgJdLJ0.png">
+<meta property="og:image" content="http://i.imgur.com/bp1fPEJ.png">
+<meta property="og:image" content="http://i.imgur.com/Ab0xqhD.png">
+<meta property="og:updated_time" content="2016-04-18T10:41:38.026Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Myh4ck1ife">
-<meta name="twitter:description" content="学习总结 思考感悟 知识管理">
+<meta name="twitter:title" content="一次收到”中奖短信“后的XSS测试">
+<meta name="twitter:description" content="起因 前几天上课的时候，忽然收到一条短信
+
+ 打开网址如下：
+
+ 既然我有如此“运气”，就让我看看葫芦里卖的什么药吧！
+过程测试 随手x了一句
+&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;
+ 发现报错了，我以为是对“script整个标签”进行了过滤（后来发现仅仅是对script进行过滤），然后就进行继续尝试。
+&amp;lt;scr&amp;lt;script&amp;gt;ipt&amp;gt;a">
+<meta name="twitter:image" content="http://i.imgur.com/y3VFOAV.png">
 
 
 
@@ -106,7 +138,7 @@
   };
 </script>
 
-  <title> Myh4ck1ife </title>
+  <title> 一次收到”中奖短信“后的XSS测试 | Myh4ck1ife </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +159,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +246,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,10 +268,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/04/18/一次收到”中奖短信“后的XSS测试/" itemprop="url">
-                  一次收到”中奖短信“后的XSS测试
-                </a>
+                一次收到”中奖短信“后的XSS测试
               
             
           </h1>
@@ -307,9 +334,7 @@
       
 
       
-        
-          
-            <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p> 前几天上课的时候，忽然收到一条短信</p>
+        <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p> 前几天上课的时候，忽然收到一条短信</p>
 <p><img src="http://i.imgur.com/y3VFOAV.png" alt=""></p>
 <p> 打开网址如下：</p>
 <p><img src="http://i.imgur.com/WlRIEj7.png" alt=""></p>
@@ -336,274 +361,57 @@
 </blockquote>
 <p>如有不妥之处，请联系我，必将配合删除，至此告之。</p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/18/一毛钱买娃娃/" itemprop="url">
-                  一毛钱买娃娃
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T17:59:36+08:00" content="2016-04-18">
-              2016-04-18
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hack-life/" itemprop="url" rel="index">
-                    <span itemprop="name">hack_life</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/18/一毛钱买娃娃/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/一毛钱买娃娃/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/存储型xss/" rel="tag">#存储型xss</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>前几天在看xss的时候偶然找到了一个成人用品网站，结果怎么x都会被实体，这个时候问了问表哥@Black-Hole，然后表哥太忙没有时间回复。所以就想换一个猥琐的思路，手段也很老了，是逻辑上的问题。</p>
-<h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>我们先来看一下本次的目标</p>
-<p><img src="http://i.imgur.com/8efpSvz.png" alt=""></p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="改包"><a href="#改包" class="headerlink" title="改包"></a>改包</h2><blockquote>
-<p>首先我们先抓包，找到支付金额的地方，改一下包，把金额改成一毛。</p>
-</blockquote>
-<p><img src="http://i.imgur.com/26OBEtk.png" alt=""></p>
-<p>##支付##</p>
-<p>我们按照要求支付一毛钱</p>
-<p><img src="http://i.imgur.com/2srBAtu.png" alt=""></p>
-<h1 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h1><p><img src="http://i.imgur.com/G06cUdH.png" alt=""></p>
-<h1 id="最后想说"><a href="#最后想说" class="headerlink" title="最后想说"></a>最后想说</h1><p>本文只做个人技术总结，并无宣扬对厂商造成破坏之意，且本漏洞已提交至乌云并已公开：</p>
-<blockquote>
-<p><a href="http://www.wooyun.org/bugs/wooyun-2016-0173411" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2016-0173411</a></p>
-</blockquote>
-<p>如有不妥之处，请联系我，必将配合删除，至此告之。</p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/18/一毛钱买娃娃/" rel="next" title="一毛钱买娃娃">
+                <i class="fa fa-chevron-left"></i> 一毛钱买娃娃
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/04/17/新的开始/" itemprop="url">
-                  新的开始
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-17T13:55:16+08:00" content="2016-04-17">
-              2016-04-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/17/新的开始/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/17/新的开始/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>由于以前博客忘记续费域名，域名进入删除期，无法赎回，所以现在利用github和hexo重新搭建了一个博客，用于自己的笔记记录和总结学习。</p>
-<p><strong>一些都将重新开始！加油！</strong></p>
-<p>2016/4/17 星期日 13:58:01 </p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -611,6 +419,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/04/18/一次收到”中奖短信“后的XSS测试/"
+           data-title="一次收到”中奖短信“后的XSS测试" data-url="http://yoursite.com/2016/04/18/一次收到”中奖短信“后的XSS测试/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -630,8 +446,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -681,6 +506,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">2.1.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绕过"><span class="nav-number">2.2.</span> <span class="nav-text">绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#得到cookies"><span class="nav-number">2.3.</span> <span class="nav-text">得到cookies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登陆后台"><span class="nav-number">2.4.</span> <span class="nav-text">登陆后台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后想说"><span class="nav-number">3.</span> <span class="nav-text">最后想说</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -777,6 +613,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
