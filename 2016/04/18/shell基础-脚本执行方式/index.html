@@ -118,7 +118,10 @@ echo &amp;apos;&amp;apos;">
 <meta property="og:image" content="http://i.imgur.com/YTzn5oF.png">
 <meta property="og:image" content="http://i.imgur.com/3tRtntD.png">
 <meta property="og:image" content="http://i.imgur.com/NsiPlvy.png">
-<meta property="og:updated_time" content="2016-04-18T14:44:29.316Z">
+<meta property="og:image" content="http://i.imgur.com/zd4lWHU.png">
+<meta property="og:image" content="http://i.imgur.com/iC2mqZ6.png">
+<meta property="og:image" content="http://i.imgur.com/1Hxg5Zv.png">
+<meta property="og:updated_time" content="2016-04-19T04:41:02.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell基础-脚本执行方式">
 <meta name="twitter:description" content="shell脚本的执行方式echo输出命令命令语法
@@ -442,7 +445,23 @@ vim CentOS-Media.repo
 <p><img src="http://i.imgur.com/3tRtntD.png" alt=""></p>
 <p>我们重新安装，发现又有报错。</p>
 <p><img src="http://i.imgur.com/NsiPlvy.png" alt=""></p>
-<p>暂时先停在这里</p>
+<p>后来我发现是yum源改错了，我改成了centos5的源而且是i386架构的。所以进行一下改正。因为我这里觉得改正比较麻烦，所以就直接改成国内的源了。</p>
+<h3 id="yum源的更换"><a href="#yum源的更换" class="headerlink" title="yum源的更换"></a>yum源的更换</h3><p>切入yum源目录</p>
+<pre><code>cd /etc/yum.repos.d
+</code></pre><p>备份一下系统的源</p>
+<pre><code>mv CentOS-Media.repo CentOS-Media.repo.bak
+</code></pre><p>下载163网易的yum源</p>
+<pre><code>wget http://mirrors.163.com/.help/CentOS6-Base-163.repo
+</code></pre><p>更新yum配置</p>
+<pre><code>yum makecache
+</code></pre><p><img src="http://i.imgur.com/zd4lWHU.png" alt=""></p>
+<p>然后我们只需要耐心的等待，然后再运行一下安装dos2unix命令即可</p>
+<p><img src="http://i.imgur.com/iC2mqZ6.png" alt=""></p>
+<p>安装完成以后我们运行一下转换命令</p>
+<pre><code>dos2unix hello.sh
+</code></pre><p>然后我们cat -A发现回车符已经正常，bash也能正常运行</p>
+<p><img src="http://i.imgur.com/1Hxg5Zv.png" alt=""></p>
+<p><strong> 当然相同的unix2dos也是存在的。</strong></p>
 
       
     </div>
@@ -596,7 +615,7 @@ vim CentOS-Media.repo
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shell脚本的执行方式"><span class="nav-number">1.</span> <span class="nav-text">shell脚本的执行方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echo输出命令"><span class="nav-number">1.1.</span> <span class="nav-text">echo输出命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#b-退格键删除左侧字符"><span class="nav-number">1.1.1.</span> <span class="nav-text">/b 退格键删除左侧字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制表符与换行符"><span class="nav-number">1.1.2.</span> <span class="nav-text">制表符与换行符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照十六进制ASCII输出"><span class="nav-number">1.1.3.</span> <span class="nav-text">按照十六进制ASCII输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出颜色"><span class="nav-number">1.1.4.</span> <span class="nav-text">输出颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个脚本"><span class="nav-number">1.2.</span> <span class="nav-text">第一个脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建sh目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建sh目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到sh目录"><span class="nav-number">1.2.2.</span> <span class="nav-text">切换到sh目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入脚本"><span class="nav-number">1.2.3.</span> <span class="nav-text">写入脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存退出"><span class="nav-number">1.2.4.</span> <span class="nav-text">保存退出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本执行"><span class="nav-number">1.3.</span> <span class="nav-text">脚本执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#赋予执行权限，直接运行"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">赋予执行权限，直接运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过bash调用执行脚本"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">通过bash调用执行脚本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.4.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dos2unix的安装"><span class="nav-number">1.4.1.</span> <span class="nav-text">dos2unix的安装</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shell脚本的执行方式"><span class="nav-number">1.</span> <span class="nav-text">shell脚本的执行方式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echo输出命令"><span class="nav-number">1.1.</span> <span class="nav-text">echo输出命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#b-退格键删除左侧字符"><span class="nav-number">1.1.1.</span> <span class="nav-text">/b 退格键删除左侧字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制表符与换行符"><span class="nav-number">1.1.2.</span> <span class="nav-text">制表符与换行符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按照十六进制ASCII输出"><span class="nav-number">1.1.3.</span> <span class="nav-text">按照十六进制ASCII输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出颜色"><span class="nav-number">1.1.4.</span> <span class="nav-text">输出颜色</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一个脚本"><span class="nav-number">1.2.</span> <span class="nav-text">第一个脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建sh目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">创建sh目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#切换到sh目录"><span class="nav-number">1.2.2.</span> <span class="nav-text">切换到sh目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写入脚本"><span class="nav-number">1.2.3.</span> <span class="nav-text">写入脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保存退出"><span class="nav-number">1.2.4.</span> <span class="nav-text">保存退出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本执行"><span class="nav-number">1.3.</span> <span class="nav-text">脚本执行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一"><span class="nav-number">1.3.1.</span> <span class="nav-text">方法一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#赋予执行权限，直接运行"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">赋予执行权限，直接运行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">1.3.2.</span> <span class="nav-text">方法二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过bash调用执行脚本"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">通过bash调用执行脚本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.4.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dos2unix的安装"><span class="nav-number">1.4.1.</span> <span class="nav-text">dos2unix的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yum源的更换"><span class="nav-number">1.4.2.</span> <span class="nav-text">yum源的更换</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
