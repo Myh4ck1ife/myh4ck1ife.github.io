@@ -92,7 +92,10 @@ history [选项] [历史命令保存文件]">
 <meta property="og:image" content="http://i.imgur.com/X2TfmNF.png">
 <meta property="og:image" content="http://i.imgur.com/60Ejfdx.png">
 <meta property="og:image" content="http://i.imgur.com/nFUOwVR.png">
-<meta property="og:updated_time" content="2016-04-19T13:37:43.778Z">
+<meta property="og:image" content="http://i.imgur.com/0cPisgK.png">
+<meta property="og:image" content="http://i.imgur.com/u2gRWow.png">
+<meta property="og:image" content="http://i.imgur.com/X5CpZ8A.png">
+<meta property="og:updated_time" content="2016-04-20T14:52:00.347Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash的基本功能">
 <meta name="twitter:description" content="bash的基本功能历史命令linux现在比较智能，可以查看到自己历史所使用过的命令
@@ -351,6 +354,28 @@ history [选项] [历史命令保存文件]">
 </blockquote>
 <p>我们在历史命令记录文件里面可以看到历史命令前有编号，便可以利用这个进行历史命令的调用。</p>
 <h2 id="命令与文件补全"><a href="#命令与文件补全" class="headerlink" title="命令与文件补全"></a>命令与文件补全</h2><p>tab键即补全键，可以进行命令补全与目录补全，可以加速命令的输入速度。</p>
+<h2 id="命令别名"><a href="#命令别名" class="headerlink" title="命令别名"></a>命令别名</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><pre><code>alias 别名=&apos;原命令&apos;
+</code></pre><p>设定命令别名</p>
+<pre><code>alias
+</code></pre><p>查询命令别名</p>
+<p>比如我们把vim改成vi</p>
+<p><img src="http://i.imgur.com/0cPisgK.png" alt=""></p>
+<p>这个时候我们再用vi的时候实际上执行的就是vim</p>
+<p>这里我们也能看到，rm实际执行的是加了-i选项的，这也能解释为什么删除的时候会有询问。其他命令也是如此，好多都已经内置选项。</p>
+<h3 id="命令执行顺序"><a href="#命令执行顺序" class="headerlink" title="命令执行顺序"></a>命令执行顺序</h3><blockquote>
+<p>第一顺位执行用绝对路径或相对路径执行的命令</p>
+<p>第二顺位执行别名</p>
+<p>第三顺位执行bash的内部命令</p>
+<p>第四顺位执行按照$path环境变量定义的目录查找顺序找到的第一个命令</p>
+</blockquote>
+<p>PATH环境变量这里解释一下</p>
+<p><img src="http://i.imgur.com/u2gRWow.png" alt=""></p>
+<p>我们echo一下path，当我们执行命令的时候，命令会按照变量中的路径一个个去找命令所在目录，如果所有路径找完都找不到，就会报错。</p>
+<p>其实linux所有可执行文件与命令都应该用绝对变量去设置，但是命令系统默认用PATH变量去使得操作简便了。但是有些命令是找不到文件的，比如cd，因为这些命令是shell bash自带的命令。</p>
+<h3 id="如何永久生效"><a href="#如何永久生效" class="headerlink" title="如何永久生效"></a>如何永久生效</h3><p>修改家目录下得bashrc<br>比如root：</p>
+<pre><code>vi /root/.bashrc
+</code></pre><h3 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h3><pre><code>unalias 别名
+</code></pre><h2 id="bash常用快捷键"><a href="#bash常用快捷键" class="headerlink" title="bash常用快捷键"></a>bash常用快捷键</h2><p><img src="http://i.imgur.com/X5CpZ8A.png" alt=""></p>
 
       
     </div>
@@ -510,7 +535,7 @@ history [选项] [历史命令保存文件]">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash的基本功能"><span class="nav-number">1.</span> <span class="nav-text">bash的基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">1.1.</span> <span class="nav-text">历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改历史命令保存条数"><span class="nav-number">1.1.2.</span> <span class="nav-text">更改历史命令保存条数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史命令的调用"><span class="nav-number">1.1.3.</span> <span class="nav-text">历史命令的调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与文件补全"><span class="nav-number">1.2.</span> <span class="nav-text">命令与文件补全</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash的基本功能"><span class="nav-number">1.</span> <span class="nav-text">bash的基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">1.1.</span> <span class="nav-text">历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改历史命令保存条数"><span class="nav-number">1.1.2.</span> <span class="nav-text">更改历史命令保存条数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史命令的调用"><span class="nav-number">1.1.3.</span> <span class="nav-text">历史命令的调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与文件补全"><span class="nav-number">1.2.</span> <span class="nav-text">命令与文件补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令别名"><span class="nav-number">1.3.</span> <span class="nav-text">命令别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序"><span class="nav-number">1.3.2.</span> <span class="nav-text">命令执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何永久生效"><span class="nav-number">1.3.3.</span> <span class="nav-text">如何永久生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除别名"><span class="nav-number">1.3.4.</span> <span class="nav-text">删除别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash常用快捷键"><span class="nav-number">1.4.</span> <span class="nav-text">bash常用快捷键</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
