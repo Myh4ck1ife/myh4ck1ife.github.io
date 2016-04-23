@@ -95,7 +95,20 @@ history [选项] [历史命令保存文件]">
 <meta property="og:image" content="http://i.imgur.com/0cPisgK.png">
 <meta property="og:image" content="http://i.imgur.com/u2gRWow.png">
 <meta property="og:image" content="http://i.imgur.com/X5CpZ8A.png">
-<meta property="og:updated_time" content="2016-04-20T14:52:00.347Z">
+<meta property="og:image" content="http://i.imgur.com/WsUgUay.png">
+<meta property="og:image" content="http://i.imgur.com/GvbL2Kd.png">
+<meta property="og:image" content="http://i.imgur.com/jN30wv1.png">
+<meta property="og:image" content="http://i.imgur.com/sHie9tp.png">
+<meta property="og:image" content="http://i.imgur.com/3OOaQY9.png">
+<meta property="og:image" content="http://i.imgur.com/QYc5jDo.png">
+<meta property="og:image" content="http://i.imgur.com/Lvx60Gd.png">
+<meta property="og:image" content="http://i.imgur.com/zO9BZOR.png">
+<meta property="og:image" content="http://i.imgur.com/xAYtHbv.png">
+<meta property="og:image" content="http://i.imgur.com/KU5KZbr.png">
+<meta property="og:image" content="http://i.imgur.com/TvPBoVO.png">
+<meta property="og:image" content="http://i.imgur.com/Qpu1OYb.png">
+<meta property="og:image" content="http://i.imgur.com/Ml49tUh.png">
+<meta property="og:updated_time" content="2016-04-23T15:39:54.126Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash的基本功能">
 <meta name="twitter:description" content="bash的基本功能历史命令linux现在比较智能，可以查看到自己历史所使用过的命令
@@ -376,6 +389,64 @@ history [选项] [历史命令保存文件]">
 <pre><code>vi /root/.bashrc
 </code></pre><h3 id="删除别名"><a href="#删除别名" class="headerlink" title="删除别名"></a>删除别名</h3><pre><code>unalias 别名
 </code></pre><h2 id="bash常用快捷键"><a href="#bash常用快捷键" class="headerlink" title="bash常用快捷键"></a>bash常用快捷键</h2><p><img src="http://i.imgur.com/X5CpZ8A.png" alt=""></p>
+<h2 id="输入输出重定向"><a href="#输入输出重定向" class="headerlink" title="输入输出重定向"></a>输入输出重定向</h2><h3 id="标准输入输出"><a href="#标准输入输出" class="headerlink" title="标准输入输出"></a>标准输入输出</h3><p><img src="http://i.imgur.com/WsUgUay.png" alt=""></p>
+<p>因为这些设备文件名不好记忆，所以linux中增加了文件描述符的选项。</p>
+<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><p><img src="http://i.imgur.com/GvbL2Kd.png" alt=""></p>
+<p>输出重定向的意思是，本来是输出到屏幕上，但是这里我们重新输出到文件里，那么为什么要输出到文件呢？有一些操作是我们在人少的时候执行，以减少服务器平时的负荷，我们可以用shell来执行定时任务，我们如果不把输出保存下来的话，shell执行过程中出现的问题无法记录。当然有些命令是没有输出的，重定向也没有意义。</p>
+<h4 id="覆盖与追加的区别"><a href="#覆盖与追加的区别" class="headerlink" title="覆盖与追加的区别"></a>覆盖与追加的区别</h4><h5 id="正确输出"><a href="#正确输出" class="headerlink" title="正确输出"></a>正确输出</h5><p>我们这里用ls举例子，把ls输出结果保存下来。</p>
+<pre><code>ls &gt; abc
+</code></pre><p><img src="http://i.imgur.com/jN30wv1.png" alt=""></p>
+<p>我们cat一下abc内容</p>
+<pre><code>cat abc
+</code></pre><p><img src="http://i.imgur.com/sHie9tp.png" alt=""></p>
+<p>我们也知道date命令也是可以有输出的，这里我们也让他保存到abc</p>
+<pre><code>date &gt; abc
+</code></pre><p>我们继续cat一下看看</p>
+<p><img src="http://i.imgur.com/3OOaQY9.png" alt=""></p>
+<p>我们发现覆盖了结果，因为 &gt; 是覆盖，而 &gt;&gt; 是追加</p>
+<p>我们在date一次，这次用追加</p>
+<pre><code>date &gt;&gt; abc
+</code></pre><p><img src="http://i.imgur.com/QYc5jDo.png" alt=""></p>
+<p>我们发现结果已经追加</p>
+<p>这就是追加和覆盖的结果，但是这些都是命令正确输出的结果那么要是错误输出会怎么样呢？</p>
+<h5 id="错误输出"><a href="#错误输出" class="headerlink" title="错误输出"></a>错误输出</h5><p>比如我们随意输入一个错误命令</p>
+<pre><code>lst 
+</code></pre><p><img src="http://i.imgur.com/Lvx60Gd.png" alt=""></p>
+<p>如果我们想把这个结果追加到abc，会出现什么情况呢？</p>
+<p><img src="http://i.imgur.com/zO9BZOR.png" alt=""></p>
+<p>发现操作是不可以的要是想错误结果也能保存的话，我们要加错误输出重定向。</p>
+<pre><code>lst 2&gt;&gt; abc
+</code></pre><p><img src="http://i.imgur.com/xAYtHbv.png" alt=""></p>
+<p>我们发现错误信息输出</p>
+<p><strong>这里注意2和&gt;之间是不能有空格</strong></p>
+<p>但是这里我们也发现一个问题，就是我们要先判断命令的正确与否才能重定向，实际作用中是意义不大的，所以我们用的一般都是正确输出错误输出同时重定向的。</p>
+<h5 id="错误输出正确输出同时保存"><a href="#错误输出正确输出同时保存" class="headerlink" title="错误输出正确输出同时保存"></a>错误输出正确输出同时保存</h5><p><img src="http://i.imgur.com/KU5KZbr.png" alt=""></p>
+<p>只要利用这种方法，正确错误都可以保存</p>
+<p>这里我们要介绍一个文件</p>
+<blockquote>
+<p>/dev/null</p>
+</blockquote>
+<p>它是一个特殊文件，这个文件就是一个类似一个垃圾箱，不管命令的执行结果正确与否，我们不关心结果，只要执行就行，在后面我们会写一些shell，这些命令的输出对我们没有意义，所以扔到垃圾箱就好。</p>
+<h3 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h3><pre><code>wc 【选项】 【文件名】
+</code></pre><p>选项：</p>
+<blockquote>
+<p>-c 统计字节数</p>
+<p>-w 统计单词数</p>
+<p>-l 统计行数</p>
+</blockquote>
+<p>这里我们是用 wc 命令举例子</p>
+<p>wc命令是一个统计命令 </p>
+<p>输入wc之后我们就开始输入要统计的内容ctrl + d 结束输入</p>
+<p><img src="http://i.imgur.com/TvPBoVO.png" alt=""></p>
+<p>这里统计结果是 5行 5个单词 21个字符</p>
+<p>字符中包含回车符，这里统计了键盘的输入结果，选项加上以后会只统计该选项的代表值。我们这里重定向可以让它统计文件：</p>
+<pre><code>wc anaconda.cfg
+</code></pre><p>用日志文件举例子</p>
+<p><img src="http://i.imgur.com/Qpu1OYb.png" alt=""></p>
+<p>当然也有 &gt;&gt;，比如：</p>
+<pre><code>wc &lt;&lt; hello
+</code></pre><p>这里不再是ctrl d 结束，而是直到再碰到hello结束</p>
+<p><img src="http://i.imgur.com/Ml49tUh.png" alt=""></p>
 
       
     </div>
@@ -535,7 +606,7 @@ history [选项] [历史命令保存文件]">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash的基本功能"><span class="nav-number">1.</span> <span class="nav-text">bash的基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">1.1.</span> <span class="nav-text">历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改历史命令保存条数"><span class="nav-number">1.1.2.</span> <span class="nav-text">更改历史命令保存条数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史命令的调用"><span class="nav-number">1.1.3.</span> <span class="nav-text">历史命令的调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与文件补全"><span class="nav-number">1.2.</span> <span class="nav-text">命令与文件补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令别名"><span class="nav-number">1.3.</span> <span class="nav-text">命令别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序"><span class="nav-number">1.3.2.</span> <span class="nav-text">命令执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何永久生效"><span class="nav-number">1.3.3.</span> <span class="nav-text">如何永久生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除别名"><span class="nav-number">1.3.4.</span> <span class="nav-text">删除别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash常用快捷键"><span class="nav-number">1.4.</span> <span class="nav-text">bash常用快捷键</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash的基本功能"><span class="nav-number">1.</span> <span class="nav-text">bash的基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">1.1.</span> <span class="nav-text">历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改历史命令保存条数"><span class="nav-number">1.1.2.</span> <span class="nav-text">更改历史命令保存条数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史命令的调用"><span class="nav-number">1.1.3.</span> <span class="nav-text">历史命令的调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与文件补全"><span class="nav-number">1.2.</span> <span class="nav-text">命令与文件补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令别名"><span class="nav-number">1.3.</span> <span class="nav-text">命令别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序"><span class="nav-number">1.3.2.</span> <span class="nav-text">命令执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何永久生效"><span class="nav-number">1.3.3.</span> <span class="nav-text">如何永久生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除别名"><span class="nav-number">1.3.4.</span> <span class="nav-text">删除别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash常用快捷键"><span class="nav-number">1.4.</span> <span class="nav-text">bash常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出重定向"><span class="nav-number">1.5.</span> <span class="nav-text">输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准输入输出"><span class="nav-number">1.5.1.</span> <span class="nav-text">标准输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出重定向"><span class="nav-number">1.5.2.</span> <span class="nav-text">输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖与追加的区别"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">覆盖与追加的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#正确输出"><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">正确输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误输出"><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">错误输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误输出正确输出同时保存"><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">错误输出正确输出同时保存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入重定向"><span class="nav-number">1.5.3.</span> <span class="nav-text">输入重定向</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
