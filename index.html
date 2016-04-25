@@ -249,6 +249,161 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/25/糗事百科成人版爬虫/" itemprop="url">
+                  糗事百科成人版爬虫
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-25T18:20:59+08:00" content="2016-04-25">
+              2016-04-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/25/糗事百科成人版爬虫/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/25/糗事百科成人版爬虫/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p>因为最近在看爬虫，所以写了一个简单的小程序来爬一些图片，练习一下库的使用。</p>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><pre><code>#coding=utf-8
+
+&apos;&apos;&apos;
+糗事百科成人版爬虫
+
+&apos;&apos;&apos;
+
+import urllib
+import re
+
+head = 0
+n = 1
+while n &lt; 10:
+    page = n
+    url = &apos;http://www.qiushimm.com/page/&apos; + str(page)
+    def getHtml(url):
+        page = urllib.urlopen(url)
+        html = page.read()
+        return html
+
+    def getImg(html):
+        reg = r&apos;src=&quot;(.+?\.jpg)&quot;&apos;
+        imgre = re.compile(reg)
+        imglist = re.findall(imgre,html)
+        x = head
+        for imgurl in imglist:
+            urllib.urlretrieve(imgurl,&apos;%s.jpg&apos; % x)
+            x+=1
+    html = getHtml(url)
+    print getImg(html)
+    n = n+1
+    head = head + 10
+</code></pre><h1 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h1><p><img src="http://i.imgur.com/VTtRJZW.jpg" alt=""></p>
+<p><img src="http://i.imgur.com/YDrIhWa.png" alt=""></p>
+<h1 id="源码下载"><a href="#源码下载" class="headerlink" title="源码下载"></a>源码下载</h1><p><a href="http://http://pan.baidu.com/share/link?shareid=3472610476&amp;uk=559295643" title="demo_1.py" target="_blank" rel="external">http://http://pan.baidu.com/share/link?shareid=3472610476&amp;uk=559295643</a></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/20/GourdScan分布式被动扫描搭建/" itemprop="url">
                   GourdScan分布式被动扫描搭建
                 </a>
@@ -992,7 +1147,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1000,7 +1155,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1009,7 +1164,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
