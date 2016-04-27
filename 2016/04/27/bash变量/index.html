@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="GoundScan," />
+  <meta name="keywords" content="bash变量,shell," />
 
 
 
@@ -80,28 +80,42 @@
 
 
 
-<meta name="description" content="GourdScanGourdScan是用一款利用sqlmapapi进行漏洞的检测，然后通过浏览器代理方式获取请求，然后对其进行测试的被动式注入检测工具。项目地址：https://github.com/code-scan/GourdScan">
+<meta name="description" content="Bash变量用户自定义变量什么是变量
+变量设置规则
+注意变量名称前是不可以以数字开头的，而且默认类型是字符串型。
+
+linux中空格代表分割，要用单引号或者双引号包含才能正确使用，而单双引号的区别可以详见这篇文章：
+http://myh4ck1ife.github.io/2016/04/19/bash%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/
+这里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GourdScan分布式被动扫描搭建">
-<meta property="og:url" content="http://yoursite.com/2016/04/20/GourdScan分布式被动扫描搭建/index.html">
+<meta property="og:title" content="bash变量">
+<meta property="og:url" content="http://yoursite.com/2016/04/27/bash变量/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
-<meta property="og:description" content="GourdScanGourdScan是用一款利用sqlmapapi进行漏洞的检测，然后通过浏览器代理方式获取请求，然后对其进行测试的被动式注入检测工具。项目地址：https://github.com/code-scan/GourdScan">
-<meta property="og:image" content="http://i.imgur.com/iXETVe9.png">
-<meta property="og:image" content="http://i.imgur.com/jDP2TX3.png">
-<meta property="og:image" content="http://i.imgur.com/H1FKrGx.png">
-<meta property="og:image" content="http://i.imgur.com/OwlFxp2.png">
-<meta property="og:image" content="http://i.imgur.com/v3EtqWw.png">
-<meta property="og:image" content="http://i.imgur.com/8oYZLps.png">
-<meta property="og:image" content="http://i.imgur.com/LeHtfd7.png">
-<meta property="og:image" content="http://i.imgur.com/OAbIfgK.png">
-<meta property="og:image" content="http://i.imgur.com/yzbGPpI.png">
-<meta property="og:image" content="http://i.imgur.com/DTFC30L.png">
-<meta property="og:image" content="http://i.imgur.com/OPubeQ9.png">
-<meta property="og:updated_time" content="2016-04-20T03:46:59.159Z">
+<meta property="og:description" content="Bash变量用户自定义变量什么是变量
+变量设置规则
+注意变量名称前是不可以以数字开头的，而且默认类型是字符串型。
+
+linux中空格代表分割，要用单引号或者双引号包含才能正确使用，而单双引号的区别可以详见这篇文章：
+http://myh4ck1ife.github.io/2016/04/19/bash%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/
+这里">
+<meta property="og:image" content="http://i.imgur.com/GXWUai9.png">
+<meta property="og:image" content="http://i.imgur.com/Xq2QhpQ.png">
+<meta property="og:image" content="http://i.imgur.com/nk57b1Y.png">
+<meta property="og:image" content="http://i.imgur.com/Chx0cr4.png">
+<meta property="og:image" content="http://i.imgur.com/JMBzlZ6.png">
+<meta property="og:image" content="http://i.imgur.com/fwUGMqI.png">
+<meta property="og:image" content="http://i.imgur.com/RioZyUl.png">
+<meta property="og:updated_time" content="2016-04-27T13:41:02.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="GourdScan分布式被动扫描搭建">
-<meta name="twitter:description" content="GourdScanGourdScan是用一款利用sqlmapapi进行漏洞的检测，然后通过浏览器代理方式获取请求，然后对其进行测试的被动式注入检测工具。项目地址：https://github.com/code-scan/GourdScan">
-<meta name="twitter:image" content="http://i.imgur.com/iXETVe9.png">
+<meta name="twitter:title" content="bash变量">
+<meta name="twitter:description" content="Bash变量用户自定义变量什么是变量
+变量设置规则
+注意变量名称前是不可以以数字开头的，而且默认类型是字符串型。
+
+linux中空格代表分割，要用单引号或者双引号包含才能正确使用，而单双引号的区别可以详见这篇文章：
+http://myh4ck1ife.github.io/2016/04/19/bash%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/
+这里">
+<meta name="twitter:image" content="http://i.imgur.com/GXWUai9.png">
 
 
 
@@ -119,7 +133,7 @@
   };
 </script>
 
-  <title> GourdScan分布式被动扫描搭建 | Myh4ck1ife </title>
+  <title> bash变量 | Myh4ck1ife </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -259,7 +273,7 @@
             
             
               
-                GourdScan分布式被动扫描搭建
+                bash变量
               
             
           </h1>
@@ -271,8 +285,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-20T11:03:03+08:00" content="2016-04-20">
-              2016-04-20
+            <time itemprop="dateCreated" datetime="2016-04-27T20:39:40+08:00" content="2016-04-27">
+              2016-04-27
             </time>
           </span>
 
@@ -285,8 +299,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hack-life/" itemprop="url" rel="index">
-                    <span itemprop="name">hack_life</span>
+                  <a href="/categories/linux-study/" itemprop="url" rel="index">
+                    <span itemprop="name">linux_study</span>
                   </a>
                 </span>
 
@@ -301,8 +315,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/20/GourdScan分布式被动扫描搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/20/GourdScan分布式被动扫描搭建/" itemprop="commentsCount"></span>
+                <a href="/2016/04/27/bash变量/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/27/bash变量/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -325,67 +339,29 @@
       
 
       
-        <h1 id="GourdScan"><a href="#GourdScan" class="headerlink" title="GourdScan"></a>GourdScan</h1><p>GourdScan是用一款利用sqlmapapi进行漏洞的检测，然后通过浏览器代理方式获取请求，然后对其进行测试的被动式注入检测工具。项目地址：<br><a href="https://github.com/code-scan/GourdScan" target="_blank" rel="external">https://github.com/code-scan/GourdScan</a></p>
-<a id="more"></a>
-<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><blockquote>
-<p>python 2.7 tornado</p>
-<p>php</p>
-<p>mysql</p>
-<p>apache</p>
-</blockquote>
-<p>我这里是用wamp准备的环境，python已经提前配置好了。</p>
-<p>配置参考资料</p>
-<blockquote>
-<p>wamp <a href="http://jingyan.baidu.com/article/fec7a1e50c6b541190b4e739.html" target="_blank" rel="external">http://jingyan.baidu.com/article/fec7a1e50c6b541190b4e739.html</a></p>
-<p>python <a href="http://jingyan.baidu.com/article/676629976cf3a954d41b847e.html" target="_blank" rel="external">http://jingyan.baidu.com/article/676629976cf3a954d41b847e.html</a> </p>
-</blockquote>
-<h3 id="数据库数据导入"><a href="#数据库数据导入" class="headerlink" title="数据库数据导入"></a>数据库数据导入</h3><p>我们新建一个数据库pscan，并将目录下的pscan.sql导入</p>
-<p><img src="http://i.imgur.com/iXETVe9.png" alt=""></p>
-<p><img src="http://i.imgur.com/jDP2TX3.png" alt=""></p>
-<h3 id="配置文件修改"><a href="#配置文件修改" class="headerlink" title="配置文件修改"></a>配置文件修改</h3><h4 id="conn-php"><a href="#conn-php" class="headerlink" title="conn.php"></a>conn.php</h4><p>修改数据库信息</p>
-<p><img src="http://i.imgur.com/H1FKrGx.png" alt=""></p>
-<h4 id="proxy-isqlmap-py"><a href="#proxy-isqlmap-py" class="headerlink" title="./proxy/isqlmap.py"></a>./proxy/isqlmap.py</h4><blockquote>
-<p> self.webserver=”<a href="http://localhost:88/" target="_blank" rel="external">http://localhost:88/</a>“</p>
-</blockquote>
-<p>改成你自己的主机地址和端口</p>
-<p><img src="http://i.imgur.com/OwlFxp2.png" alt=""></p>
-<h4 id="proxy-task-py"><a href="#proxy-task-py" class="headerlink" title="./proxy/task.py"></a>./proxy/task.py</h4><blockquote>
-<p>def update():<br>    url=”<a href="http://localhost:88/api.php?type=sqlmap_update" target="_blank" rel="external">http://localhost:88/api.php?type=sqlmap_update</a>“<br>    urllib2.urlopen(url).read()<br>def api_get():<br>    url=”<a href="http://localhost:88/api.php?type=api_get" target="_blank" rel="external">http://localhost:88/api.php?type=api_get</a>“<br>    data=urllib2.urlopen(url).read()</p>
-</blockquote>
-<p>修改成你的host地址</p>
-<p><img src="http://i.imgur.com/v3EtqWw.png" alt=""></p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置网站目录"><a href="#配置网站目录" class="headerlink" title="配置网站目录"></a>配置网站目录</h3><p>我们把root目录下的文件放置到www目录下</p>
-<p>打开127.0.0.1查看一下是否能正确访问。</p>
-<p><img src="http://i.imgur.com/8oYZLps.png" alt=""></p>
-<h3 id="节点配置"><a href="#节点配置" class="headerlink" title="节点配置"></a>节点配置</h3><p>打开 <a href="http://localhost:88/config.php" target="_blank" rel="external">http://localhost:88/config.php</a> 在list里面添加sqlmapapi节点</p>
-<p>格式为</p>
-<blockquote>
-<p><a href="http://127.0.0.1:8775" target="_blank" rel="external">http://127.0.0.1:8775</a> (不需要最后一个/)</p>
-</blockquote>
-<p>浏览器设置代理，并且添加一个http header</p>
-<blockquote>
-<p>User-Hash: youhash</p>
-</blockquote>
-<p>youhash可以随意填写，主要用于分类 若不填写默认是 cond0r</p>
-<p>可以在 <a href="http://localhost:88/config.php" target="_blank" rel="external">http://localhost:88/config.php</a> 查看你的分类，点击分类名称即可查看。</p>
-<p>因为这里我们是演示，所以节点只留一个，然后分类保持默认，效果如上图。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>首先运行sqlmapapi，并且在config里面增加一个节点</p>
-<blockquote>
-<p>cd proxy/</p>
-<p>python proxy_io.py 8080&amp;</p>
-<p>python task.py&amp;</p>
-</blockquote>
-<p><img src="http://i.imgur.com/LeHtfd7.png" alt=""></p>
-<p><img src="http://i.imgur.com/OAbIfgK.png" alt=""></p>
-<p><img src="http://i.imgur.com/yzbGPpI.png" alt=""></p>
-<p>然后将浏览器代理设置为</p>
-<blockquote>
-<p>http 127.0.0.1 8080</p>
-</blockquote>
-<p><img src="http://i.imgur.com/DTFC30L.png" alt=""></p>
-<p>然后要做的就是进行不断地对待测试网站进行不断地请求，然后就可以在分类下面查看到结果，节点越多效率也就越多。</p>
-<p><img src="http://i.imgur.com/OPubeQ9.png" alt=""></p>
-
+        <h1 id="Bash变量"><a href="#Bash变量" class="headerlink" title="Bash变量"></a>Bash变量</h1><h2 id="用户自定义变量"><a href="#用户自定义变量" class="headerlink" title="用户自定义变量"></a>用户自定义变量</h2><h3 id="什么是变量"><a href="#什么是变量" class="headerlink" title="什么是变量"></a>什么是变量</h3><p><img src="http://i.imgur.com/GXWUai9.png" alt=""></p>
+<h3 id="变量设置规则"><a href="#变量设置规则" class="headerlink" title="变量设置规则"></a>变量设置规则</h3><p><img src="http://i.imgur.com/Xq2QhpQ.png" alt=""></p>
+<p>注意变量名称前是不可以以数字开头的，而且默认类型是字符串型。</p>
+<p><img src="http://i.imgur.com/nk57b1Y.png" alt=""></p>
+<p>linux中空格代表分割，要用单引号或者双引号包含才能正确使用，而单双引号的区别可以详见这篇文章：</p>
+<p><a href="http://myh4ck1ife.github.io/2016/04/19/bash%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/" title="bash的基本功能" target="_blank" rel="external">http://myh4ck1ife.github.io/2016/04/19/bash%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD/</a></p>
+<p>这里变量也可以进行叠加。</p>
+<p><img src="http://i.imgur.com/Chx0cr4.png" alt=""></p>
+<h3 id="变量分类"><a href="#变量分类" class="headerlink" title="变量分类"></a>变量分类</h3><p><img src="http://i.imgur.com/JMBzlZ6.png" alt=""></p>
+<h3 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h3><pre><code>name=&quot;myh4ck1ife jack&quot;
+</code></pre><h3 id="变量叠加"><a href="#变量叠加" class="headerlink" title="变量叠加"></a>变量叠加</h3><pre><code>aa=123
+aa=&quot;$aa&quot;456
+aa=${aa}789
+</code></pre><p>这里的意思是先给aa赋值123，再给aa加上456这里如果echo一下我们看看会怎么样？</p>
+<p><img src="http://i.imgur.com/fwUGMqI.png" alt=""></p>
+<p>当然下面的这种写法是和上面作用是一样的，看个人习惯</p>
+<h3 id="变量调用"><a href="#变量调用" class="headerlink" title="变量调用"></a>变量调用</h3><pre><code>echo $name
+</code></pre><p>我们习惯用echo调用，当然也可以用程序调用。</p>
+<h3 id="变量查看"><a href="#变量查看" class="headerlink" title="变量查看"></a>变量查看</h3><pre><code>set 
+</code></pre><p>作用是查看系统所有变量</p>
+<p><img src="http://i.imgur.com/RioZyUl.png" alt=""></p>
+<h3 id="变量删除"><a href="#变量删除" class="headerlink" title="变量删除"></a>变量删除</h3><pre><code>unset name
+</code></pre>
       
     </div>
     
@@ -405,7 +381,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/GoundScan/" rel="tag">#GoundScan</a>
+            <a href="/tags/bash变量/" rel="tag">#bash变量</a>
+          
+            <a href="/tags/shell/" rel="tag">#shell</a>
           
         </div>
       
@@ -414,17 +392,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/19/bash的基本功能/" rel="next" title="bash的基本功能">
-                <i class="fa fa-chevron-left"></i> bash的基本功能
+              <a href="/2016/04/25/糗事百科成人版爬虫/" rel="next" title="糗事百科成人版爬虫">
+                <i class="fa fa-chevron-left"></i> 糗事百科成人版爬虫
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/25/糗事百科成人版爬虫/" rel="prev" title="糗事百科成人版爬虫">
-                糗事百科成人版爬虫 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -450,8 +424,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/20/GourdScan分布式被动扫描搭建/"
-           data-title="GourdScan分布式被动扫描搭建" data-url="http://yoursite.com/2016/04/20/GourdScan分布式被动扫描搭建/">
+      <div class="ds-thread" data-thread-key="2016/04/27/bash变量/"
+           data-title="bash变量" data-url="http://yoursite.com/2016/04/27/bash变量/">
       </div>
     
   </div>
@@ -542,7 +516,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GourdScan"><span class="nav-number">1.</span> <span class="nav-text">GourdScan</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Install"><span class="nav-number">1.1.</span> <span class="nav-text">Install</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备环境"><span class="nav-number">1.1.1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库数据导入"><span class="nav-number">1.1.2.</span> <span class="nav-text">数据库数据导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件修改"><span class="nav-number">1.1.3.</span> <span class="nav-text">配置文件修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#conn-php"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">conn.php</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proxy-isqlmap-py"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">./proxy/isqlmap.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proxy-task-py"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">./proxy/task.py</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置网站目录"><span class="nav-number">1.2.1.</span> <span class="nav-text">配置网站目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点配置"><span class="nav-number">1.2.2.</span> <span class="nav-text">节点配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.3.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash变量"><span class="nav-number">1.</span> <span class="nav-text">Bash变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户自定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">用户自定义变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是变量"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量设置规则"><span class="nav-number">1.1.2.</span> <span class="nav-text">变量设置规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量分类"><span class="nav-number">1.1.3.</span> <span class="nav-text">变量分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量定义"><span class="nav-number">1.1.4.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量叠加"><span class="nav-number">1.1.5.</span> <span class="nav-text">变量叠加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量调用"><span class="nav-number">1.1.6.</span> <span class="nav-text">变量调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量查看"><span class="nav-number">1.1.7.</span> <span class="nav-text">变量查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量删除"><span class="nav-number">1.1.8.</span> <span class="nav-text">变量删除</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
