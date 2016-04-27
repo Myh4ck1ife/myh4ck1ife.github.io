@@ -108,7 +108,23 @@ history [选项] [历史命令保存文件]">
 <meta property="og:image" content="http://i.imgur.com/TvPBoVO.png">
 <meta property="og:image" content="http://i.imgur.com/Qpu1OYb.png">
 <meta property="og:image" content="http://i.imgur.com/Ml49tUh.png">
-<meta property="og:updated_time" content="2016-04-23T15:39:54.126Z">
+<meta property="og:image" content="http://i.imgur.com/R1TQXG7.png">
+<meta property="og:image" content="http://i.imgur.com/Wo6LvpS.png">
+<meta property="og:image" content="http://i.imgur.com/2NvyZVR.png">
+<meta property="og:image" content="http://i.imgur.com/gZgnjcF.png">
+<meta property="og:image" content="http://i.imgur.com/AbXM0q3.png">
+<meta property="og:image" content="http://i.imgur.com/XEhFAV0.png">
+<meta property="og:image" content="http://i.imgur.com/XeiAnIs.png">
+<meta property="og:image" content="http://i.imgur.com/M3BdUdR.png">
+<meta property="og:image" content="http://i.imgur.com/NCfPAUK.png">
+<meta property="og:image" content="http://i.imgur.com/F65zhBC.png">
+<meta property="og:image" content="http://i.imgur.com/3PPbH9u.png">
+<meta property="og:image" content="http://i.imgur.com/zWzgwcw.png">
+<meta property="og:image" content="http://i.imgur.com/bXGs8WF.png">
+<meta property="og:image" content="http://i.imgur.com/HaNeoLm.png">
+<meta property="og:image" content="http://i.imgur.com/lGshbZK.png">
+<meta property="og:image" content="http://i.imgur.com/2ZwUhk1.png">
+<meta property="og:updated_time" content="2016-04-27T12:28:21.372Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash的基本功能">
 <meta name="twitter:description" content="bash的基本功能历史命令linux现在比较智能，可以查看到自己历史所使用过的命令
@@ -447,6 +463,95 @@ history [选项] [历史命令保存文件]">
 <pre><code>wc &lt;&lt; hello
 </code></pre><p>这里不再是ctrl d 结束，而是直到再碰到hello结束</p>
 <p><img src="http://i.imgur.com/Ml49tUh.png" alt=""></p>
+<h2 id="多命令顺序执行与管道符"><a href="#多命令顺序执行与管道符" class="headerlink" title="多命令顺序执行与管道符"></a>多命令顺序执行与管道符</h2><h3 id="多命令执行"><a href="#多命令执行" class="headerlink" title="多命令执行"></a>多命令执行</h3><h4 id="；"><a href="#；" class="headerlink" title="；"></a>；</h4><p><img src="http://i.imgur.com/R1TQXG7.png" alt=""></p>
+<p>; 代表命令之间没有关系，即使命令一错了，命令二也会正常执行。</p>
+<p><img src="http://i.imgur.com/Wo6LvpS.png" alt=""></p>
+<p>我们这里输入了</p>
+<pre><code>ls;lst;date
+</code></pre><p>我们知道是没有lst命令的，所以命令二报错，而其他命令正确执行了</p>
+<p>这样的方式可以简化操作，dd命令也有帮助。</p>
+<p>dd if=输入文件 of=输出文件 bs=字节数 count=个数</p>
+<p>选项</p>
+<blockquote>
+<p>if = 输入文件 制定源文件或源设备</p>
+<p>of = 输出文件 根据目标文件或目标设备</p>
+<p>bs = 字节数   指定一次输入或输出多少字节，即把这些字节看作一个数据块</p>
+<p>count = 个数  指定输入或输出多少个数据块</p>
+</blockquote>
+<p>我们来输入以下代码：</p>
+<pre><code>date;dd if=/dev/zero of=/root/testfile bs=1k count=100000;date
+</code></pre><p>dd是一个复制命令，不仅包括文件还可以是磁盘或者是系统</p>
+<p><img src="http://i.imgur.com/2NvyZVR.png" alt=""></p>
+<p>我们中间相当于创建了一个100m的文件，前后两个date命令可以让我们看到创建一个如此文件耗费了多少时间。</p>
+<h4 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp;"></a>&amp;&amp;</h4><p>第一个命令成功执行，第二个才会执行。</p>
+<pre><code>ls &amp;&amp; echo yes
+</code></pre><p><img src="http://i.imgur.com/gZgnjcF.png" alt=""></p>
+<p>成功执行了ls并输出了yes，如果前面的命令不成功执行，则不会输出。有些命令要在其他命令基础上执行，就会用到逻辑与命令。</p>
+<h4 id=""><a href="#" class="headerlink" title="||"></a>||</h4><p>第一个命令未成功执行，第二个才会执行</p>
+<p><img src="http://i.imgur.com/AbXM0q3.png" alt=""></p>
+<p><strong>由上面我们就可以写一个判断命令是否正确执行的代码</strong></p>
+<pre><code>命令 &amp;&amp; echo yes || echo no
+</code></pre><p><img src="http://i.imgur.com/XEhFAV0.png" alt=""></p>
+<h3 id="管道符"><a href="#管道符" class="headerlink" title="管道符"></a>管道符</h3><p>命令一的正确输出作为命令二的操作对象</p>
+<p>命令一必须正确而且必须有输出，命令二才可以执行</p>
+<pre><code>ll -a /etc/ | more
+</code></pre><p><img src="http://i.imgur.com/XeiAnIs.png" alt=""></p>
+<p>我们这样就可以分别显示命令结果，即可以看到了所有该目录下的文件，而且是分屏显示的。</p>
+<pre><code>netstat -an | grep &quot;ESTABLISHED&quot;
+</code></pre><p><img src="http://i.imgur.com/M3BdUdR.png" alt=""></p>
+<p>NETSTAT的作用是查看所有网络连接，listen代表监听，establish代表正在连接，本身是很繁琐的，我们这里用grep命令只显示正在连接的。</p>
+<h4 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h4><blockquote>
+<p>grep 【选项】 “搜素内容” 文件名</p>
+</blockquote>
+<p>选项</p>
+<blockquote>
+<p>-i：忽略大小</p>
+<p>-n：输出行号</p>
+<p>-v：反向查找</p>
+<p>–color=auot ：搜索出的关键字用颜色显示</p>
+</blockquote>
+<pre><code>grep &quot;root&quot; /etc/passwd
+</code></pre><p><img src="http://i.imgur.com/NCfPAUK.png" alt=""></p>
+<p>这里我们是在passwd搜索包含root的相关内容。</p>
+<p>我们这里加一下颜色</p>
+<pre><code>grep --color=auto &quot;root&quot; /etc/passwd
+</code></pre><p><img src="http://i.imgur.com/F65zhBC.png" alt=""></p>
+<p>我们发现已经加上颜色了</p>
+<h2 id="通配符与其他特殊符号"><a href="#通配符与其他特殊符号" class="headerlink" title="通配符与其他特殊符号"></a>通配符与其他特殊符号</h2><h3 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h3><p><img src="http://i.imgur.com/3PPbH9u.png" alt=""></p>
+<pre><code>cd /tmp/
+ls
+rm -rf *
+ls
+</code></pre><p><img src="http://i.imgur.com/zWzgwcw.png" alt=""></p>
+<p>我们这里用*删除了所有文件</p>
+<pre><code>touch abc
+touch abcd
+touch 012
+touch 0abcd
+</code></pre><p>这里我们创建了这么几个文件</p>
+<pre><code>ls ？abc
+ls [0-9]*
+ls [^0-9]*
+</code></pre><p><img src="http://i.imgur.com/bXGs8WF.png" alt=""></p>
+<p>我们这里显示的分别是任意一个字符+abc、0~9开头后面加任意字符、非0~9开头的任意字符。</p>
+<p>？代表至少有一个，所以匹配不到abc但是*是任意，所以可以匹配到abc，但是这里要注意：<br>通配符是完全匹配，所以*abc<br>代表任意内容加abc，其他的都不可以。所以abcd是不符合这个规则的</p>
+<h3 id="其他特殊符号"><a href="#其他特殊符号" class="headerlink" title="其他特殊符号"></a>其他特殊符号</h3><p><img src="http://i.imgur.com/HaNeoLm.png" alt=""></p>
+<h4 id="单双引号区别"><a href="#单双引号区别" class="headerlink" title="单双引号区别"></a>单双引号区别</h4><p>这里区别单双引号的区别，单引号中的特殊符号只能是符号，而双引号中却任然可以保持部分作用。</p>
+<pre><code>name=sc
+echo &apos;$name&apos;
+echo &quot;$name&quot;
+echo &apos;$(date)&apos;
+echo &quot;$(date)&quot;
+</code></pre><p><img src="http://i.imgur.com/lGshbZK.png" alt=""></p>
+<p>这里我们定义了一个名字的变量，我们发现单引号的全是原封不动的输出，但是双引号的话则输出了变量的内容。</p>
+<h4 id="反引号与-区别"><a href="#反引号与-区别" class="headerlink" title="反引号与$()区别"></a>反引号与$()区别</h4><p>我们再看反引号，可以将命令赋值给变量。</p>
+<pre><code>abc=`date`
+</code></pre><p>我们这里给abc赋值date函数，在echo输出一下试试</p>
+<p><img src="http://i.imgur.com/2ZwUhk1.png" alt=""></p>
+<p>我们发现abc已经输出了命令的变量，但是反引号太不容易看出了，比较容易和单引号弄混，这里就可以用$()进行相同的作用。<br>所以上面我们的单双引号区分的例子中的date函数会有区分。</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title="#"></a>#</h4><p>注释符号</p>
+<h4 id="-2"><a href="#-2" class="headerlink" title="$"></a>$</h4><p>调用变量的值</p>
+<h4 id="-3"><a href="#-3" class="headerlink" title="\"></a>\</h4><p>转义符</p>
 
       
     </div>
@@ -606,7 +711,7 @@ history [选项] [历史命令保存文件]">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash的基本功能"><span class="nav-number">1.</span> <span class="nav-text">bash的基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">1.1.</span> <span class="nav-text">历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改历史命令保存条数"><span class="nav-number">1.1.2.</span> <span class="nav-text">更改历史命令保存条数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史命令的调用"><span class="nav-number">1.1.3.</span> <span class="nav-text">历史命令的调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与文件补全"><span class="nav-number">1.2.</span> <span class="nav-text">命令与文件补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令别名"><span class="nav-number">1.3.</span> <span class="nav-text">命令别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序"><span class="nav-number">1.3.2.</span> <span class="nav-text">命令执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何永久生效"><span class="nav-number">1.3.3.</span> <span class="nav-text">如何永久生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除别名"><span class="nav-number">1.3.4.</span> <span class="nav-text">删除别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash常用快捷键"><span class="nav-number">1.4.</span> <span class="nav-text">bash常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出重定向"><span class="nav-number">1.5.</span> <span class="nav-text">输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准输入输出"><span class="nav-number">1.5.1.</span> <span class="nav-text">标准输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出重定向"><span class="nav-number">1.5.2.</span> <span class="nav-text">输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖与追加的区别"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">覆盖与追加的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#正确输出"><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">正确输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误输出"><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">错误输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误输出正确输出同时保存"><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">错误输出正确输出同时保存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入重定向"><span class="nav-number">1.5.3.</span> <span class="nav-text">输入重定向</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bash的基本功能"><span class="nav-number">1.</span> <span class="nav-text">bash的基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#历史命令"><span class="nav-number">1.1.</span> <span class="nav-text">历史命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看历史命令"><span class="nav-number">1.1.1.</span> <span class="nav-text">查看历史命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改历史命令保存条数"><span class="nav-number">1.1.2.</span> <span class="nav-text">更改历史命令保存条数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#历史命令的调用"><span class="nav-number">1.1.3.</span> <span class="nav-text">历史命令的调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令与文件补全"><span class="nav-number">1.2.</span> <span class="nav-text">命令与文件补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令别名"><span class="nav-number">1.3.</span> <span class="nav-text">命令别名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序"><span class="nav-number">1.3.2.</span> <span class="nav-text">命令执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何永久生效"><span class="nav-number">1.3.3.</span> <span class="nav-text">如何永久生效</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除别名"><span class="nav-number">1.3.4.</span> <span class="nav-text">删除别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bash常用快捷键"><span class="nav-number">1.4.</span> <span class="nav-text">bash常用快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入输出重定向"><span class="nav-number">1.5.</span> <span class="nav-text">输入输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准输入输出"><span class="nav-number">1.5.1.</span> <span class="nav-text">标准输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出重定向"><span class="nav-number">1.5.2.</span> <span class="nav-text">输出重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖与追加的区别"><span class="nav-number">1.5.2.1.</span> <span class="nav-text">覆盖与追加的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#正确输出"><span class="nav-number">1.5.2.1.1.</span> <span class="nav-text">正确输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误输出"><span class="nav-number">1.5.2.1.2.</span> <span class="nav-text">错误输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#错误输出正确输出同时保存"><span class="nav-number">1.5.2.1.3.</span> <span class="nav-text">错误输出正确输出同时保存</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入重定向"><span class="nav-number">1.5.3.</span> <span class="nav-text">输入重定向</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多命令顺序执行与管道符"><span class="nav-number">1.6.</span> <span class="nav-text">多命令顺序执行与管道符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#多命令执行"><span class="nav-number">1.6.1.</span> <span class="nav-text">多命令执行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#；"><span class="nav-number">1.6.1.1.</span> <span class="nav-text">；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#amp-amp"><span class="nav-number">1.6.1.2.</span> <span class="nav-text">&&</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#"><span class="nav-number">1.6.1.3.</span> <span class="nav-text">||</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道符"><span class="nav-number">1.6.2.</span> <span class="nav-text">管道符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#grep命令"><span class="nav-number">1.6.2.1.</span> <span class="nav-text">grep命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通配符与其他特殊符号"><span class="nav-number">1.7.</span> <span class="nav-text">通配符与其他特殊符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通配符"><span class="nav-number">1.7.1.</span> <span class="nav-text">通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他特殊符号"><span class="nav-number">1.7.2.</span> <span class="nav-text">其他特殊符号</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单双引号区别"><span class="nav-number">1.7.2.1.</span> <span class="nav-text">单双引号区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反引号与-区别"><span class="nav-number">1.7.2.2.</span> <span class="nav-text">反引号与$()区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-1"><span class="nav-number">1.7.2.3.</span> <span class="nav-text">#</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-2"><span class="nav-number">1.7.2.4.</span> <span class="nav-text">$</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-3"><span class="nav-number">1.7.2.5.</span> <span class="nav-text">\</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
