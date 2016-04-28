@@ -93,7 +93,18 @@
 <meta property="og:image" content="http://i.imgur.com/JMBzlZ6.png">
 <meta property="og:image" content="http://i.imgur.com/fwUGMqI.png">
 <meta property="og:image" content="http://i.imgur.com/RioZyUl.png">
-<meta property="og:updated_time" content="2016-04-27T15:12:34.686Z">
+<meta property="og:image" content="http://i.imgur.com/YLpqN2T.png">
+<meta property="og:image" content="http://i.imgur.com/n8cBYn6.png">
+<meta property="og:image" content="http://i.imgur.com/BDcXymo.png">
+<meta property="og:image" content="http://i.imgur.com/T5A6guA.png">
+<meta property="og:image" content="http://i.imgur.com/U8BIxUQ.png">
+<meta property="og:image" content="http://i.imgur.com/ituB5i8.png">
+<meta property="og:image" content="http://i.imgur.com/AcSgzoz.png">
+<meta property="og:image" content="http://i.imgur.com/QgccLrL.png">
+<meta property="og:image" content="http://i.imgur.com/0WvVRXC.png">
+<meta property="og:image" content="http://i.imgur.com/nXu14Xc.png">
+<meta property="og:image" content="http://i.imgur.com/X5zIFRf.png">
+<meta property="og:updated_time" content="2016-04-28T15:23:17.920Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bash变量">
 <meta name="twitter:description" content="Bash变量用户自定义变量什么是变量">
@@ -344,7 +355,50 @@ aa=${aa}789
 </code></pre><p>作用是查看系统所有变量</p>
 <p><img src="http://i.imgur.com/RioZyUl.png" alt=""></p>
 <h3 id="变量删除"><a href="#变量删除" class="headerlink" title="变量删除"></a>变量删除</h3><pre><code>unset name
-</code></pre>
+</code></pre><h2 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h2><h3 id="什么是环境变量"><a href="#什么是环境变量" class="headerlink" title="什么是环境变量"></a>什么是环境变量</h3><p><img src="http://i.imgur.com/YLpqN2T.png" alt=""></p>
+<h3 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h3><p><img src="http://i.imgur.com/n8cBYn6.png" alt=""></p>
+<pre><code>pstree 查询进程数
+</code></pre><p><img src="http://i.imgur.com/BDcXymo.png" alt=""></p>
+<h3 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h3><p>这里我们看到 pstree 有个父shell bash，再向上还有个bash，再向上还有通过远程连接的。当然如果我们这里exit，退出的是pstree上面的bash。</p>
+<pre><code>name=myhacklife
+export age=18
+sex=man
+</code></pre><p>这里我们定义了一个本地变量name，一个全局变量age，一个本地变量sex。那我们要是想把sex这个已经存在的本地变量改成全局变量要怎么做呢？</p>
+<pre><code>export sex
+</code></pre><p>即可</p>
+<h3 id="查询变量"><a href="#查询变量" class="headerlink" title="查询变量"></a>查询变量</h3><p>set的作用是查看所有变量，而env是专门查看环境变量的。</p>
+<h3 id="删除变量"><a href="#删除变量" class="headerlink" title="删除变量"></a>删除变量</h3><pre><code>unset 变量名
+</code></pre><h3 id="系统常见环境变量"><a href="#系统常见环境变量" class="headerlink" title="系统常见环境变量"></a>系统常见环境变量</h3><p>其实这里严格来说，ps1不是环境变量，用env都查不到，它是系统预留的专门操作系统的环境变量的一个子分支，以上两个命令对系统有特殊含义。</p>
+<h4 id="path"><a href="#path" class="headerlink" title="path"></a>path</h4><p><img src="http://i.imgur.com/T5A6guA.png" alt=""></p>
+<p>脚本命令都要加路径才能执行，但是系统命令不加路径就可以执行，但是它毕竟也是可执行文件，不加路径的原因是因为path环境变量的设置，如果找不到，才会提示命令报错。</p>
+<p>我们这里创建一个简单的脚本</p>
+<pre><code>#!/bin/bash
+
+echo &quot;hello&quot;
+</code></pre><p>我们要想执行，要赋予给它执行权限</p>
+<pre><code>chmod 755 hello.sh
+</code></pre><p>我们这里执行可以用绝对路径或者相对路径执行。</p>
+<p><img src="http://i.imgur.com/U8BIxUQ.png" alt=""></p>
+<p>我们这里要是把环境变量中写入这个脚本，就可以直接执行，不用用相对路径或绝对路径了。</p>
+<p><img src="http://i.imgur.com/ituB5i8.png" alt=""></p>
+<p>这里用 hello.sh 执行，而且tab可以自动执行。但是我们不推荐改变系统本身的命令，我们更习惯变量叠加，所以我们把自己脚本位置加入变量中就可以，我们先删除了它。</p>
+<pre><code>rm -rf /bin/hello.sh
+</code></pre><p><img src="http://i.imgur.com/AcSgzoz.png" alt=""></p>
+<p>这里已经不能直接执行了，我们下面进行变量叠加。</p>
+<pre><code>PATH=&quot;$PATH&quot;:/root
+</code></pre><p><img src="http://i.imgur.com/QgccLrL.png" alt=""></p>
+<p>我们发现已经能用了。</p>
+<p>我们这时候来echo一下path变量</p>
+<p><img src="http://i.imgur.com/0WvVRXC.png" alt=""></p>
+<p>我们发现路径中已经有了，但是这是临时的，如果重启配置就会恢复默认。</p>
+<h4 id="ps1"><a href="#ps1" class="headerlink" title="ps1"></a>ps1</h4><p><img src="http://i.imgur.com/nXu14Xc.png" alt=""></p>
+<p>我们这里echo一下</p>
+<pre><code>echo $PS1
+</code></pre><p>我们改一下</p>
+<pre><code>PS1=&apos;[\u0\t \w]\$ &apos;
+</code></pre><p><img src="http://i.imgur.com/X5zIFRf.png" alt=""></p>
+<p>我们发信已经改好了，这里我们要注意一下最后单引号前有个空格。我们这里可以显示时间和完整路径了。当然其他功能也可以实现。总之这个系统提示符也是可以改的。当然这里也没有写入配置文件，重启或重新登陆会恢复默认配置。</p>
+
       
     </div>
     
@@ -499,7 +553,7 @@ aa=${aa}789
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash变量"><span class="nav-number">1.</span> <span class="nav-text">Bash变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户自定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">用户自定义变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是变量"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量设置规则"><span class="nav-number">1.1.2.</span> <span class="nav-text">变量设置规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量分类"><span class="nav-number">1.1.3.</span> <span class="nav-text">变量分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量定义"><span class="nav-number">1.1.4.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量叠加"><span class="nav-number">1.1.5.</span> <span class="nav-text">变量叠加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量调用"><span class="nav-number">1.1.6.</span> <span class="nav-text">变量调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量查看"><span class="nav-number">1.1.7.</span> <span class="nav-text">变量查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量删除"><span class="nav-number">1.1.8.</span> <span class="nav-text">变量删除</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash变量"><span class="nav-number">1.</span> <span class="nav-text">Bash变量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户自定义变量"><span class="nav-number">1.1.</span> <span class="nav-text">用户自定义变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是变量"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量设置规则"><span class="nav-number">1.1.2.</span> <span class="nav-text">变量设置规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量分类"><span class="nav-number">1.1.3.</span> <span class="nav-text">变量分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量定义"><span class="nav-number">1.1.4.</span> <span class="nav-text">变量定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量叠加"><span class="nav-number">1.1.5.</span> <span class="nav-text">变量叠加</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量调用"><span class="nav-number">1.1.6.</span> <span class="nav-text">变量调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量查看"><span class="nav-number">1.1.7.</span> <span class="nav-text">变量查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量删除"><span class="nav-number">1.1.8.</span> <span class="nav-text">变量删除</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境变量"><span class="nav-number">1.2.</span> <span class="nav-text">环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是环境变量"><span class="nav-number">1.2.1.</span> <span class="nav-text">什么是环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置环境变量"><span class="nav-number">1.2.2.</span> <span class="nav-text">设置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#声明变量"><span class="nav-number">1.2.3.</span> <span class="nav-text">声明变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询变量"><span class="nav-number">1.2.4.</span> <span class="nav-text">查询变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除变量"><span class="nav-number">1.2.5.</span> <span class="nav-text">删除变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统常见环境变量"><span class="nav-number">1.2.6.</span> <span class="nav-text">系统常见环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#path"><span class="nav-number">1.2.6.1.</span> <span class="nav-text">path</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ps1"><span class="nav-number">1.2.6.2.</span> <span class="nav-text">ps1</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
