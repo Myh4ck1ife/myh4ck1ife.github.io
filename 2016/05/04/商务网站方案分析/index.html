@@ -91,6 +91,10 @@
 <meta property="og:image" content="http://i.imgur.com/BuT7hPO.png">
 <meta property="og:image" content="http://i.imgur.com/AwdRz3e.png">
 <meta property="og:image" content="http://i.imgur.com/HKbLWHE.png">
+<meta property="og:image" content="http://i.imgur.com/kbK1ziS.png">
+<meta property="og:image" content="http://i.imgur.com/634ZtUn.png">
+<meta property="og:image" content="http://i.imgur.com/TCEBHKu.png">
+<meta property="og:image" content="http://i.imgur.com/Yxa8WZK.png">
 <meta property="og:image" content="http://i.imgur.com/PFhPc7h.png">
 <meta property="og:image" content="http://i.imgur.com/PBWGJg6.png">
 <meta property="og:image" content="http://i.imgur.com/bpxEbn9.png">
@@ -105,7 +109,7 @@
 <meta property="og:image" content="http://i.imgur.com/uH6szbL.png">
 <meta property="og:image" content="http://i.imgur.com/tn2PW9B.png">
 <meta property="og:image" content="http://i.imgur.com/dDDHx24.png">
-<meta property="og:updated_time" content="2016-05-04T08:25:56.421Z">
+<meta property="og:updated_time" content="2016-05-04T08:52:23.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="商务网站方案分析">
 <meta name="twitter:description" content="第一章 绪论1.1 课题背景文哥为促进我个人学习提出的一个考试题目
@@ -363,7 +367,14 @@
 <p>图3 数据库实体关系图</p>
 <h3 id="3-4-3数据库逻辑设计"><a href="#3-4-3数据库逻辑设计" class="headerlink" title="3.4.3数据库逻辑设计"></a>3.4.3数据库逻辑设计</h3><p>在数据库逻辑结构设计阶段，需要将数据库概念结构转化为MySQL数据库系统所支持的实际数据模型，也就是数据库的逻辑结构。在上面的实体结构的基础上，形成对应的数据库表。</p>
 <p>但是此处数据库不是我个人设计且数据量庞大所以暂不予以详细分析。</p>
-<h3 id="3-4-4数据库结构实现"><a href="#3-4-4数据库结构实现" class="headerlink" title="3.4.4数据库结构实现"></a>3.4.4数据库结构实现</h3><p>ecshop已经实现。</p>
+<h3 id="3-4-4数据库结构实现"><a href="#3-4-4数据库结构实现" class="headerlink" title="3.4.4数据库结构实现"></a>3.4.4数据库结构实现</h3><p>（1）admin_user  管理员管理</p>
+<p><img src="http://i.imgur.com/kbK1ziS.png" alt=""></p>
+<p>（2）cart  购物车购物信息记录表</p>
+<p><img src="http://i.imgur.com/634ZtUn.png" alt=""></p>
+<p>（3）goods  商品表</p>
+<p><img src="http://i.imgur.com/TCEBHKu.png" alt=""></p>
+<p>（4）user_address  收货人的信息列表</p>
+<p><img src="http://i.imgur.com/Yxa8WZK.png" alt=""></p>
 <h1 id="第4章-系统详细设计与实现"><a href="#第4章-系统详细设计与实现" class="headerlink" title="第4章 系统详细设计与实现"></a>第4章 系统详细设计与实现</h1><h2 id="4-1-界面设计原则"><a href="#4-1-界面设计原则" class="headerlink" title="4.1 界面设计原则"></a>4.1 界面设计原则</h2><p>界面设计是屏幕产品的重要组成部分。界面设计是一个复杂的有不同学科参与的工程，认知心理学、设计学、语言学等在此都扮演着重要的角色。用户界面是用户与程序沟通的唯一途径，要能为用户提供方便有效的服务。用户界面设计的三大原则是：置界面于用户的控制之下、减少用户的记忆负担、保持界面的一致性。</p>
 <h2 id="4-2主要功能及界面的实现"><a href="#4-2主要功能及界面的实现" class="headerlink" title="4.2主要功能及界面的实现"></a>4.2主要功能及界面的实现</h2><p>本电子商务网站采用的是PHP技术作为前端页面展现,由于每个模块的页面是不一样的，因此在设计页面时，要合理的安排，尽量使用户能够很快的熟悉本网站的主要功能，同时需要保持界面的简洁和一致性。</p>
 <h3 id="4-2-1前台子系统的设计与实现"><a href="#4-2-1前台子系统的设计与实现" class="headerlink" title="4.2.1前台子系统的设计与实现"></a>4.2.1前台子系统的设计与实现</h3><p>（1）前台用户注册<br>对于本电子商务网站，未成功注册用户只能查看新闻公告，商品信息等，而不能进入系统使用其他的业务。用户需要办理注册手续，即进入注册页面，，按要求输入有效的个人信息，如用户名，email，手机，QQ等必要信息。</p>
