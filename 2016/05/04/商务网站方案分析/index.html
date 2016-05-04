@@ -1,0 +1,681 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="商务网站分析," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="第一章 绪论1.1 课题背景文哥为促进我个人学习提出的一个考试题目
+研究意义做一个完整对网站的设计，从需求到功能实现，然后再到开发，积累自身知识，为运维圈开发打下基础。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="商务网站方案分析">
+<meta property="og:url" content="http://yoursite.com/2016/05/04/商务网站方案分析/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="第一章 绪论1.1 课题背景文哥为促进我个人学习提出的一个考试题目
+研究意义做一个完整对网站的设计，从需求到功能实现，然后再到开发，积累自身知识，为运维圈开发打下基础。">
+<meta property="og:image" content="http://i.imgur.com/BuT7hPO.png">
+<meta property="og:image" content="http://i.imgur.com/AwdRz3e.png">
+<meta property="og:image" content="http://i.imgur.com/HKbLWHE.png">
+<meta property="og:image" content="http://i.imgur.com/PFhPc7h.png">
+<meta property="og:image" content="http://i.imgur.com/PBWGJg6.png">
+<meta property="og:image" content="http://i.imgur.com/bpxEbn9.png">
+<meta property="og:image" content="http://i.imgur.com/c0PSS3w.png">
+<meta property="og:image" content="http://i.imgur.com/hnavKkI.png">
+<meta property="og:image" content="http://i.imgur.com/W03f1UK.png">
+<meta property="og:updated_time" content="2016-05-04T03:20:53.787Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="商务网站方案分析">
+<meta name="twitter:description" content="第一章 绪论1.1 课题背景文哥为促进我个人学习提出的一个考试题目
+研究意义做一个完整对网站的设计，从需求到功能实现，然后再到开发，积累自身知识，为运维圈开发打下基础。">
+<meta name="twitter:image" content="http://i.imgur.com/BuT7hPO.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 商务网站方案分析 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                商务网站方案分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-04T09:30:49+08:00" content="2016-05-04">
+              2016-05-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/运维圈/" itemprop="url" rel="index">
+                    <span itemprop="name">运维圈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/04/商务网站方案分析/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/04/商务网站方案分析/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h1><h2 id="1-1-课题背景"><a href="#1-1-课题背景" class="headerlink" title="1.1 课题背景"></a>1.1 课题背景</h2><p>文哥为促进我个人学习提出的一个考试题目</p>
+<h2 id="研究意义"><a href="#研究意义" class="headerlink" title="研究意义"></a>研究意义</h2><p>做一个完整对网站的设计，从需求到功能实现，然后再到开发，积累自身知识，为运维圈开发打下基础。</p>
+<a id="more"></a>
+<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><p>请采用B/S模式，选取合适的网络程序开发语言，实现电子商务网站的开发和制作。<br>电子商务网站分为前台页面和后台管理。前台页面包括商品展示、用户登录、用户基本信息维护、商品订购、购物车等。后台管理包括商品管理、订单管理、用户管理等模块。主要模块的功能如下：<br>（1）用户管理：注册用户，包括用户名、密码等信息。修改用户信息、删除用户信息。<br>（2）商品管理：添加商品类别，修改商品类别，删除商品类别，添加商品信息，（包括商品的类别、名称、编号、生产公司等信息。）商品图片上传、修改和删除，修改商品信息，删除商品信息，查看商品信息。<br>（3）订单的管理：生成订单，发货，结账，删除订单。</p>
+<h1 id="第二章-开发工具及相关技术简介"><a href="#第二章-开发工具及相关技术简介" class="headerlink" title="第二章 开发工具及相关技术简介"></a>第二章 开发工具及相关技术简介</h1><p>软件的开发工具用以支持软件开发的相关过程、活动和任务。运行环境为工具集成和软件的开发、维护及管理提供统一的支持。本系统依据开发的实体需求，涉及到的相关资料及用具有WAMPSERVER，模板堂ECSHOP合集版系统。</p>
+<h2 id="2-1-WAMPSERVER"><a href="#2-1-WAMPSERVER" class="headerlink" title="2.1 WAMPSERVER"></a>2.1 WAMPSERVER</h2><p>WampServer是一款由法国人开发的Apache Web服务器、PHP解释器以<br>及MySQL数据库的整合软件包。免去了开发人员将时间花费在繁琐的配置环境过程，从而腾出更多精力去做开发。在windows下将Apache+PHP+Mysql 集成环境，拥有简单的图形和菜单安装和配置环境。PHP扩展、Apache模块，开启/关闭鼠标点点就搞定，再也不用亲自去修改配置文件了，WAMP它会去做。再也不用到处询问php的安装问题了，wampserver一切都搞定了。</p>
+<h2 id="2-2-ECSHOP"><a href="#2-2-ECSHOP" class="headerlink" title="2.2 ECSHOP"></a>2.2 ECSHOP</h2><p>ecshop网店系统是专注于网上商店的软件，也是国内唯一免费开源的网店系统，经历十几年的迭代更新，已成为数以万计的企业和个人用户首选网上开店解决方案，也是目前国内最受欢迎的网店商城系统。</p>
+<h2 id="2-3-B-S架构"><a href="#2-3-B-S架构" class="headerlink" title="2.3 B/S架构"></a>2.3 B/S架构</h2><p>B/S[5]最大的优点就是可以在任何地方进行操作而不用安装任何专门的软件，只要有一台能上网的电脑就能使用，客户端零安装、零维护。系统的扩展非常容易。B/S同时具有升级和维护方式相对简单、成本较低等。</p>
+<h1 id="第3章-系统总体设计"><a href="#第3章-系统总体设计" class="headerlink" title="第3章 系统总体设计"></a>第3章 系统总体设计</h1><h2 id="3-1-功能模块分析"><a href="#3-1-功能模块分析" class="headerlink" title="3.1 功能模块分析"></a>3.1 功能模块分析</h2><p>本电子商务网站涉及到两种业务角色，即前台用户角色和后台管理员角色。</p>
+<h3 id="3-1-1前台功能模块分析"><a href="#3-1-1前台功能模块分析" class="headerlink" title="3.1.1前台功能模块分析"></a>3.1.1前台功能模块分析</h3><p>（1）用户信息模块，即用户登录、用户基本信息维护；<br>（2）商品信息模块，即商品展示；<br>（3）购物车信息模块以及订单信息模块，即商品订购、购物车等；</p>
+<h3 id="3-1-2后台功能模块分析"><a href="#3-1-2后台功能模块分析" class="headerlink" title="3.1.2后台功能模块分析"></a>3.1.2后台功能模块分析</h3><p>（1）商品管理模块，即添加商品类别，修改商品类别，删除商品类别，添加商品信息，（包括商品的类别、名称、编号、生产公司等信息。）商品图片上传、修改和删除，修改商品信息，删除商品信息，查看商品信息。 </p>
+<p>（2）用户管理模块，即注册用户，包括用户名、密码等信息。修改用户信息、删除用户信息。</p>
+<p>（3）订单管理模块，即生成订单，发货，结账，删除订单。</p>
+<h2 id="3-2-业务流程分析"><a href="#3-2-业务流程分析" class="headerlink" title="3.2 业务流程分析"></a>3.2 业务流程分析</h2><p>通过本电子商务网站分为前后台两种角色管理，前台用户可以完成对应的业务逻辑，如图1所示。后台管理员完成对应的业务逻辑，如图2所示。</p>
+<p><img src="http://i.imgur.com/BuT7hPO.png" alt=""></p>
+<p>图1 前台业务流程图</p>
+<p><img src="http://i.imgur.com/AwdRz3e.png" alt=""></p>
+<p>图2 后台业务流程图</p>
+<h2 id="3-3-可行性研究"><a href="#3-3-可行性研究" class="headerlink" title="3.3 可行性研究"></a>3.3 可行性研究</h2><p>可行性分析能使新系统达到以最小的开发成本取得最佳的经济效益，其目的也是根据开发管理信息系统的需求，通过初步调查和系统目标分析，对于本电子商务网站设计从技术上、经济上和管理上进行是否可行的研究与分析，这既是保证资源的有效合理利用，也是避免在日常工作中的失误而导致的种种浪费现象。</p>
+<h3 id="3-3-1技术可行性"><a href="#3-3-1技术可行性" class="headerlink" title="3.3.1技术可行性"></a>3.3.1技术可行性</h3><p>wamp与ecshop均是已经成熟的技术产品，较为完善与成熟可行。</p>
+<h3 id="3-3-2经济可行性"><a href="#3-3-2经济可行性" class="headerlink" title="3.3.2经济可行性"></a>3.3.2经济可行性</h3><p>只做技术研究，且无大成本消耗。</p>
+<h3 id="3-3-3管理可行性"><a href="#3-3-3管理可行性" class="headerlink" title="3.3.3管理可行性"></a>3.3.3管理可行性</h3><p>对于绝大多数用户而言，他们已经养成了网上购物的习惯。对于购物方式，也已相对比较熟悉。对于本网站而言，简洁友好的界面可以使用户快速的了解本网站提供的业务，从而能更好的操作以完成网上购物的体验。对于后台管理者而言，本系统提供的后台操作简单，模块划分简洁明了。因此无论是用户，还是管理员都能很好的操作本网站提供的功能，在管理方面是可行的。</p>
+<h2 id="3-4-数据库设计"><a href="#3-4-数据库设计" class="headerlink" title="3.4 数据库设计"></a>3.4 数据库设计</h2><p>数据库设计是指对于一个给定的应用环境，构造（设计）优化的数据库逻辑模式和物理结构，并据此建立数据库及其应用系统，使之能够有效地存储和管理数据，满足各种用户的应用需求，包括信息管理要求和数据操作需求。信息管理要求是指在数据库中应该存储和管理哪些数据对象；数据操作要求是指对数据对象需要进行哪些操作，如查询、增、删、改、统计等操作。</p>
+<h3 id="3-4-1数据库需求分析"><a href="#3-4-1数据库需求分析" class="headerlink" title="3.4.1数据库需求分析"></a>3.4.1数据库需求分析</h3><p>数据库需求分析的任务是通过详细调查现实世界要处理的对象（组织、部门、企业等），充分了解系统的工作概况，明确用户的各种需求，然后在此基础上确定系统的功能，因此必须充分考虑今后可能的扩充和改变，不能仅仅按照当前应用需求来设计数据库。本系统相对比较简单，从前台到后台操作涉及到的实体及其属性的定义都能满足系统的要求，因此在考虑后期可能的应用需求，本数据库的设计相对合理，应用性良好。</p>
+<h3 id="3-4-2数据库概念设计"><a href="#3-4-2数据库概念设计" class="headerlink" title="3.4.2数据库概念设计"></a>3.4.2数据库概念设计</h3><p>数据库概念设计阶段是在需求分析的基础上，设计出能满足用户需求的各种实体，以及它们之间的关系，为后面的逻辑结构设计打下基础。在本电子商务网站中，各项实体之间的关系并不复杂，本系统的数据库没有设计外键关联，只是将关联数据库的字段存放到需要的数据库表中，从而能达到数据关联的目的，如图3所示，因此概念设计也相对比较容易。</p>
+<p><img src="http://i.imgur.com/HKbLWHE.png" alt=""></p>
+<p>图3 数据库实体关系图</p>
+<h3 id="3-4-3数据库逻辑设计"><a href="#3-4-3数据库逻辑设计" class="headerlink" title="3.4.3数据库逻辑设计"></a>3.4.3数据库逻辑设计</h3><p>在数据库逻辑结构设计阶段，需要将数据库概念结构转化为MySQL数据库系统所支持的实际数据模型，也就是数据库的逻辑结构。在上面的实体结构的基础上，形成对应的数据库表。</p>
+<p>但是此处数据库不是我个人设计且数据量庞大所以暂不予以详细分析。</p>
+<h3 id="3-4-4数据库结构实现"><a href="#3-4-4数据库结构实现" class="headerlink" title="3.4.4数据库结构实现"></a>3.4.4数据库结构实现</h3><p>ecshop已经实现。</p>
+<h1 id="第4章-系统详细设计与实现"><a href="#第4章-系统详细设计与实现" class="headerlink" title="第4章 系统详细设计与实现"></a>第4章 系统详细设计与实现</h1><h2 id="4-1-界面设计原则"><a href="#4-1-界面设计原则" class="headerlink" title="4.1 界面设计原则"></a>4.1 界面设计原则</h2><p>界面设计是屏幕产品的重要组成部分。界面设计是一个复杂的有不同学科参与的工程，认知心理学、设计学、语言学等在此都扮演着重要的角色。用户界面是用户与程序沟通的唯一途径，要能为用户提供方便有效的服务。用户界面设计的三大原则是：置界面于用户的控制之下、减少用户的记忆负担、保持界面的一致性。</p>
+<h2 id="4-2主要功能及界面的实现"><a href="#4-2主要功能及界面的实现" class="headerlink" title="4.2主要功能及界面的实现"></a>4.2主要功能及界面的实现</h2><p>本电子商务网站采用的是PHP技术作为前端页面展现,由于每个模块的页面是不一样的，因此在设计页面时，要合理的安排，尽量使用户能够很快的熟悉本网站的主要功能，同时需要保持界面的简洁和一致性。</p>
+<h3 id="4-2-1前台子系统的设计与实现"><a href="#4-2-1前台子系统的设计与实现" class="headerlink" title="4.2.1前台子系统的设计与实现"></a>4.2.1前台子系统的设计与实现</h3><p>（1）前台用户注册<br>对于本电子商务网站，未成功注册用户只能查看新闻公告，商品信息等，而不能进入系统使用其他的业务。用户需要办理注册手续，即进入注册页面，，按要求输入有效的个人信息，如用户名，email，手机，QQ等必要信息。</p>
+<p><img src="http://i.imgur.com/PFhPc7h.png" alt=""></p>
+<p>图10 用户注册</p>
+<p>（2）前台用户登录<br>已成功注册用户只有登录系统才能执行其他业务操作，如图11所示，因此在登录界面输入账户名和密码，提交信息后，后台进行验证，若与数据库里存储的信息匹配，则可以成功登陆。</p>
+<p><img src="http://i.imgur.com/PBWGJg6.png" alt=""></p>
+<p>图11 用户登录</p>
+<p>（3）前台新闻信息模块<br>当进入网站首页，则直接在右边的页面中浏览所有的公告信息，或者点击“首页”，则回到所有新闻信息显示页面，如图12所示。</p>
+<p><img src="http://i.imgur.com/bpxEbn9.png" alt=""></p>
+<p>图12前台新闻信息模块</p>
+<p>（4）前台用户信息模块<br>进入主界面后，当用户点击“会员信息”时，即进入“前台用户信息”子模块，此模块中显示了登陆用户的个人信息，用户可以修改个人信息，包括密码的修改等，如图13所示。</p>
+<p><img src="http://i.imgur.com/c0PSS3w.png" alt=""></p>
+<p>图13 前台用户信息模块</p>
+<p>（5）前台商品信息模块<br>在主界面的左侧导航栏中（如“聚美优品”、“商品类别”、“品牌商家”等），则根据其下拉的选项点击查看不同的商品信息。在对应页面上方的查询输入框中，输入商品名称，则可查询所需的商品信息，如图14所示。</p>
+<p><img src="http://i.imgur.com/hnavKkI.png" alt=""></p>
+<p>图14 前台商品信息模块</p>
+<p>（6）前台购物车信息模块<br>当点击商品信息的操作栏中“加入购物车”链接时，则进入购物车信息模块。该页面上显示将加入购物车中的商品信息。当点击“购物车”时，则显示该用户下的购物车中的商品信息。当点击购物车列表里“删除”操作，则可删除购物车中对应的商品。在购物车列表页面的输入框中输入商品名称，显示所需的商品信息，如图15所示。</p>
+<p><img src="http://i.imgur.com/W03f1UK.png" alt=""></p>
+<p>图15前台购物车信息模块</p>
+<p>（7）前台订单信息模块<br>当点击商品列表的“生成订单”操作，如图14所示。或者点击购物车列表的“生成订单”操作，如图15所示时，则出现订单信息填写页面，输入订单信息，并通过验证，即完成订单添加操作；否则添加失败。点击“查看订单”操作，显示该用户下所有的订单信息。点击订单列表中的“删除”操作，则删除对应的商品订单。在订单列表的输入框中输入订单编号，则查询出所需的订单信息，如图16所示。</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/商务网站分析/" rel="tag">#商务网站分析</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/27/bash变量/" rel="next" title="bash变量">
+                <i class="fa fa-chevron-left"></i> bash变量
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/04/商务网站方案分析/"
+           data-title="商务网站方案分析" data-url="http://yoursite.com/2016/05/04/商务网站方案分析/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-绪论"><span class="nav-number">1.</span> <span class="nav-text">第一章 绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-课题背景"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 课题背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#研究意义"><span class="nav-number">1.2.</span> <span class="nav-text">研究意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设计目标"><span class="nav-number">1.3.</span> <span class="nav-text">设计目标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-开发工具及相关技术简介"><span class="nav-number">2.</span> <span class="nav-text">第二章 开发工具及相关技术简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-WAMPSERVER"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 WAMPSERVER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-ECSHOP"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 ECSHOP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-B-S架构"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 B/S架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第3章-系统总体设计"><span class="nav-number">3.</span> <span class="nav-text">第3章 系统总体设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-功能模块分析"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 功能模块分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1前台功能模块分析"><span class="nav-number">3.1.1.</span> <span class="nav-text">3.1.1前台功能模块分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2后台功能模块分析"><span class="nav-number">3.1.2.</span> <span class="nav-text">3.1.2后台功能模块分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-业务流程分析"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 业务流程分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-可行性研究"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 可行性研究</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1技术可行性"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.3.1技术可行性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2经济可行性"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.3.2经济可行性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3管理可行性"><span class="nav-number">3.3.3.</span> <span class="nav-text">3.3.3管理可行性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-数据库设计"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1数据库需求分析"><span class="nav-number">3.4.1.</span> <span class="nav-text">3.4.1数据库需求分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2数据库概念设计"><span class="nav-number">3.4.2.</span> <span class="nav-text">3.4.2数据库概念设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3数据库逻辑设计"><span class="nav-number">3.4.3.</span> <span class="nav-text">3.4.3数据库逻辑设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4数据库结构实现"><span class="nav-number">3.4.4.</span> <span class="nav-text">3.4.4数据库结构实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第4章-系统详细设计与实现"><span class="nav-number">4.</span> <span class="nav-text">第4章 系统详细设计与实现</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-界面设计原则"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 界面设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2主要功能及界面的实现"><span class="nav-number">4.2.</span> <span class="nav-text">4.2主要功能及界面的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1前台子系统的设计与实现"><span class="nav-number">4.2.1.</span> <span class="nav-text">4.2.1前台子系统的设计与实现</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
