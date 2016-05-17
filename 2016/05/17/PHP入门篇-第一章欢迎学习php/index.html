@@ -1,0 +1,690 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="PHP可以做什么？为什么要学习PHP？“我可以用JavaScript来实现程序编写。”但JavaScript的能力是有限的，JavaScript通常运行在浏览器（客户端），它可以制作网页上面的特效：鼠标滑过背景改变颜色，还有网页上常见的鼠标滑过弹出菜单。但如果要让JavaScript实现显示“访问网站的总人数”，它就无能为力了，因为它只能获得客户端的信息，而“访问网站的总人数”是存储在服务器端的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP入门篇 第一章欢迎学习php">
+<meta property="og:url" content="http://yoursite.com/2016/05/17/PHP入门篇-第一章欢迎学习php/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="PHP可以做什么？为什么要学习PHP？“我可以用JavaScript来实现程序编写。”但JavaScript的能力是有限的，JavaScript通常运行在浏览器（客户端），它可以制作网页上面的特效：鼠标滑过背景改变颜色，还有网页上常见的鼠标滑过弹出菜单。但如果要让JavaScript实现显示“访问网站的总人数”，它就无能为力了，因为它只能获得客户端的信息，而“访问网站的总人数”是存储在服务器端的。">
+<meta property="og:image" content="http://i.imgur.com/eXseBVn.png">
+<meta property="og:image" content="http://i.imgur.com/bcwPHsw.png">
+<meta property="og:image" content="http://i.imgur.com/GHLmpoi.png">
+<meta property="og:image" content="http://i.imgur.com/lkk1xUB.png">
+<meta property="og:image" content="http://i.imgur.com/cpeYYZ5.png">
+<meta property="og:image" content="http://i.imgur.com/5QyewCp.png">
+<meta property="og:image" content="http://i.imgur.com/KUNpVYb.png">
+<meta property="og:updated_time" content="2016-05-17T12:13:09.310Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP入门篇 第一章欢迎学习php">
+<meta name="twitter:description" content="PHP可以做什么？为什么要学习PHP？“我可以用JavaScript来实现程序编写。”但JavaScript的能力是有限的，JavaScript通常运行在浏览器（客户端），它可以制作网页上面的特效：鼠标滑过背景改变颜色，还有网页上常见的鼠标滑过弹出菜单。但如果要让JavaScript实现显示“访问网站的总人数”，它就无能为力了，因为它只能获得客户端的信息，而“访问网站的总人数”是存储在服务器端的。">
+<meta name="twitter:image" content="http://i.imgur.com/eXseBVn.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP入门篇 第一章欢迎学习php | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP入门篇 第一章欢迎学习php
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-17T19:33:01+08:00" content="2016-05-17">
+              2016-05-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/php-study/" itemprop="url" rel="index">
+                    <span itemprop="name">php_study</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/17/PHP入门篇-第一章欢迎学习php/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/17/PHP入门篇-第一章欢迎学习php/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="PHP可以做什么？"><a href="#PHP可以做什么？" class="headerlink" title="PHP可以做什么？"></a>PHP可以做什么？</h1><p>为什么要学习PHP？“我可以用JavaScript来实现程序编写。”但JavaScript的能力是有限的，JavaScript通常运行在浏览器（客户端），它可以制作网页上面的特效：鼠标滑过背景改变颜色，还有网页上常见的鼠标滑过弹出菜单。但如果要让JavaScript实现显示“访问网站的总人数”，它就无能为力了，因为它只能获得客户端的信息，而“访问网站的总人数”是存储在服务器端的。所以就需要另外一种可以在服务器端运行的编程语言，PHP语言就是其中的一种，因为它可以运行在Web服务器端。</p>
+<p>在学习PHP之前让我们来认识一下PHP及其功能。</p>
+<p>1、运行在服务器端：学会了PHP，就可以指挥服务器给你干活，甚至是搞破坏^_^（千万不能真这么做咯），WEB网站的大部分数据都是存储在服务器端的，PHP就是用来处理这些存储在服务器的数据的（功能强大吧）。</p>
+<p>2、跨平台：服务器可以是多种平台的服务器，比如Linux、Windows、Unix，你都可以指挥（不用怕只能指挥一种服务器啦吧）。</p>
+<p>3、脚本语言：它是通过编写脚本，也就是一行行的计算机指令（也可以理解为特定的英文单词），来指挥服务器来工作的，因此，在编写PHP的过程其实就是与老外（服务器成老外啦）交流的过程，交流的语言就是PHP。</p>
+<p>4、免费：免费使用（天下还真有免费的午餐）。</p>
+<p>IE党注意了：此课程不支持IE9版本以下，建议使用 chrome、safari、firefox、opera浏览器学习本课程。</p>
+<p>任务</p>
+<p>纸上谈兵那是赵括，咱要向陆游学习，要躬行一把。</p>
+<p>请在右边编辑器中输入两行指令。第10行输入第一条指令：</p>
+<pre><code>echo &apos;PHP学到家，走到哪儿都不怕！&apos;;
+</code></pre><p>“echo”这个命令是告诉服务器，打印一串字符。</p>
+<p><img src="http://i.imgur.com/eXseBVn.png" alt=""></p>
+<h1 id="认识PHP代码标识"><a href="#认识PHP代码标识" class="headerlink" title="认识PHP代码标识"></a>认识PHP代码标识</h1><p>想在页面中编写PHP​代码非常容易，如下面代码：</p>
+<pre><code>&lt;?php
+echo &quot;想学习php吗？来慕课网吧&quot;;
+?&gt;
+</code></pre><p>就像你可以编写JavaScript脚本语言需要写在&lt;script&gt;标签之间一样，你可以在页面中编写PHP代码写在&lt;?php?&gt;标签之间，但注意后面的?&gt;是可以省略的。</p>
+<p>你也可能把代码写在一行上噢！如下面的代码：</p>
+<pre><code>&lt;?php echo &quot;想学习php吗？来慕课网吧&quot;;?&gt;
+</code></pre><p>任务</p>
+<p>我来试一试：在结果窗口中输出23+6的计算结果</p>
+<p>1、在右部编辑器中第9行的写入代码:</p>
+<pre><code>&lt;?php echo 23+6;?&gt; 
+</code></pre><p><img src="http://i.imgur.com/bcwPHsw.png" alt=""></p>
+<h1 id="Echo语句"><a href="#Echo语句" class="headerlink" title="Echo语句"></a>Echo语句</h1><p>echo是PHP中的输出语句，可以把字符串输出（字符串用双引号括起来）。</p>
+<p>如下代码：</p>
+<pre><code>&lt;?php echo &quot;Hello world!&quot;;?&gt;
+</code></pre><p>注意echo关键字与字符串之间至少要有一个空格。如下面写法是不正确的：</p>
+<pre><code>&lt;?php echo&quot;Hello world!&quot;;?&gt;
+</code></pre><p>任务</p>
+<p>我来试一试：用echo语句输出字串符“Welcome to imooc!”</p>
+<p>1、在右部编辑器中第9行输入代码：</p>
+<pre><code>&lt;?php echo &quot;Welcome to imooc!&quot;; ?&gt;
+</code></pre><p><img src="http://i.imgur.com/GHLmpoi.png" alt=""></p>
+<h1 id="计算表达式"><a href="#计算表达式" class="headerlink" title="计算表达式"></a>计算表达式</h1><p>不同于HTML和CSS，在php中我们可以做计算，比如我们写入echo 12*3计算机会计算出结果36。如下代码：</p>
+<pre><code>&lt;?php echo 12*3;?&gt;
+</code></pre><p>任务</p>
+<p>我也来试一试：计算12*3，并把结果输出</p>
+<p>1.在右部编辑器中的第9行输入PHP代码，让它可以计算12*3。</p>
+<p><img src="http://i.imgur.com/lkk1xUB.png" alt=""></p>
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><p>一个字符串是用双引号括起来的一个词或一个句字，比如：“Hi,imooc！”。你可以用PHP语言输出把这个字符串输出，像这样：</p>
+<pre><code>&lt;?php echo &quot;Hi,imooc！&quot;;?&gt;
+</code></pre><p>也可以用单引号括起来，就像下面代码：</p>
+<pre><code>&lt;?php echo &apos;Hi,imooc！&apos;;?&gt;
+</code></pre><p>可以把两个字符用连接符连接起来，像这样:</p>
+<pre><code>&lt;?php echo &apos;Hi,&apos;.&apos;imooc!&apos;;?&gt;
+</code></pre><p>注意:连接符可以连接多个字符串，上面的例子就是把一个字符串拆分为二个小字符串，然后用一个连接符连起来。</p>
+<p>在php中字符串连接符是用点（.）来表示的，这一点比较特殊，其它语言中是用加号（+）来表示的，比如：JavaScirpt、Asp、C。<br>任务</p>
+<p>我来试一试：输出字符串</p>
+<p>1.在右部编辑器中的第9行的输入任意字符串，字符串用双引号括起来。</p>
+<p><img src="http://i.imgur.com/cpeYYZ5.png" alt=""></p>
+<h1 id="PHP语句结束符"><a href="#PHP语句结束符" class="headerlink" title="PHP语句结束符"></a>PHP语句结束符</h1><p>有的小伙伴们是不是已经注意在每一条PHP代码行结尾处都会有一个分号；。对的，这点注意，在PHP编程中需要在每条语句的末尾加入分号；。但要注意，分号；一定在半角状态下输入噢。</p>
+<p>任务</p>
+<p>我来试一试：在右部编辑器中，10-12行缺少代码，请补充。</p>
+<p><img src="http://i.imgur.com/5QyewCp.png" alt=""></p>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p>在PHP中也有注释语句：用双斜杠（//）来表示。其它语言中，Html中使用<!--注释语句-->，CSS中使用/<em>注释语句</em>/。如下面代码：</p>
+<pre><code>&lt;?php
+//输出hi,imooc!
+echo &quot;hi,imooc!&quot;;
+?&gt;
+</code></pre><p>注释语句可以在PHP程序的任意位置（但注释语句一定要写在&lt;?php ?&gt;之间）。</p>
+<p>注意：这个注释语句是为程序员准备的。<br>任务</p>
+<p>在右部编辑器中的任意位置写入一个PHP注释语句。</p>
+<p><img src="http://i.imgur.com/KUNpVYb.png" alt=""></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/04/商务网站方案分析/" rel="next" title="商务网站方案分析">
+                <i class="fa fa-chevron-left"></i> 商务网站方案分析
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/17/PHP入门篇-第一章欢迎学习php/"
+           data-title="PHP入门篇 第一章欢迎学习php" data-url="http://yoursite.com/2016/05/17/PHP入门篇-第一章欢迎学习php/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP可以做什么？"><span class="nav-number">1.</span> <span class="nav-text">PHP可以做什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#认识PHP代码标识"><span class="nav-number">2.</span> <span class="nav-text">认识PHP代码标识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Echo语句"><span class="nav-number">3.</span> <span class="nav-text">Echo语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算表达式"><span class="nav-number">4.</span> <span class="nav-text">计算表达式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串"><span class="nav-number">5.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP语句结束符"><span class="nav-number">6.</span> <span class="nav-text">PHP语句结束符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注释"><span class="nav-number">7.</span> <span class="nav-text">注释</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
