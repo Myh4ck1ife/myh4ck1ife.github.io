@@ -259,145 +259,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/24/第-2-章-：-HTTP协议/" itemprop="url">
-                  第 2 章 ： HTTP协议 
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T15:25:16+08:00" content="2016-07-24">
-              2016-07-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Kali实战-Web渗透/" itemprop="url" rel="index">
-                    <span itemprop="name">Kali实战-Web渗透</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/24/第-2-章-：-HTTP协议/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/第-2-章-：-HTTP协议/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Http协议基础-明文"><a href="#Http协议基础-明文" class="headerlink" title="Http协议基础-明文"></a>Http协议基础-明文</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>http协议本身有以下特点：</p>
-<p>七层的应用层协议。</p>
-<p><strong>是明文协议</strong></p>
-<ul>
-<li>无内建的机密性安全机制</li>
-<li>嗅探或代理阶段可查看全部明文信息</li>
-<li>https只能提高传输层安全</li>
-</ul>
-<p>中间人基于https侦听劫持一样可以实现中间人攻击</p>
-<h3 id="https劫持"><a href="#https劫持" class="headerlink" title="https劫持"></a>https劫持</h3><p>访问https网站时会发送相应的请求，服务器端会将公钥证书传给客户端，客户端会生成一个对称密钥用于加密之后所有的数据，对称密钥不会传输，会用证书里面服务器的公钥将其加密，然后发给服务器端，服务器有对应的私钥，可以得到相应数据，每次会话的对称密钥都是随机的，而且加密强度很大，而且存在时间短，安全性高。但是攻击者会在本机生成一个伪证书，与服务器的区别是私钥不同，其他是相同的，会将自身本身的公钥发给被劫持者的客户端，然后被劫持者会生成这个假数据的对称密钥，由于传过去的公钥是劫持者的公钥，因此劫持者用本身的私钥就可以对数据进行解密，从而进行了https劫持。</p>
-<p><strong>无状态</strong></p>
-<ul>
-<li>每一次客户端和服务器端的通信都是独立的过程</li>
-<li>WEB应用需要跟踪客户端会话(多部通讯)</li>
-<li>不使用cookie的应用，客户端每次请求都要重新身份验证（不现实)</li>
-<li>Session用于在于用户身份验证后跟踪用户行为踪迹<ul>
-<li>提高用户体验，但增加了攻击向量</li>
-</ul>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/07/14/第-1-章-：-概述/" itemprop="url">
                   第 1 章 ： 概述 
                 </a>
@@ -1485,6 +1346,129 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/18/一次收到”中奖短信“后的XSS测试/" itemprop="url">
+                  一次收到”中奖短信“后的XSS测试
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-18T18:21:26+08:00" content="2016-04-18">
+              2016-04-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/hack-life/" itemprop="url" rel="index">
+                    <span itemprop="name">hack_life</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/18/一次收到”中奖短信“后的XSS测试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/一次收到”中奖短信“后的XSS测试/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p> 前几天上课的时候，忽然收到一条短信</p>
+<p><img src="http://i.imgur.com/y3VFOAV.png" alt=""></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/18/一次收到”中奖短信“后的XSS测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1530,7 +1514,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1547,7 +1531,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
