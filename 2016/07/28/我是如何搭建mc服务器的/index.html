@@ -1,0 +1,754 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="我的世界," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="0x01 起因由于跟朋友一直玩Minecraft，但是没有服务器，网上那些软件也并不靠谱，正好放假了就准备自己搭建一个。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我是如何搭建mc服务器的">
+<meta property="og:url" content="http://yoursite.com/2016/07/28/我是如何搭建mc服务器的/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="0x01 起因由于跟朋友一直玩Minecraft，但是没有服务器，网上那些软件也并不靠谱，正好放假了就准备自己搭建一个。">
+<meta property="og:image" content="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png">
+<meta property="og:updated_time" content="2016-07-28T13:49:44.820Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我是如何搭建mc服务器的">
+<meta name="twitter:description" content="0x01 起因由于跟朋友一直玩Minecraft，但是没有服务器，网上那些软件也并不靠谱，正好放假了就准备自己搭建一个。">
+<meta name="twitter:image" content="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 我是如何搭建mc服务器的 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                我是如何搭建mc服务器的
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-28T20:10:29+08:00" content="2016-07-28">
+              2016-07-28
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Minecraft/" itemprop="url" rel="index">
+                    <span itemprop="name">Minecraft</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/28/我是如何搭建mc服务器的/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/28/我是如何搭建mc服务器的/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_cir6dnk0a000iq8vozu32jvlv"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        <h1 id="0x01-起因"><a href="#0x01-起因" class="headerlink" title="0x01 起因"></a>0x01 起因</h1><p>由于跟朋友一直玩Minecraft，但是没有服务器，网上那些软件也并不靠谱，正好放假了就准备自己搭建一个。</p>
+<a id="more"></a>
+<h1 id="0x02-过程"><a href="#0x02-过程" class="headerlink" title="0x02 过程"></a>0x02 过程</h1><h2 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h2><h3 id="购买服务器"><a href="#购买服务器" class="headerlink" title="购买服务器"></a>购买服务器</h3><p>首先我们需要一个服务器，这里推荐阿里云和腾讯的大学生扶持计划，分别只需要9.9元/月和1元/月。我这边用的是阿里云的服务器.配置如下：</p>
+<blockquote>
+<p>  CPU： 1核</p>
+<p>  内存： 1024 MB</p>
+<p>  操作系统： CentOS 6.5 64位</p>
+<p>  带宽计费方式： 按使用流量</p>
+<p>  当前使用带宽： 1Mbps（峰值）</p>
+</blockquote>
+<h3 id="登陆服务器"><a href="#登陆服务器" class="headerlink" title="登陆服务器"></a>登陆服务器</h3><p>这边推荐用putty或者xshell，填上我们服务器的公网IP，然后输入用户密码即可登录。</p>
+<p><img src="http://i.imgur.com/cntto8b.png" alt=""></p>
+<p>登陆成功以后我们要对系统进行一下更新，</p>
+<pre><code>yum -y update
+</code></pre><p><img src="http://i.imgur.com/nUDoERC.png" alt=""></p>
+<p>我们再对所有包进行一下升级，</p>
+<pre><code>yum -y upgrade
+</code></pre><p><img src="http://i.imgur.com/scbL3OS.png" alt=""></p>
+<p>接下来我们进行MC服务器的搭建</p>
+<h3 id="建立-MC服务器"><a href="#建立-MC服务器" class="headerlink" title="建立    MC服务器"></a>建立    MC服务器</h3><h4 id="配置JAVA环境"><a href="#配置JAVA环境" class="headerlink" title="配置JAVA环境"></a>配置JAVA环境</h4><p>安装java的办法很多，大家可以自行百度，我这边选择的是本地下载好了RPM安装包，然后用winscp传到服务器上，进行安装。<br>我这边首先新建了一个java文件夹，</p>
+<p><img src="http://i.imgur.com/cZXlGUT.png" alt=""></p>
+<p>然后我们将我们在 <a href="http://www.java.com/zh_CN/download/manual.jsp" title="java下载页" target="_blank" rel="external">http://www.java.com/zh_CN/download/manual.jsp</a> 下载的java rpm包上传进去。</p>
+<p>然后因为平时我这个服务器不仅仅只是想做MC的服务器，所以我准备安装一个screen。</p>
+<p>我们接下来安装java环境：</p>
+<pre><code>cd /usr/java
+rpm -ivh jre- //此处按键盘的Tab键即可自动补全，你上传的文件名
+</code></pre><p>我们刚才进行了java rpm的安装，我们接下来验证一下是否安装成功：</p>
+<pre><code>java -version
+</code></pre><p><img src="http://i.imgur.com/5K9JjYr.png" alt=""></p>
+<p>我这边提示java已经安装成功了，接下来我们进行环境变量的配置，首先我们切换到java目录，</p>
+<pre><code>cd /usr/java
+ls -al
+</code></pre><p><img src="http://i.imgur.com/BwxDM79.png" alt=""></p>
+<p>如图，我的文件夹名为：jre1.8.0_91，复制一下这个名字。<br>接下来依次执行下列命令（一次一行）：</p>
+<pre><code>echo &apos;export JAVA_HOME=/usr/java/jre1.8.0_91&apos; &gt;&gt; /etc/profile
+
+echo &apos;export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar&apos;&gt;&gt; /etc/profile
+
+echo &apos;export PATH=$PATH:$JAVA_HOME/bin&apos; &gt;&gt; /etc/profile
+</code></pre><p>我们java就配置好了</p>
+<h4 id="screen安装"><a href="#screen安装" class="headerlink" title="screen安装"></a>screen安装</h4><p>首先我们安装screen，</p>
+<pre><code>yum -y install screen
+</code></pre><p><img src="http://i.imgur.com/tzjTKpx.png" alt=""></p>
+<blockquote>
+<p>GNU Screen是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。<br>常用Screen 命令：<br>screen -S mc //新建一个叫mc的Screen<br>screen -r mc //返回名为mc的Screen<br>键盘按Ctrl + A //退出刚创建的Screen<br>screen -ls //显示所有的Screen<br>exit //在Screen中使用可以关闭当前Screen会话</p>
+</blockquote>
+<p>更多资料大家可以自行百度</p>
+<h2 id="MC服务端"><a href="#MC服务端" class="headerlink" title="MC服务端"></a>MC服务端</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>首先，我们需要下载MC的服务端文件。我选择了Cauldron（原MCPC+，可安装Mod）1.7.10版本。</p>
+<p>项目地址：<a href="https://sourceforge.net/projects/cauldron-unofficial/files/1.7.10/" target="_blank" rel="external">https://sourceforge.net/projects/cauldron-unofficial/files/1.7.10/</a></p>
+<p>这里我们下载libraries即可，如图：</p>
+<p><img src="http://i.imgur.com/zkxrTnk.png" alt=""></p>
+<p>下载好后，将libraries文件夹解压，将解压出来的文件上传到服务器。我上传到了“/home/mcserver”这个文件夹下，mcserver这个文件夹需要自己创建，</p>
+<p><img src="http://i.imgur.com/ClnIxxq.png" alt=""></p>
+<h3 id="MC服务端设置"><a href="#MC服务端设置" class="headerlink" title="MC服务端设置"></a>MC服务端设置</h3><p>上传完毕后，打开Putty，连接服务器。<br>接下来编辑启动脚本。<br>首先创建个新的Screen，命名为mc，用于启动管理MC服务器，而且也不会耽误我们服务器其他功能的使用：</p>
+<pre><code>screen -S mc
+</code></pre><p>然后切换到mcserver目录：</p>
+<pre><code>cd /home/mcserver
+</code></pre><h4 id="编写脚本"><a href="#编写脚本" class="headerlink" title="编写脚本"></a>编写脚本</h4><p>建立启动脚本文件：</p>
+<pre><code>vim start.sh
+</code></pre><p>关于vim的用法大家可以自行百度</p>
+<p>这里简单介绍一点，按i或者insert进行编辑，粘贴进我们的代码</p>
+<pre><code>#!/bin/sh java -Xmx768M -Xms512M -jar /home/mcserver/minecraft_server.1.7.10.jar
+</code></pre><p>其中的minecraft_server.1.7.10.jar为你的服务器文件，即当前目录下你上传的server.jar文件名。</p>
+<p><img src="http://i.imgur.com/POfYomk.png" alt=""></p>
+<p>然后按:进入命令模式，然后输入wq保存并退出。</p>
+<h4 id="赋予权限"><a href="#赋予权限" class="headerlink" title="赋予权限"></a>赋予权限</h4><p>执行命令，赋予脚本执行权限。</p>
+<pre><code>chmod 777 start.sh
+</code></pre><h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><p>运行启动脚本启动MC服务器：</p>
+<pre><code>sh ./start.sh
+</code></pre><p>出现错误，提示需要修改EULI文件。</p>
+<p><img src="http://i.imgur.com/FzZvghJ.png" alt=""></p>
+<p>命令行输入：</p>
+<pre><code>vim eula.txt 
+</code></pre><p>将其中的</p>
+<pre><code>eula=false
+</code></pre><p>改成</p>
+<pre><code>eula=ture
+</code></pre><p>然后保存退出，再次运行脚本，运行成功：</p>
+<p><img src="http://i.imgur.com/z6UHzn4.png" alt=""></p>
+<h2 id="盗版设置"><a href="#盗版设置" class="headerlink" title="盗版设置"></a>盗版设置</h2><p>接下来，还有非常重要的一步：<br>要想让非正版客户端也可以连接服务器，还需要设置一下server.properties文件。<br>首先 Ctrl + C 停止MC服务器，<br>命令行输入:</p>
+<pre><code>vim server.prperties
+</code></pre><p>找到</p>
+<pre><code>online-mode=true
+</code></pre><p>改成</p>
+<pre><code>online-mode=false
+</code></pre><p>然后保存退出，重新运行服务器脚本即可。</p>
+<h1 id="体验我的世界"><a href="#体验我的世界" class="headerlink" title="体验我的世界"></a>体验我的世界</h1><p>接下来我们下载一个客户端，测试一下就行了。</p>
+<p>我们打开游戏以后：</p>
+<p><img src="http://i.imgur.com/c6pH1jT.png" alt=""></p>
+<p>选择多人游戏，</p>
+<p><img src="http://i.imgur.com/6IGmfQ2.png" alt=""></p>
+<p>然后我们选择直接连接，输入服务器ip就行了，</p>
+<p><img src="http://i.imgur.com/HRT7wLz.png" alt=""></p>
+<p>然后就享受你的世界吧~</p>
+<p><img src="http://i.imgur.com/WAwPX7G.png" alt=""></p>
+<h1 id="下次连接"><a href="#下次连接" class="headerlink" title="下次连接"></a>下次连接</h1><p>下次我们使用Putty连接服务器时，只要使用命令：</p>
+<pre><code>screen -r mc
+</code></pre><p>即可回到我们的MC服务器状态啦~</p>
+<p>如果想手动添加mod服务,那么需要手动下载服务器文件下载 里边的cauldron-1.7.10-1.1388.1.0-server.jar (注意和你下载的libraries的版本要相同),然后放到服务器mc目录下,修改启动脚本 start.sh为:</p>
+<pre><code>#!/bin/sh java -Xmx768M -Xms512M -jar /home/mcserver/cauldron-1.7.10-1.1388.1.0-server.jar 
+</code></pre><h1 id="关于op权限的开启"><a href="#关于op权限的开启" class="headerlink" title="关于op权限的开启"></a>关于op权限的开启</h1><p>我们会发现在使用我的世界精灵的时候，有些传送功能使用时会提示：您不具有相关权限，这里我们就把op权限打开即可，</p>
+<p>我们首先进入screen中</p>
+<pre><code>screen -r mc
+</code></pre><p>然后输入</p>
+<pre><code>op 用户名
+</code></pre><p>即可打开权限</p>
+<p><img src="http://i.imgur.com/uLrO2RM.png" alt=""></p>
+<p><img src="http://i.imgur.com/a6K7sSH.png" alt=""></p>
+<p>祝您在我的世界玩的愉快~</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/我的世界/" rel="tag">#我的世界</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/27/送给她的礼物后记/" rel="next" title="送给她的礼物后记">
+                <i class="fa fa-chevron-left"></i> 送给她的礼物后记
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/28/我是如何搭建mc服务器的/"
+           data-title="我是如何搭建mc服务器的" data-url="http://yoursite.com/2016/07/28/我是如何搭建mc服务器的/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#0x01-起因"><span class="nav-number">1.</span> <span class="nav-text">0x01 起因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#0x02-过程"><span class="nav-number">2.</span> <span class="nav-text">0x02 过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器"><span class="nav-number">2.1.</span> <span class="nav-text">服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买服务器"><span class="nav-number">2.1.1.</span> <span class="nav-text">购买服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆服务器"><span class="nav-number">2.1.2.</span> <span class="nav-text">登陆服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立-MC服务器"><span class="nav-number">2.1.3.</span> <span class="nav-text">建立    MC服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置JAVA环境"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">配置JAVA环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#screen安装"><span class="nav-number">2.1.3.2.</span> <span class="nav-text">screen安装</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MC服务端"><span class="nav-number">2.2.</span> <span class="nav-text">MC服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载"><span class="nav-number">2.2.1.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MC服务端设置"><span class="nav-number">2.2.2.</span> <span class="nav-text">MC服务端设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#编写脚本"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">编写脚本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#赋予权限"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">赋予权限</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务器"><span class="nav-number">2.3.</span> <span class="nav-text">启动服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盗版设置"><span class="nav-number">2.4.</span> <span class="nav-text">盗版设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#体验我的世界"><span class="nav-number">3.</span> <span class="nav-text">体验我的世界</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#下次连接"><span class="nav-number">4.</span> <span class="nav-text">下次连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于op权限的开启"><span class="nav-number">5.</span> <span class="nav-text">关于op权限的开启</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
