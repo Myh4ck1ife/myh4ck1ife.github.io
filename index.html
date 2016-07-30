@@ -330,7 +330,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/metasploit-and-metasploitable.1280x600.jpg" rel="gallery_cir8vfurc000uqsvoemxklpou"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/metasploit-and-metasploitable.1280x600.jpg" rel="gallery_cir8viivf0016jovo4gsy868u"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/metasploit-and-metasploitable.1280x600.jpg" itemprop="contentUrl"/>
               </a>
@@ -344,80 +344,12 @@
 
       
         
-          
-            <h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><h2 id="Metasploitable"><a href="#Metasploitable" class="headerlink" title="Metasploitable"></a>Metasploitable</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>下载地址：<a href="https://sourceforge.net/projects/metasploitable/" title="Metasploitable" target="_blank" rel="external">https://sourceforge.net/projects/metasploitable/</a></p>
-<h3 id="项目表述"><a href="#项目表述" class="headerlink" title="项目表述"></a>项目表述</h3><blockquote>
-<p>This is Metasploitable2 (Linux)</p>
-<p>Metasploitable is an intentionally vulnerable Linux virtual machine. This VM can be used to conduct security training, test security tools, and practice common penetration testing techniques. </p>
-<p>The default login and password is msfadmin:msfadmin.<br>Never expose this VM to an untrusted network (use NAT or Host-only mode if you have any questions what that means).</p>
-<p>To contact the developers, please send email to msfdev@metasploit.com </p>
-</blockquote>
-<p>Metasploitable是一款基于Ubuntu Linux的操作系统。该系统是一个虚拟机文件，从上述地址下载后解压就可直接使用，无需安装，由于他存在大量未打补丁的漏洞，并且开放了很多高危端口，所以我们用来当作攻击靶机。</p>
-<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>（1）下载Metasploitables 2，其文件名为Metasploitable-Linux-2.0.0.zip。</p>
-<p>（2）将下载的文件解压到本地磁盘。</p>
-<p>（3）打开VMwareWorkstation，并依次选择“文件”|“打开”命令。</p>
-<p><img src="http://i.imgur.com/ZrYqlNO.png" alt=""></p>
-<p>（4）在该界面选择Metasploitable.vmx，然后单击“打开”按钮，</p>
-<p><img src="http://i.imgur.com/0t6cPBF.png" alt=""></p>
-<p>（5）在该界面单击“开启此虚拟机”按钮。然后经过一段时间等待，我们会看到如下界面。</p>
-<p><img src="http://i.imgur.com/J3ybLaX.png" alt=""></p>
-<p>（6）默认的用户名密码都是：msfadmin</p>
-<p><img src="http://i.imgur.com/KnTt1QM.png" alt=""></p>
-<p>好了，这里我们已经登陆成功。</p>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="验证是否通信"><a href="#验证是否通信" class="headerlink" title="验证是否通信"></a>验证是否通信</h3><p>首先我们查看一下ip地址，输入命令：</p>
-<pre><code>ifconfig
-</code></pre><p><img src="http://i.imgur.com/eNl3nrj.png" alt=""></p>
-<p>我们可以看到已经获得了一个网络ip地址：192.168.238.136</p>
-<p>然后我们在打开kali看一下他的ip地址。</p>
-<p><img src="http://i.imgur.com/iOtaAVA.png" alt=""></p>
-<p>我们可以看到她的ip是：192.168.238.129</p>
-<p>接下来我们ping一下，看看两台之间是否能够正常通信。</p>
-<pre><code>ping 192.168.238.136
-</code></pre><p><img src="http://i.imgur.com/7qaUJ2D.png" alt=""></p>
-<p>我们可以看到是没问题的。</p>
-<p>接下来我们打开浏览器，去访问一下msf的ip地址，因为默认情况下，他上面是具有一些web application的。</p>
-<p><img src="http://i.imgur.com/7LQoU0q.png" alt=""></p>
-<p>我们可以正常打开，那么我们要主要使用的，就是其中的DVWA。</p>
-<h3 id="DVWA"><a href="#DVWA" class="headerlink" title="DVWA"></a>DVWA</h3><p><img src="http://i.imgur.com/pKscFF9.png" alt=""></p>
-<h4 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h4><blockquote>
-<p>Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.</p>
-</blockquote>
-<p>默认的登陆账号和密码为：admin与password</p>
-<p><img src="http://i.imgur.com/WCjToyd.png" alt=""></p>
-<h4 id="安全级别"><a href="#安全级别" class="headerlink" title="安全级别"></a>安全级别</h4><p>DVWA安全级别分为高，中，低三个级别，我们可以通过左侧的DVWA security进行设置</p>
-<p><img src="http://i.imgur.com/ecYLlDk.png" alt=""></p>
-<h1 id="安全工具介绍及使用"><a href="#安全工具介绍及使用" class="headerlink" title="安全工具介绍及使用"></a>安全工具介绍及使用</h1><h2 id="侦察"><a href="#侦察" class="headerlink" title="侦察"></a>侦察</h2><h3 id="Httrack"><a href="#Httrack" class="headerlink" title="Httrack"></a>Httrack</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>他是用来将目标网站进行克隆到本地的专门应用于web一个工具，可以将web上所有可以访问的页面拷贝到本机，目的是为了减少与目标系统的交互，否则在侦察阶段就有可能引起目标的注意。</p>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>这里我们在kali中打开终端，输入：</p>
-<pre><code>httrack
-</code></pre><p>即可打开工具</p>
-<p><img src="http://i.imgur.com/MJ41YK3.png" alt=""></p>
-<p>首先要给项目起个名字，我们这里用dvwa做名字。</p>
-<p><img src="http://i.imgur.com/LRlVwDk.png" alt=""></p>
-<p>接下来会让你输入一个base path，就是你拷贝网页到哪里。我们可以创建一个目录，用来存放我们的文件。</p>
-<p>我这里在/root下创建了一个新的文件夹dvwa</p>
-<pre><code>mkdir dvwa
-</code></pre><p><img src="http://i.imgur.com/veDwFw8.png" alt=""></p>
-<p>所以我们将路径/root/dvwa写进去就好，</p>
-<p><img src="http://i.imgur.com/ruuo6F9.png" alt=""></p>
-<p>接下来会让我们输入网址的起始路径，我们这里将我们dvwa的地址输入进去即可，</p>
-<p><img src="http://i.imgur.com/IqYccYp.png" alt=""></p>
-<p>然后下面几个选项大家按自己需求选择即可。</p>
-<p>这个工具是支持代理的，代理工具有很多，比如 hidemyass找一些代理（需翻墙），这里要注意免费代理需谨慎，流量可以被截断。</p>
-<p><img src="http://i.imgur.com/MQjPAf0.png" alt=""></p>
-<p>由于我们是虚拟机环境，就不代理了，接下来他提示我们可以使用一些通配符，我们这里由于想要都下载过来，所以使用通配符：</p>
-<pre><code>*
-</code></pre><p><img src="http://i.imgur.com/pd0vG8C.png" alt=""></p>
-<p>这边会问我们是否有额外选项</p>
-<ul>
-<li>-r <number> 选择递归层数</number></li>
-</ul>
-<p>我们这边直接none，下面是否开始，我们选择yes。</p>
-<p><img src="http://i.imgur.com/2Sdz87L.png" alt=""></p>
-<p>然后就开始工作，我们下载的文件都可以在/root/dvwa这个目录下看到192.168.238.136文件夹，我们的页面也在其中。</p>
-<p><img src="http://i.imgur.com/bPuvIoE.png" alt=""></p>
-<p>使用方法就大概是这样。</p>
-
-          
+          <h1 id="实验环境"><a href="#实验环境" class="headerlink" title="实验环境"></a>实验环境</h1><h2 id="Metasploitable"><a href="#Metasploitable" class="headerlink" title="Metasploitable"></a>Metasploitable</h2><h3 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h3><p>下载地址：<a href="https://sourceforge.net/projects/metasploitable/" title="Metasploitable">https://sourceforge.net/projects/metasploitable/</a></p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/30/第-3-章-：-实验环境/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -536,7 +468,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_cir8vfuqt000cqsvopn1oidzh"
+                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_cir8viiv2000rjovom4eumxmw"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" itemprop="contentUrl"/>
               </a>
@@ -674,7 +606,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160727210001.png" rel="gallery_cir8vfurg0012qsvorvfupcfn"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160727210001.png" rel="gallery_cir8viivm001djovokj3faz7s"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160727210001.png" itemprop="contentUrl"/>
               </a>
@@ -939,7 +871,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/20131017115015_77260.jpg" rel="gallery_cir8vfurk0017qsvo7nd6r2gq"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/20131017115015_77260.jpg" rel="gallery_cir8viivd0014jovos4vd1vym"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/20131017115015_77260.jpg" itemprop="contentUrl"/>
               </a>
