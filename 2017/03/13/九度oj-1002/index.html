@@ -80,25 +80,22 @@
 
 
 
-<meta name="description" content="#题目描述：#
-Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
+<meta name="description" content="题目描述：Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
 It is even harder to design a process to make the results as fair as possible. 
-One way is to assign each exam problem">
+One way is to assign each exam problem to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="九度oj-1002">
 <meta property="og:url" content="http://yoursite.com/2017/03/13/九度oj-1002/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
-<meta property="og:description" content="#题目描述：#
-Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
+<meta property="og:description" content="题目描述：Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
 It is even harder to design a process to make the results as fair as possible. 
-One way is to assign each exam problem">
-<meta property="og:updated_time" content="2017-03-13T13:24:52.227Z">
+One way is to assign each exam problem to">
+<meta property="og:updated_time" content="2017-03-13T13:30:17.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="九度oj-1002">
-<meta name="twitter:description" content="#题目描述：#
-Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
+<meta name="twitter:description" content="题目描述：Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
 It is even harder to design a process to make the results as fair as possible. 
-One way is to assign each exam problem">
+One way is to assign each exam problem to">
 
 
 
@@ -332,8 +329,7 @@ One way is to assign each exam problem">
       
 
       
-        <p>#题目描述：#</p>
-<pre><code>Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
 It is even harder to design a process to make the results as fair as possible. 
 One way is to assign each exam problem to 3 independent experts. If they do not agree to each other, a judge is invited to make the final decision. Now you are asked to write a program to help this process.
 For each problem, there is a full-mark P and a tolerance T(&lt;P) given. The grading rules are:
@@ -342,17 +338,13 @@ For each problem, there is a full-mark P and a tolerance T(&lt;P) given. The gra
 • If G3 is within the tolerance with either G1 or G2, but NOT both, then this problem&apos;s grade will be the average of G3 and the closest grade.
 • If G3 is within the tolerance with both G1 and G2, then this problem&apos;s grade will be the maximum of the three grades.
 • If G3 is within the tolerance with neither G1 nor G2, a judge will give the final grade GJ.
-</code></pre><p>#输入：#</p>
-<pre><code>Each input file may contain more than one test case.
+</code></pre><a id="more"></a>
+<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>Each input file may contain more than one test case.
 Each case occupies a line containing six positive integers: P, T, G1, G2, G3, and GJ, as described in the problem. It is guaranteed that all the grades are valid, that is, in the interval [0, P].
-</code></pre><p>#输出：#</p>
-<pre><code>For each test case you should output the final grade of the problem in a line. The answer must be accurate to 1 decimal place.
-</code></pre><p>#样例输入：#</p>
-<pre><code>20 2 15 13 10 18
-</code></pre><p>#样例输出：#</p>
-<pre><code>14.0
-</code></pre><p>#代码：#</p>
-<pre><code>#include&lt;stdio.h&gt;
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>For each test case you should output the final grade of the problem in a line. The answer must be accurate to 1 decimal place.
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>20 2 15 13 10 18
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>14.0
+</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code>#include&lt;stdio.h&gt;
 int main(){
 int p,t,g1,g2,g3,gj;
 float grade;
@@ -382,8 +374,7 @@ while(scanf(&quot;%d%d%d%d%d%d&quot;,&amp;p,&amp;t,&amp;g1,&amp;g2,&amp;g3,&amp;
     printf(&quot;%.1f\n&quot;,grade);
     }
 }
-</code></pre><p>#一只狗的提醒：#</p>
-<pre><code>题目就是大致说公平算分的事，就是先给定一个T，
+</code></pre><h1 id="一只狗的提醒："><a href="#一只狗的提醒：" class="headerlink" title="一只狗的提醒："></a>一只狗的提醒：</h1><pre><code>题目就是大致说公平算分的事，就是先给定一个T，
 如果 |G1 - G2| ≤ T 那结果就是G1 G2平均值
 要是不符合这个条件 就看G3
 如果|G2 - G3| ≤ T 与 |G1 - G3| ≤ T 只有其中一个成立的话 就找和G3最接近的一个数，
@@ -552,7 +543,7 @@ while(scanf(&quot;%d%d%d%d%d%d&quot;,&amp;p,&amp;t,&amp;g1,&amp;g2,&amp;g3,&amp;
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">6.</span> <span class="nav-text">代码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一只狗的提醒："><span class="nav-number">7.</span> <span class="nav-text">一只狗的提醒：</span></a></li></ol></div>
             
           </div>
         </section>
