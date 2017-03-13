@@ -259,6 +259,353 @@
             
               
                 
+                <a class="post-title-link" href="/2017/03/13/九度oj-1003/" itemprop="url">
+                  九度oj-1003
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T21:19:36+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/13/九度oj-1003/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/九度oj-1003/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#题目描述：#<br>    给定两个整数A和B，其表示形式是：从个位开始，每三位数用逗号”,”隔开。<br>    现在请计算A+B的结果，并以正常形式输出。</p>
+<p>#输入：#<br>    输入包含多组数据数据，每组数据占一行，由两个整数A和B组成（-10^9 &lt; A,B &lt; 10^9）。</p>
+<p>#输出：#<br>    请计算A+B的结果，并以正常形式输出，每组数据占一行。</p>
+<p>#样例输入：#</p>
+<pre><code>-234,567,890 123,456,789
+1,234 2,345,678
+</code></pre><p>#样例输出：#</p>
+<pre><code>-111111101
+2346912
+</code></pre><p>#代码：#</p>
+<pre><code>#include &lt;stdio.h&gt;  
+#include &lt;string.h&gt;  
+   int praseStr(char s[20])  
+{  
+    int a = 0;  
+    int i;  
+    for (i=0; i&lt;strlen(s); i++)  
+    {  
+        if(s[i] == &apos;-&apos; || s[i] == &apos;,&apos;)  
+            continue;  
+        a = a*10 + s[i]-48;  
+    }  
+    if(s[0] == &apos;-&apos;)  
+        a = -a;  
+    //printf(&quot;%d\n&quot;, a);  
+    return a;  
+}  
+
+
+int main(void)  
+{  
+    char sa[20], sb[20];  
+    int a, b;  
+
+    while (scanf(&quot;%s%s&quot;, sa, sb) != EOF)  
+    {  
+        a = praseStr(sa);  
+        b = praseStr(sb);  
+        printf(&quot;%d\n&quot;, a+b);  
+    }  
+
+    return 0;  
+}  
+</code></pre><p>#一直狗的提醒：#</p>
+<pre><code>主要是先变成字符型去检测逗号和负号，一开始不知道那个减48是什么意思，
+因为&apos;0&apos;的ASCII值为48,s[i]-&apos;0&apos;把字符型转换成数字型,用哪种都行
+</code></pre>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/13/九度oj-1002/" itemprop="url">
+                  九度oj-1002
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-13T21:14:07+08:00" content="2017-03-13">
+              2017-03-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/13/九度oj-1002/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/九度oj-1002/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#题目描述：#</p>
+<pre><code>Grading hundreds of thousands of Graduate Entrance Exams is a hard work. 
+It is even harder to design a process to make the results as fair as possible. 
+One way is to assign each exam problem to 3 independent experts. If they do not agree to each other, a judge is invited to make the final decision. Now you are asked to write a program to help this process.
+For each problem, there is a full-mark P and a tolerance T(&lt;P) given. The grading rules are:
+• A problem will first be assigned to 2 experts, to obtain G1 and G2. If the difference is within the tolerance, that is, if |G1 - G2| ≤ T, this problem&apos;s grade will be the average of G1 and G2.
+• If the difference exceeds T, the 3rd expert will give G3.
+• If G3 is within the tolerance with either G1 or G2, but NOT both, then this problem&apos;s grade will be the average of G3 and the closest grade.
+• If G3 is within the tolerance with both G1 and G2, then this problem&apos;s grade will be the maximum of the three grades.
+• If G3 is within the tolerance with neither G1 nor G2, a judge will give the final grade GJ.
+</code></pre><p>#输入：#</p>
+<pre><code>Each input file may contain more than one test case.
+Each case occupies a line containing six positive integers: P, T, G1, G2, G3, and GJ, as described in the problem. It is guaranteed that all the grades are valid, that is, in the interval [0, P].
+</code></pre><p>#输出：#</p>
+<pre><code>For each test case you should output the final grade of the problem in a line. The answer must be accurate to 1 decimal place.
+</code></pre><p>#样例输入：#</p>
+<pre><code>20 2 15 13 10 18
+</code></pre><p>#样例输出：#</p>
+<pre><code>14.0
+</code></pre><p>#代码：#</p>
+<pre><code>#include&lt;stdio.h&gt;
+int main(){
+int p,t,g1,g2,g3,gj;
+float grade;
+while(scanf(&quot;%d%d%d%d%d%d&quot;,&amp;p,&amp;t,&amp;g1,&amp;g2,&amp;g3,&amp;gj)!=EOF)
+{
+    if(abs(g1-g2)&lt;=t)
+    {
+          grade=(g1+g2)/2.0;                  
+    }
+    else if(abs(g2-g3)&lt;=t&amp;&amp;abs(g1-g3)&lt;=t)
+    {
+         int max=g1;
+         if(g2&gt;max)
+              max=g2;
+         if(g3&gt;max)
+             max=g3;
+         grade=(float)max;  
+    }else if(abs(g2-g3)&gt;t&amp;&amp;abs(g1-g3)&gt;t){
+           grade=(float)gj;
+    }else{
+         if(abs(g1-g3)&gt;abs(g2-g3)){
+                grade=(g2+g3)/2.0;
+         }else{
+                grade=(g1+g3)/2.0;
+               } 
+    }
+    printf(&quot;%.1f\n&quot;,grade);
+    }
+}
+</code></pre><p>#一只狗的提醒：#</p>
+<pre><code>题目就是大致说公平算分的事，就是先给定一个T，
+如果 |G1 - G2| ≤ T 那结果就是G1 G2平均值
+要是不符合这个条件 就看G3
+如果|G2 - G3| ≤ T 与 |G1 - G3| ≤ T 只有其中一个成立的话 就找和G3最接近的一个数，
+然后两个取平均值
+比如G1 G2 G3分别是  3 6 4 因为G1比较近嘛 两个就差1 最后结果就是（3+4）/2
+如果|G2 - G3| ≤ T 与 |G1 - G3| ≤ T 都成立 就取 G1 G2 G3三个里面的最大值
+如果都不符合就取gj
+一定要看到（g1+g2）/2.0 不是2 因为他这个真的是会算很多数据 考虑的很全面 
+一开始我也以为是人家语法的问题 其实是她会测试很多数据 有一组不可以就不行，
+还有看题：The answer must be accurate to 1 decimal place. 
+精确到小数点后一位 也提示了/2.0
+</code></pre>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/03/13/九度oj-1001/" itemprop="url">
                   九度oj-1001
                 </a>
@@ -577,7 +924,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/ZIP.png" rel="gallery_cj084ll1t000pcovorf563r8s"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/ZIP.png" rel="gallery_cj0856tzs001060voenf3kczj"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/ZIP.png" itemprop="contentUrl"/>
               </a>
@@ -719,7 +1066,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png" rel="gallery_cj084ll270013covo5f29n0o7"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png" rel="gallery_cj0856u02001960vonzu6nsnk"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png" itemprop="contentUrl"/>
               </a>
@@ -861,7 +1208,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/metasploit-and-metasploitable.1280x600.jpg" rel="gallery_cj084ll2o001jcovo0e457jue"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/metasploit-and-metasploitable.1280x600.jpg" rel="gallery_cj0856u0j001n60vow3d5lix0"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/metasploit-and-metasploitable.1280x600.jpg" itemprop="contentUrl"/>
               </a>
@@ -999,7 +1346,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_cj084ll23000ycovoxr2dymcr"
+                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_cj0856tzz001560voekin0c31"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" itemprop="contentUrl"/>
               </a>
@@ -1137,7 +1484,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160727210001.png" rel="gallery_cj084ll2t001ocovo6vqteoqe"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160727210001.png" rel="gallery_cj0856u0x001u60vo16xi918r"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160727210001.png" itemprop="contentUrl"/>
               </a>
@@ -1310,267 +1657,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/24/第-2-章-：-HTTP协议/" itemprop="url">
-                  第 2 章 ： HTTP协议 
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-24T15:25:16+08:00" content="2016-07-24">
-              2016-07-24
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Kali实战-Web渗透/" itemprop="url" rel="index">
-                    <span itemprop="name">Kali实战-Web渗透</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/24/第-2-章-：-HTTP协议/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/24/第-2-章-：-HTTP协议/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/20131017115015_77260.jpg" rel="gallery_cj084ll2d0018covog1eenzhl"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://7xrpph.com1.z0.glb.clouddn.com/20131017115015_77260.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <h1 id="Http协议基础-明文"><a href="#Http协议基础-明文" class="headerlink" title="Http协议基础-明文"></a>Http协议基础-明文</h1><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>http协议本身有以下特点：</p>
-<p>七层的应用层协议。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/24/第-2-章-：-HTTP协议/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/14/第-1-章-：-概述/" itemprop="url">
-                  第 1 章 ： 概述 
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-14T12:38:21+08:00" content="2016-07-14">
-              2016-07-14
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Kali实战-Web渗透/" itemprop="url" rel="index">
-                    <span itemprop="name">Kali实战-Web渗透</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/14/第-1-章-：-概述/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/14/第-1-章-：-概述/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="课时1-Web技术发展和Web攻击面"><a href="#课时1-Web技术发展和Web攻击面" class="headerlink" title="课时1 Web技术发展和Web攻击面"></a>课时1 Web技术发展和Web攻击面</h1><h2 id="WEB技术发展"><a href="#WEB技术发展" class="headerlink" title="WEB技术发展"></a>WEB技术发展</h2><h3 id="静态WEB"><a href="#静态WEB" class="headerlink" title="静态WEB"></a>静态WEB</h3><p>很早的时候都是静态网页，工作内容以排版为主，黑客攻击针对webserver，是对IIS等进行攻击</p>
-<h3 id="动态WEB"><a href="#动态WEB" class="headerlink" title="动态WEB"></a>动态WEB</h3><h4 id="应用程序"><a href="#应用程序" class="headerlink" title="应用程序"></a>应用程序</h4><h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><h4 id="每个人看到的内容不同"><a href="#每个人看到的内容不同" class="headerlink" title="每个人看到的内容不同"></a>每个人看到的内容不同</h4><h4 id="根据用户输入返回不同结果"><a href="#根据用户输入返回不同结果" class="headerlink" title="根据用户输入返回不同结果"></a>根据用户输入返回不同结果</h4><h3 id="WEB攻击类型数几百种"><a href="#WEB攻击类型数几百种" class="headerlink" title="WEB攻击类型数几百种"></a>WEB攻击类型数几百种</h3><h4 id="本次介绍典型的几种"><a href="#本次介绍典型的几种" class="headerlink" title="本次介绍典型的几种"></a>本次介绍典型的几种</h4><h4 id="WEB攻击面"><a href="#WEB攻击面" class="headerlink" title="WEB攻击面"></a>WEB攻击面</h4><h5 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h5><h5 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h5><h5 id="WEB-SERVER"><a href="#WEB-SERVER" class="headerlink" title="WEB SERVER"></a>WEB SERVER</h5><p>客户端 - web server -database </p>
-<p>客户端 - web server - appserver -database</p>
-<h5 id="APP-SERVER"><a href="#APP-SERVER" class="headerlink" title="APP SERVER"></a>APP SERVER</h5><h5 id="WEB-APPLICATION"><a href="#WEB-APPLICATION" class="headerlink" title="WEB APPLICATION"></a>WEB APPLICATION</h5><h5 id="DATABASE"><a href="#DATABASE" class="headerlink" title="DATABASE"></a>DATABASE</h5><h5 id="BROWSER"><a href="#BROWSER" class="headerlink" title="BROWSER"></a>BROWSER</h5>
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1616,7 +1702,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
