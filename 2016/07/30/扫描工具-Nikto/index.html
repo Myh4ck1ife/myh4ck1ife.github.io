@@ -80,17 +80,26 @@
 
 
 
-<meta name="description" content="我们对目标网站进行了足够的信息收集之后，">
+<meta name="description" content="我们对目标网站进行了足够的信息收集之后，我们就要进行主动扫描，从而获得更多信息，而web上的扫描工具一般支持两种模式。
+
+代理截断模式
+直接扫描模式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="扫描工具-Nikto">
 <meta property="og:url" content="http://yoursite.com/2016/07/30/扫描工具-Nikto/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
-<meta property="og:description" content="我们对目标网站进行了足够的信息收集之后，">
+<meta property="og:description" content="我们对目标网站进行了足够的信息收集之后，我们就要进行主动扫描，从而获得更多信息，而web上的扫描工具一般支持两种模式。
+
+代理截断模式
+直接扫描模式">
 <meta property="og:image" content="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png">
-<meta property="og:updated_time" content="2016-07-30T08:10:21.870Z">
+<meta property="og:updated_time" content="2016-08-31T03:32:06.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="扫描工具-Nikto">
-<meta name="twitter:description" content="我们对目标网站进行了足够的信息收集之后，">
+<meta name="twitter:description" content="我们对目标网站进行了足够的信息收集之后，我们就要进行主动扫描，从而获得更多信息，而web上的扫描工具一般支持两种模式。
+
+代理截断模式
+直接扫描模式">
 <meta name="twitter:image" content="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png">
 
 
@@ -328,7 +337,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png" rel="gallery_ciravils1000ov4vos0xed0ly"
+                 href="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png" rel="gallery_cj083topj00114kvomniujdwc"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xrpph.com1.z0.glb.clouddn.com/QQ%E6%88%AA%E5%9B%BE20160730144604.png" itemprop="contentUrl"/>
               </a>
@@ -341,7 +350,72 @@
       
 
       
-        <p>我们对目标网站进行了足够的信息收集之后，</p>
+        <p>我们对目标网站进行了足够的信息收集之后，我们就要进行主动扫描，从而获得更多信息，而web上的扫描工具一般支持两种模式。</p>
+<ul>
+<li>代理截断模式</li>
+<li>直接扫描模式</li>
+</ul>
+<a id="more"></a>
+<h1 id="手动扫描"><a href="#手动扫描" class="headerlink" title="手动扫描"></a>手动扫描</h1><p>基本上有一个浏览器就够了，人工去点击目标的每一个页面，去提交表单。</p>
+<h1 id="自动扫面"><a href="#自动扫面" class="headerlink" title="自动扫面"></a>自动扫面</h1><p>基于字典的对其中存在的页面去爬取。</p>
+<p><strong> 扫描工具只是为了我们更好的渗透测试 </strong></p>
+<h1 id="Web-Penetration-Testing-with-Kali-Linux"><a href="#Web-Penetration-Testing-with-Kali-Linux" class="headerlink" title="Web Penetration Testing with Kali Linux"></a>Web Penetration Testing with Kali Linux</h1><p>对于初学者来说，是一本不错的工具书。缺点是设计方面比较广泛，所以每项内容不是很详细。其中一些工具在kali 2.0中也已经移除。</p>
+<h1 id="Nikto"><a href="#Nikto" class="headerlink" title="Nikto"></a>Nikto</h1><p>是Perl语言开发的开源web安全扫描器，有些扫描器只会扫描网络层和操作系统层的漏洞，大部分web扫描器不会包含这些功能，他们的重点是web应用程序代码的扫描。</p>
+<ul>
+<li>这个工具会扫描web服务器使用的软件版本，并比较可能有哪些漏洞</li>
+<li>会搜索存在安全隐患文件，比如有些安全员的将网络备份的压缩文件放在web目录下，这样通过扫描器就可以扫描，并得到这个文件，进行代码审计，带来更大的危险。</li>
+<li>还会扫描服务器配置漏洞。</li>
+<li>常见的WEB Application层面的安全隐患也会检查，例如sql注入和xss。</li>
+<li>所有的扫描器的主要任务首先是找到所有页面，早期都是通过访问返回信息来判断的，有很多服务器不遵循RFC标准，有些页面不存在也可能会返回200响应码，扫描器就会误判，后来扫描器就开始判断文件内容，通过关键字判断页面是否存在，这样其实还是存在弊端，一方面是无法将所有关键字概括全面，另一方面是不同后缀名的文件返回信息不同，比如html与jsp，所以也不好判断，而nikto会将提前所有可能存在的扩展名进行数据库存储，然后以随机文件名去提交从而判断返回信息，去除时间信息后的内容取MD5值。</li>
+<li>-no404 这个命令就不会进行上述尝试，而是直接对服务器去请求判断。准确性有所下降，但是速度会有所提升。</li>
+</ul>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>我们在终端中直接输入</p>
+<pre><code>nikto
+</code></pre><p><img src="http://i.imgur.com/DuviG4T.png" alt=""></p>
+<p>会将主要的参数进行显示，如果我们想看到更多的参数和帮助信息，我们可以使用：</p>
+<pre><code>man nikto
+</code></pre><p><img src="http://i.imgur.com/w7dILUL.png" alt=""></p>
+<h2 id="升级数据库及插件"><a href="#升级数据库及插件" class="headerlink" title="升级数据库及插件"></a>升级数据库及插件</h2><pre><code>nikto -update
+</code></pre><p>这个命令会使nikto从cirt.net升级它的数据库及插件。建议大家使用前进行升级。但是受国内运营商的限制，大部分无法进行升级。会提示：</p>
+<blockquote>
+<p>ERROR (302): Unable to get cirt.net/nikto/UPDATES/2.1.6/versions.txt</p>
+</blockquote>
+<p><img src="http://i.imgur.com/DAb6DGF.png" alt=""></p>
+<p>我们可以通过：</p>
+<p><a href="https://cirt.net/nikto/UPDATES/" target="_blank" rel="external">https://cirt.net/nikto/UPDATES/</a></p>
+<p>去下载最新及历史版本进行使用</p>
+<h2 id="查看所有插件"><a href="#查看所有插件" class="headerlink" title="查看所有插件"></a>查看所有插件</h2><p>我们可以使用</p>
+<pre><code>nikto -list-plugins
+</code></pre><p>查看插件类型</p>
+<p><img src="http://i.imgur.com/gpdsKOw.png" alt=""></p>
+<p>其中要提及的是shellshock这是一个破壳漏洞，也可以用nikto去扫描。</p>
+<h2 id="基本扫描命令"><a href="#基本扫描命令" class="headerlink" title="基本扫描命令"></a>基本扫描命令</h2><pre><code>nikto -host 目标
+</code></pre><p>我们这里用靶机进行演示：</p>
+<pre><code>nikto -host 192.168.238.136
+</code></pre><p><img src="http://i.imgur.com/NRXCiYv.png" alt=""></p>
+<p>这里我们可以看到已经开始扫描了，当然一般我们使用的时候有两种方式进行扫描：</p>
+<h3 id="URL方式"><a href="#URL方式" class="headerlink" title="URL方式"></a>URL方式</h3><pre><code>nikto -host http://192.168.238.136/dvwa/
+</code></pre><p>这里我们就可以对dvwa这个确定的目录进行扫描</p>
+<h3 id="IP-端口形式"><a href="#IP-端口形式" class="headerlink" title="IP+端口形式"></a>IP+端口形式</h3><pre><code>nikto -host 192.168.238.136 -port 80,443
+</code></pre><p>可以跟多个端口，之间用都好隔开。</p>
+<h3 id="https"><a href="#https" class="headerlink" title="https"></a>https</h3><p>它还可以对ssl，也就是https进行扫描，同样可以用上述两种方式进行扫描。</p>
+<pre><code>nikto -host www.baidu.com -port 443 -ssl
+</code></pre><p><img src="http://i.imgur.com/uSRknPs.png" alt=""></p>
+<p>默认是443端口</p>
+<p>我们可以看到端口，域名，IP，证书，以及证书加密方式和颁发者信息。</p>
+<h3 id="同时扫描多个目标"><a href="#同时扫描多个目标" class="headerlink" title="同时扫描多个目标"></a>同时扫描多个目标</h3><p>我们可以将多个目标写到一个txt文本中，进行扫描。</p>
+<pre><code>nikto -host host.txt
+</code></pre><p>文本格式：</p>
+<pre><code>192.168.1.1:80
+https://192.168.1.1:8443
+192.168.1.1
+</code></pre><p>默认是80端口</p>
+<h3 id="与nmap结合"><a href="#与nmap结合" class="headerlink" title="与nmap结合"></a>与nmap结合</h3><pre><code>nmap -p80 192.168.238.0/24 -oG - | nikto -host -
+</code></pre><p>即先用nmap 扫描在192.168.238.0/24这个网段中开启80端口的目标，输出以后用管道传输到nikto再进行详细的扫描。</p>
+<p><img src="http://i.imgur.com/1F5rZxB.png" alt=""></p>
+<p>如果提示中有No CGI的时候我们可以加上-C all参数去进行详细的目录扫描。</p>
+<h3 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h3><pre><code>nikto -host http://192.168.238.136/dvwa -useproxy http://localhost:8087
+</code></pre><h3 id="vhost"><a href="#vhost" class="headerlink" title="vhost"></a>vhost</h3><p>虚拟主机，我们一个ip上可以部署多个网站都，可以用ip区分，也可以用端口区分，还有一种方式是通过主机头区分，这里ip也相同，端口也不同，类似于一个是www.abc.com，另一个是www.bcd.com我们就可以把-host改成-vhost，后面只能用域名方式了。 </p>
 
       
     </div>
@@ -455,7 +529,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -463,7 +537,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -472,7 +546,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -501,7 +575,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#手动扫描"><span class="nav-number">1.</span> <span class="nav-text">手动扫描</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动扫面"><span class="nav-number">2.</span> <span class="nav-text">自动扫面</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Web-Penetration-Testing-with-Kali-Linux"><span class="nav-number">3.</span> <span class="nav-text">Web Penetration Testing with Kali Linux</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Nikto"><span class="nav-number">4.</span> <span class="nav-text">Nikto</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用"><span class="nav-number">5.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#升级数据库及插件"><span class="nav-number">5.1.</span> <span class="nav-text">升级数据库及插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看所有插件"><span class="nav-number">5.2.</span> <span class="nav-text">查看所有插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本扫描命令"><span class="nav-number">5.3.</span> <span class="nav-text">基本扫描命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#URL方式"><span class="nav-number">5.3.1.</span> <span class="nav-text">URL方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-端口形式"><span class="nav-number">5.3.2.</span> <span class="nav-text">IP+端口形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#https"><span class="nav-number">5.3.3.</span> <span class="nav-text">https</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同时扫描多个目标"><span class="nav-number">5.3.4.</span> <span class="nav-text">同时扫描多个目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与nmap结合"><span class="nav-number">5.3.5.</span> <span class="nav-text">与nmap结合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用代理"><span class="nav-number">5.3.6.</span> <span class="nav-text">使用代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vhost"><span class="nav-number">5.3.7.</span> <span class="nav-text">vhost</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -520,7 +594,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

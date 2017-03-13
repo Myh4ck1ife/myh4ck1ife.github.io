@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Myh4ck1ife">
 <meta property="og:description" content="0x01 起因由于跟朋友一直玩Minecraft，但是没有服务器，网上那些软件也并不靠谱，正好放假了就准备自己搭建一个。">
 <meta property="og:image" content="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png">
-<meta property="og:updated_time" content="2016-07-28T13:49:44.820Z">
+<meta property="og:updated_time" content="2016-08-08T15:06:13.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我是如何搭建mc服务器的">
 <meta name="twitter:description" content="0x01 起因由于跟朋友一直玩Minecraft，但是没有服务器，网上那些软件也并不靠谱，正好放假了就准备自己搭建一个。">
@@ -328,7 +328,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_ciravilry000kv4votz8qkcof"
+                 href="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" rel="gallery_cj083topi000z4kvodsjnyg07"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://images.liqucn.com/h014/h76/img20140517173116479_info1920X1080.png" itemprop="contentUrl"/>
               </a>
@@ -363,7 +363,6 @@
 <h3 id="建立-MC服务器"><a href="#建立-MC服务器" class="headerlink" title="建立    MC服务器"></a>建立    MC服务器</h3><h4 id="配置JAVA环境"><a href="#配置JAVA环境" class="headerlink" title="配置JAVA环境"></a>配置JAVA环境</h4><p>安装java的办法很多，大家可以自行百度，我这边选择的是本地下载好了RPM安装包，然后用winscp传到服务器上，进行安装。<br>我这边首先新建了一个java文件夹，</p>
 <p><img src="http://i.imgur.com/cZXlGUT.png" alt=""></p>
 <p>然后我们将我们在 <a href="http://www.java.com/zh_CN/download/manual.jsp" title="java下载页" target="_blank" rel="external">http://www.java.com/zh_CN/download/manual.jsp</a> 下载的java rpm包上传进去。</p>
-<p>然后因为平时我这个服务器不仅仅只是想做MC的服务器，所以我准备安装一个screen。</p>
 <p>我们接下来安装java环境：</p>
 <pre><code>cd /usr/java
 rpm -ivh jre- //此处按键盘的Tab键即可自动补全，你上传的文件名
@@ -381,7 +380,7 @@ echo &apos;export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$J
 
 echo &apos;export PATH=$PATH:$JAVA_HOME/bin&apos; &gt;&gt; /etc/profile
 </code></pre><p>我们java就配置好了</p>
-<h4 id="screen安装"><a href="#screen安装" class="headerlink" title="screen安装"></a>screen安装</h4><p>首先我们安装screen，</p>
+<h4 id="screen安装"><a href="#screen安装" class="headerlink" title="screen安装"></a>screen安装</h4><p>然后因为平时我这个服务器不仅仅只是想做MC的服务器，所以我准备安装一个screen。首先我们安装screen，</p>
 <pre><code>yum -y install screen
 </code></pre><p><img src="http://i.imgur.com/tzjTKpx.png" alt=""></p>
 <blockquote>
@@ -561,7 +560,7 @@ echo &apos;export PATH=$PATH:$JAVA_HOME/bin&apos; &gt;&gt; /etc/profile
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-count">20</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -569,7 +568,7 @@ echo &apos;export PATH=$PATH:$JAVA_HOME/bin&apos; &gt;&gt; /etc/profile
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -578,7 +577,7 @@ echo &apos;export PATH=$PATH:$JAVA_HOME/bin&apos; &gt;&gt; /etc/profile
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -626,7 +625,7 @@ echo &apos;export PATH=$PATH:$JAVA_HOME/bin&apos; &gt;&gt; /etc/profile
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
