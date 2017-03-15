@@ -90,7 +90,7 @@
 <meta property="og:description" content="题目描述：    Excel可以对一组纪录按任意指定列排序。现请你编写程序实现类似功能。
     对每个测试用例，首先输出1行“Case i:”，其中 i 是测试用例的编号（从1开始）。随后在 N 行中输出按要求排序后的结果，即：当 C=1 时，按学号递增排序；当 C=2时，按姓名的非递减字典序排序；当 C=3
 时，按成绩的非递减排序。当若干学生具有相同姓名或者相同成绩时，则按他们的学号递增排序。">
-<meta property="og:updated_time" content="2017-03-15T12:10:00.648Z">
+<meta property="og:updated_time" content="2017-03-15T12:12:47.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="九度oj-1023">
 <meta name="twitter:description" content="题目描述：    Excel可以对一组纪录按任意指定列排序。现请你编写程序实现类似功能。
@@ -413,9 +413,11 @@ while(scanf(&quot;%d&quot;,&amp;n)){
 }  
 return 0;  
 }  
-</code></pre><h1 id="作者提醒"><a href="#作者提醒" class="headerlink" title="作者提醒"></a>作者提醒</h1><pre><code>本来是一道很简单的题目，我做了好久。开始是因为C++中cin,cout超时，因为这里n最大值为100000，
+</code></pre><h1 id="作者提醒"><a href="#作者提醒" class="headerlink" title="作者提醒"></a>作者提醒</h1><pre><code>本来是一道很简单的题目，我做了好久。开始是因为C++中cin,cout超时，
+因为这里n最大值为100000，
 所以这样的输入输出必定会超时。
-果断改成C语言的输入输出，由于C不支持string的输入输出，于是改成char数组，后来又由于char数组少开了一位，没有考虑到末尾的\0. 出现了奇怪的结果。
+果断改成C语言的输入输出，由于C不支持string的输入输出，于是改成char数组，
+后来又由于char数组少开了一位，没有考虑到末尾的\0. 出现了奇怪的结果。
 还有就是排序的问题，没有采用stable_sort() 稳定排序，Wrong了好久。
 </code></pre>
       
@@ -453,6 +455,10 @@ return 0;
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/15/九度oj-1025/" rel="prev" title="九度oj-1025">
+                九度oj-1025 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -524,7 +530,7 @@ return 0;
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-count">54</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
