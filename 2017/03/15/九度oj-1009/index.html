@@ -1,0 +1,745 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目描述：判断两序列是否为同一二叉搜索树序列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九度oj-1009">
+<meta property="og:url" content="http://yoursite.com/2017/03/15/九度oj-1009/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="题目描述：判断两序列是否为同一二叉搜索树序列">
+<meta property="og:updated_time" content="2017-03-15T11:18:23.715Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="九度oj-1009">
+<meta name="twitter:description" content="题目描述：判断两序列是否为同一二叉搜索树序列">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 九度oj-1009 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                九度oj-1009
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-15T19:14:02+08:00" content="2017-03-15">
+              2017-03-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/15/九度oj-1009/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/15/九度oj-1009/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>判断两序列是否为同一二叉搜索树序列
+</code></pre><a id="more"></a>
+<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>开始一个数n，(1&lt;=n&lt;=20) 表示有n个需要判断，n= 0 的时候输入结束。
+接下去一行是一个序列，序列长度小于10，包含(0~9)的数字，没有重复数字，根据这个序列可以构造出一颗二叉搜索树。
+接下去的n行有n个序列，每个序列格式跟第一个序列一样，请判断这两个序列是否能组成同一颗二叉搜索树。
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>如果序列相同则输出YES，否则输出NO
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>2
+567432
+543267
+576342
+0
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>YES
+NO
+</code></pre><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code>#include &lt;iostream&gt;  
+#include &lt;string.h&gt;  
+using namespace std;  
+
+struct Node{  
+Node* left ;  
+Node* right ;  
+char data ;  
+Node():left(NULL),right(NULL),data(&apos;*&apos;){}  
+};  
+
+//插入有序树  
+void insertSortTree(Node * root, char data){  
+Node * p = root ;  
+Node * q = new Node ;  
+q-&gt;data = data ;  
+while(1){  
+    if(p-&gt;data&gt;data&amp;&amp;p-&gt;left)p=p-&gt;left;  
+    else if(p-&gt;data&lt;data&amp;&amp;p-&gt;right)p=p-&gt;right;  
+    else if(p-&gt;data&gt;data){  
+        p-&gt;left = q ;  
+        return;  
+    }  
+    else if(p-&gt;data&lt;data){  
+        p-&gt;right = q ;  
+        return;  
+    }  
+}  
+}  
+//销毁有序树  
+void destroySortTree(Node * root){  
+Node * p = root ;  
+if(p-&gt;left!=NULL)destroySortTree(p-&gt;left);  
+if(p-&gt;right!=NULL)destroySortTree(p-&gt;right);  
+delete p ;  
+}  
+//创建有序树  
+Node * createSortTree(char * datas , int n){  
+if(n&lt;=0)return NULL;  
+Node * root = new Node ;  
+root-&gt;data = datas[0];  
+Node * p = root ;  
+for(int i = 1 ; i &lt; n ;i++){  
+    insertSortTree(root,datas[i]);  
+}  
+return root ;  
+}  
+//用到的变量  
+char x1[11];int ct1 = 0;  
+char x2[11];int ct2 = 0;  
+//前根序遍历  
+void pre_lst(Node * root,char* x,int* index){  
+if(root)x[(*index)++] = root-&gt;data ;  
+if(root-&gt;left)pre_lst(root-&gt;left,x,index) ;  
+if(root-&gt;right)pre_lst(root-&gt;right,x,index) ;  
+}  
+//比较前根序列  
+bool cmp(int n){  
+for(int i = 0 ; i &lt; n ; i++){  
+    if(x1[i]!=x2[i])return false;  
+}  
+return true ;  
+}  
+int main()  
+{  
+int T ;  
+int n;  
+Node * root1 = NULL;  
+Node * root2 = NULL;  
+int index1 ,index2 ;  
+while(1){  
+    cin&gt;&gt;T ;if(T==0)break;  
+    cin&gt;&gt;x1 ;  
+    ct1 = strlen(x1);  
+    root1 = createSortTree(x1,ct1);  
+    index1 = 0 ;  
+    pre_lst(root1,x1,&amp;index1) ;  
+    for(int i = 0 ; i &lt; T ; i++ ){  
+        cin&gt;&gt;x2 ;  
+        ct2 = strlen(x2);  
+        root2 = createSortTree(x2,ct2);  
+        index2 = 0 ;  
+        pre_lst(root2,x2,&amp;index2) ;  
+        if(cmp(ct1)){  
+            cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;  
+        }else cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;  
+        destroySortTree(root2) ;  
+    }  
+    destroySortTree(root1) ;  
+
+}  
+
+return 0;  
+}   
+</code></pre><h1 id="作者提醒"><a href="#作者提醒" class="headerlink" title="作者提醒"></a>作者提醒</h1><pre><code>解题思路：
+
+    1.构建二叉排序树。(题目中叫做二叉搜索树，其时是一样的，就是对于二叉树的任何一个结点的所有左孩子结点都小于父结点，但是父节点都小于右孩子结点，好吧，我既然还能记得住，看来，大脑锈的不是很厉害)
+
+    2.对构建的二叉排序树尽心前序遍历，得到前序序列。（前序就是 前根序，后序就是 后根序，中序就是 中根序）
+
+    3.比较前根序列，一样就输出YES ，不一样就输出 NO
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag">#c++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/15/九度oj-1008/" rel="next" title="九度oj-1008">
+                <i class="fa fa-chevron-left"></i> 九度oj-1008
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/15/九度oj-1010/" rel="prev" title="九度oj-1010">
+                九度oj-1010 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/15/九度oj-1009/"
+           data-title="九度oj-1009" data-url="http://yoursite.com/2017/03/15/九度oj-1009/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">43</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作者提醒"><span class="nav-number">7.</span> <span class="nav-text">作者提醒</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
