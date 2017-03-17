@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/17/所有标签总结笔记/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
 <meta property="og:description" content="&amp;lt;!DOCTYPE&amp;gt;html4.01与5之间区别4.01中有三种声明 5中只有这一种">
-<meta property="og:updated_time" content="2017-03-17T11:23:07.322Z">
+<meta property="og:updated_time" content="2017-03-17T12:15:16.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="所有标签总结笔记">
 <meta name="twitter:description" content="&amp;lt;!DOCTYPE&amp;gt;html4.01与5之间区别4.01中有三种声明 5中只有这一种">
@@ -340,6 +340,28 @@
 
 相信这样你能看明白了。虽然这些链接中的media没有起到任何实际作用。
 但是他们标明了目标文档是专为什么样的平台设计的。
+</code></pre><h2 id="rel"><a href="#rel" class="headerlink" title="rel"></a>rel</h2><pre><code>这些基于连接的微格式，好处是语义明确，能完全告诉搜索引擎，这是什么，那是什么
+</code></pre><p><strong>如果你想让搜索引擎对你好，那你首先要把自己当成搜索引擎</strong></p>
+<h2 id="target"><a href="#target" class="headerlink" title="target"></a>target</h2><pre><code>&lt;a&gt; 标签的 target 属性规定在何处打开链接文档。
+如果在一个 &lt;a&gt; 标签内包含一个 target 属性，
+浏览器将会载入和显示用这个标签的 href 属性命名的、名称与这个目标吻合的框架或者窗口中的文档。
+如果这个指定名称或 id 的框架或者窗口不存在，浏览器将打开一个新的窗口，
+给这个窗口一个指定的标记，然后将新的文档载入那个窗口。
+从此以后，超链接文档就可以指向这个新的窗口。
+</code></pre><h3 id="打开新窗口"><a href="#打开新窗口" class="headerlink" title="打开新窗口"></a>打开新窗口</h3><pre><code>当用户第一次选择内容列表中的某个链接时，
+浏览器将打开一个新的窗口，将它标记为 &quot;view_window&quot;，然后在其中显示希望显示的文档内容
+。如果用户从这个内容列表中选择另一个链接，且这个 &quot;view_window&quot; 仍处于打开状态，
+浏览器就会再次将选定的文档载入那个窗口，取代刚才的那些文档。
+在整个过程中，这个包含了内容列表的窗口是用户可以访问的。
+通过单击窗口中的一个连接，可使另一个窗口的内容发生变化。
+</code></pre><h3 id="在框架中打开窗口"><a href="#在框架中打开窗口" class="headerlink" title="在框架中打开窗口"></a>在框架中打开窗口</h3><pre><code>&lt;frameset cols=&quot;200,*&quot;&gt;
+  &lt;frame src=&quot;/example/html/toc.html&quot;&gt;
+  &lt;frame src=&quot;/example/html/pref.html&quot; name=&quot;view_frame&quot;&gt;
+&lt;/frameset&gt; 
+</code></pre><p>调了很久没办法在自己的页面里正常显示，后来查到资料：</p>
+<pre><code>html5中frameset是没有效果的， 
+html5把常用的标签都封装了效果，增强了标签的结构性，头部，中间，尾部，导航栏，
+都设置了相对应的标签
 </code></pre>
       
     </div>
@@ -497,7 +519,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lt-DOCTYPE-gt"><span class="nav-number">1.</span> <span class="nav-text"><!DOCTYPE></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html4-01与5之间区别"><span class="nav-number">1.1.</span> <span class="nav-text">html4.01与5之间区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对大小写不敏感"><span class="nav-number">1.2.</span> <span class="nav-text">对大小写不敏感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有结束标签"><span class="nav-number">1.3.</span> <span class="nav-text">没有结束标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-4-01-与-HTML5-之间的差异"><span class="nav-number">2.1.</span> <span class="nav-text">HTML 4.01 与 HTML5 之间的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media"><span class="nav-number">2.2.</span> <span class="nav-text">media</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lt-DOCTYPE-gt"><span class="nav-number">1.</span> <span class="nav-text"><!DOCTYPE></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html4-01与5之间区别"><span class="nav-number">1.1.</span> <span class="nav-text">html4.01与5之间区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对大小写不敏感"><span class="nav-number">1.2.</span> <span class="nav-text">对大小写不敏感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有结束标签"><span class="nav-number">1.3.</span> <span class="nav-text">没有结束标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#"><span class="nav-number">2.</span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-4-01-与-HTML5-之间的差异"><span class="nav-number">2.1.</span> <span class="nav-text">HTML 4.01 与 HTML5 之间的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media"><span class="nav-number">2.2.</span> <span class="nav-text">media</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rel"><span class="nav-number">2.3.</span> <span class="nav-text">rel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开新窗口"><span class="nav-number">2.4.1.</span> <span class="nav-text">打开新窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在框架中打开窗口"><span class="nav-number">2.4.2.</span> <span class="nav-text">在框架中打开窗口</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
