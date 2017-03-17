@@ -90,7 +90,7 @@ DOCTYPEhtml4.01与5之间区别4.01中有三种声明 5中只有这一种">
 <meta property="og:description" content="这里就放一放自己想过后再看两眼或者当时遇到的问题吧。
 项目地址：https://github.com/Myh4ck1ife/hit_and_run
 DOCTYPEhtml4.01与5之间区别4.01中有三种声明 5中只有这一种">
-<meta property="og:updated_time" content="2017-03-17T13:12:21.276Z">
+<meta property="og:updated_time" content="2017-03-17T14:47:11.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="所有标签总结笔记">
 <meta name="twitter:description" content="这里就放一放自己想过后再看两眼或者当时遇到的问题吧。
@@ -370,6 +370,80 @@ DOCTYPEhtml4.01与5之间区别4.01中有三种声明 5中只有这一种">
 <pre><code>html5中frameset是没有效果的， 
 html5把常用的标签都封装了效果，增强了标签的结构性，头部，中间，尾部，导航栏，
 都设置了相对应的标签
+</code></pre><h1 id="applet"><a href="#applet" class="headerlink" title="applet"></a>applet</h1><p>不是很明白</p>
+<pre><code>定义了包含该 applet 的一系列版本的资源名称。
+</code></pre><p><strong>这里object的定义，而且说是必须属性，例子里都没有给</strong></p>
+<p>附篇资料明天看：<a href="http://blog.csdn.net/chentracy2008/article/details/8783097" target="_blank" rel="external">http://blog.csdn.net/chentracy2008/article/details/8783097</a></p>
+<h1 id="article"><a href="#article" class="headerlink" title="article"></a>article</h1><pre><code>&lt;article&gt; 标签规定独立的自包含内容。
+
+一篇文章应有其自身的意义，应该有可能独立于站点的其余部分对其进行分发。
+
+&lt;article&gt; 元素的潜在来源：
+
+    论坛帖子
+    报纸文章
+    博客条目
+    用户评论
+</code></pre><h1 id="aside"><a href="#aside" class="headerlink" title="aside"></a>aside</h1><pre><code>&lt;aside&gt; 标签定义其所处内容之外的内容。
+
+aside 的内容应该与附近的内容相关。
+</code></pre><h1 id="base"><a href="#base" class="headerlink" title="base"></a>base</h1><pre><code>&lt;base&gt; 标签为页面上的所有链接规定默认地址或默认目标。
+
+通常情况下，浏览器会从当前文档的 URL 中提取相应的元素来填写相对 URL 中的空白。
+
+使用 &lt;base&gt; 标签可以改变这一点。浏览器随后将不再使用当前文档的 URL，
+而使用指定的基本 URL 来解析所有的相对 URL。
+这其中包括 &lt;a&gt;、&lt;img&gt;、&lt;link&gt;、&lt;form&gt; 标签中的 URL。
+&lt;base&gt; 标签必须位于 head 元素内部。
+</code></pre><h1 id="basefont"><a href="#basefont" class="headerlink" title="basefont"></a>basefont</h1><pre><code>在 HTML 4.01 中，不赞成使用 basefont 元素的 size 属性；在 XHTML 1.0 Strict DTD 中，
+不支持 basefont 元素的 size 属性。
+
+请使用 CSS 代替。
+
+CSS 语法（在 &lt;head&gt; 部分）：&lt;style&gt;body{font-size: 10px}&lt;/style&gt;
+</code></pre><h1 id="bdi"><a href="#bdi" class="headerlink" title="bdi"></a>bdi</h1><pre><code>bdi 指的是 bidi 隔离。
+
+&lt;bdi&gt; 标签允许您设置一段文本，使其脱离其父元素的文本方向设置。
+
+在发布用户评论或其他您无法完全控制的内容时，该标签很有用。
+</code></pre><h1 id="big"><a href="#big" class="headerlink" title="big"></a>big</h1><pre><code>&lt;big&gt; 标签呈现大号字体效果。
+
+使用 &lt;big&gt; 标签可以很容易地放大字体。这简直不能再简单了：浏览器显示包含在 &lt;big&gt; 标签和其相应的 &lt;/big&gt; 标签之间的文字时，其字体比周围的文字要大一号。但是，如果文字已经是最大号字体，这个 &lt;big&gt; 标签将不起任何作用。
+
+更妙的是，可以嵌套 &lt;big&gt; 标签来放大文本。每一个 &lt;big&gt; 标签都可以使字体大一号，直到上限 7 号文本，正如字体模型所定义的那样。
+
+但是使用 &lt;big&gt; 标签的时候还是要小心，因为浏览器总是很宽大地试图去理解各种标签，对于那些不支持 &lt;big&gt; 标签的浏览器来说，它经常将其认为是粗体字标签。
+</code></pre><h1 id="blockquote"><a href="#blockquote" class="headerlink" title="blockquote"></a>blockquote</h1><pre><code>&lt;blockquote&gt; 标签定义块引用。
+
+&lt;blockquote&gt; 与 &lt;/blockquote&gt; 之间的所有文本都会从常规文本中分离出来，经常会在左、右两边进行缩进（增加外边距），而且有时会使用斜体。也就是说，块引用拥有它们自己的空间。
+</code></pre><h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><pre><code>http://www.w3school.com.cn/html5/html_5_canvas.asp
+</code></pre><h1 id="col"><a href="#col" class="headerlink" title="col"></a>col</h1><pre><code>作者：贺师俊
+链接：https://www.zhihu.com/question/42699945/answer/94710195
+来源：知乎
+著作权归作者所有，转载请联系作者获得授权。
+
+首先，CSS Selectors 4 可以这样：
+col.left-aligned || td { text-align: left }
+或
+td:nth-column(odd) { text-align: left }
+
+不过目前为止（2016年4月），没有任何一款浏览器支持“||”combinator和nth-column伪类等特性。
+
+
+下面谈点历史：
+
+之所以直接在 col 上定义样式无效，是一个老问题了。实际上HTML4定义的col上的align属性在现代浏览器上从来没有得到过良好支持（只有始于CSS时代之前的IE支持），原因很简单，因为此设计在CSS1、2乃至3的机制中都无法实现。
+
+按照CSS的模型，一个元素上的CSS样式值要么来自于匹配了自己的规则，要么来自于匹配了祖先元素的规则然后通过继承获得。所以一个cell（td/th）的text-align，要么来自于匹配td/th的规则，要么来自于tr,tbody,table等祖先元素。而col/colgroup不可能是其祖先元素。
+
+因此尽管这个需求被开发者要求了十多年，但是始终未能满足。最终还是需要通过更新CSS规范，创造新的combinator和伪类来实现。
+
+
+下面谈你这个需求：
+
+一、table元素应该用于真的表格，所谓真的表格即二维数据表。从你的需求来看，其实并不像是真的数据表。因此不建议用table元素。
+
+二、其实你可以使用 nth-child 来实现你要的效果。
 </code></pre>
       
     </div>
@@ -527,7 +601,7 @@ html5把常用的标签都封装了效果，增强了标签的结构性，头部
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">1.</span> <span class="nav-text">DOCTYPE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html4-01与5之间区别"><span class="nav-number">1.1.</span> <span class="nav-text">html4.01与5之间区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对大小写不敏感"><span class="nav-number">1.2.</span> <span class="nav-text">对大小写不敏感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有结束标签"><span class="nav-number">1.3.</span> <span class="nav-text">没有结束标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a"><span class="nav-number">2.</span> <span class="nav-text">a</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-4-01-与-HTML5-之间的差异"><span class="nav-number">2.1.</span> <span class="nav-text">HTML 4.01 与 HTML5 之间的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media"><span class="nav-number">2.2.</span> <span class="nav-text">media</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rel"><span class="nav-number">2.3.</span> <span class="nav-text">rel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开新窗口"><span class="nav-number">2.4.1.</span> <span class="nav-text">打开新窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在框架中打开窗口"><span class="nav-number">2.4.2.</span> <span class="nav-text">在框架中打开窗口</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DOCTYPE"><span class="nav-number">1.</span> <span class="nav-text">DOCTYPE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#html4-01与5之间区别"><span class="nav-number">1.1.</span> <span class="nav-text">html4.01与5之间区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对大小写不敏感"><span class="nav-number">1.2.</span> <span class="nav-text">对大小写不敏感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#没有结束标签"><span class="nav-number">1.3.</span> <span class="nav-text">没有结束标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#a"><span class="nav-number">2.</span> <span class="nav-text">a</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-4-01-与-HTML5-之间的差异"><span class="nav-number">2.1.</span> <span class="nav-text">HTML 4.01 与 HTML5 之间的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media"><span class="nav-number">2.2.</span> <span class="nav-text">media</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rel"><span class="nav-number">2.3.</span> <span class="nav-text">rel</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#target"><span class="nav-number">2.4.</span> <span class="nav-text">target</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#打开新窗口"><span class="nav-number">2.4.1.</span> <span class="nav-text">打开新窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在框架中打开窗口"><span class="nav-number">2.4.2.</span> <span class="nav-text">在框架中打开窗口</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#applet"><span class="nav-number">3.</span> <span class="nav-text">applet</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#article"><span class="nav-number">4.</span> <span class="nav-text">article</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#aside"><span class="nav-number">5.</span> <span class="nav-text">aside</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#base"><span class="nav-number">6.</span> <span class="nav-text">base</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#basefont"><span class="nav-number">7.</span> <span class="nav-text">basefont</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bdi"><span class="nav-number">8.</span> <span class="nav-text">bdi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#big"><span class="nav-number">9.</span> <span class="nav-text">big</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#blockquote"><span class="nav-number">10.</span> <span class="nav-text">blockquote</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#canvas"><span class="nav-number">11.</span> <span class="nav-text">canvas</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#col"><span class="nav-number">12.</span> <span class="nav-text">col</span></a></li></ol></div>
             
           </div>
         </section>
