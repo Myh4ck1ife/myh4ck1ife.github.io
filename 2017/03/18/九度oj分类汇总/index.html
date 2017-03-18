@@ -86,7 +86,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/18/九度oj分类汇总/index.html">
 <meta property="og:site_name" content="Myh4ck1ife">
 <meta property="og:description" content="模拟类型这类题常考，看似不难，但是对于初学者来说，用代码完整地写出题意描述中的意思还是需要多加练习">
-<meta property="og:updated_time" content="2017-03-18T15:56:14.680Z">
+<meta property="og:updated_time" content="2017-03-18T16:26:26.720Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="九度oj分类汇总">
 <meta name="twitter:description" content="模拟类型这类题常考，看似不难，但是对于初学者来说，用代码完整地写出题意描述中的意思还是需要多加练习">
@@ -553,8 +553,8 @@ debug起来很费力，所以编码前一定保持冷静和清醒。
 </code></pre><h1 id="附赠一些我经常犯的错误："><a href="#附赠一些我经常犯的错误：" class="headerlink" title="附赠一些我经常犯的错误："></a>附赠一些我经常犯的错误：</h1><pre><code>re: 数组是不是少了一位 下标越界情况是否排除？（比如a[-1]）  
 pe: 空格是不是少了多了？  
 Wa: 数据是多组还是一组 大小写 空格问题  
-OLE:最外重是否忘记了scanf()==xx  测试的//是不是没有加上  
-TLE:最外重是否忘记了scanf()==xx   
+OLE:是否忘记了scanf()==xx  测试的//是不是没有加上  
+TLE:是否忘记了scanf()==xx   
 =与==的区别  
 输入的时候&amp;别忘了！！！  
 for()是否多加了; eg: for();  
@@ -562,7 +562,141 @@ memset(a,0,sizeof(0)) （自己看看这是哪不对，给数组清零）
 图的自环 重边问题  
 是不是有遗忘了的数组未初始化  
 数据定义的类型
-</code></pre><p>本文转自：<a href="http://blog.csdn.net/wdkirchhoff/article/details/41849045" target="_blank" rel="external">http://blog.csdn.net/wdkirchhoff/article/details/41849045</a></p>
+</code></pre><h1 id="代码中可能出现的术语详解"><a href="#代码中可能出现的术语详解" class="headerlink" title="代码中可能出现的术语详解"></a>代码中可能出现的术语详解</h1><h2 id="Accepted-AC"><a href="#Accepted-AC" class="headerlink" title="Accepted (AC)  :"></a>Accepted (AC)  :</h2><pre><code>OK! Your program is correct!
+</code></pre><h2 id="Presentation-Error-PE"><a href="#Presentation-Error-PE" class="headerlink" title="Presentation Error (PE) :"></a>Presentation Error (PE) :</h2><pre><code>Output Format Error. 
+Your output format is not exactly the same as the judge&apos;s output, 
+although your answer to the problem is correct. Check your output for spaces 
+blank lines, etc. against the problem output specification.
+</code></pre><h2 id="Wrong-Answer-WA"><a href="#Wrong-Answer-WA" class="headerlink" title="Wrong Answer (WA) :"></a>Wrong Answer (WA) :</h2><pre><code>Correct solution not reached for the inputs. 
+The inputs and outputs that we use to test the programs are not public. 
+Some problems with special judge may not reply &quot;Presentation Error&quot;,
+replaced by &quot;Wrong Answer&quot;.
+</code></pre><h2 id="Runtime-Error-RE"><a href="#Runtime-Error-RE" class="headerlink" title="Runtime Error (RE) :"></a>Runtime Error (RE) :</h2><pre><code>Your program failed during the execution 
+(segmentation fault, floating point exception...). 
+The exact cause is reported except Java.
+</code></pre><h2 id="Time-Limit-Exceeded-TLE"><a href="#Time-Limit-Exceeded-TLE" class="headerlink" title="Time Limit Exceeded (TLE) :"></a>Time Limit Exceeded (TLE) :</h2><pre><code>Your program tried to run with too much CPU time.
+</code></pre><h2 id="Memory-Limit-Exceeded-MLE"><a href="#Memory-Limit-Exceeded-MLE" class="headerlink" title="Memory Limit Exceeded (MLE) :"></a>Memory Limit Exceeded (MLE) :</h2><pre><code>Your program tried to use more memory than the judge default settings.
+</code></pre><h2 id="Output-Limit-Exceeded-OLE"><a href="#Output-Limit-Exceeded-OLE" class="headerlink" title="Output Limit Exceeded (OLE):"></a>Output Limit Exceeded (OLE):</h2><pre><code>Your program tried to write too much. 
+This usually occurs if it goes into an infinite loop. 
+The output limit is usually 256K, 512K, or 1M bytes.
+</code></pre><h2 id="Compilation-Error-CE"><a href="#Compilation-Error-CE" class="headerlink" title="Compilation Error (CE) :"></a>Compilation Error (CE) :</h2><pre><code>The compiler (gcc/g++/gpc/fpc/javac) could not compile your program. 
+Of course, warning messages are not error messages. 
+Click the link at the judge reply to see the actual error message.
+</code></pre><h2 id="Restricted-Function-RF"><a href="#Restricted-Function-RF" class="headerlink" title="Restricted Function (RF):"></a>Restricted Function (RF):</h2><pre><code>Your program tried to call restricted functions. 
+For example, maybe you have tried to open a file which is forbidden on OJ. 
+It may also caused by Runtime Error 
+(e.g. maybe a pointer point to wrong funtion), 
+just consider it as Runtime Error in this situation.
+</code></pre><h2 id="Internal-Error-IE"><a href="#Internal-Error-IE" class="headerlink" title="Internal Error (IE):"></a>Internal Error (IE):</h2><pre><code>The Judge system cause an internal error, please submit it later.
+</code></pre><h1 id="看见英文想吐就看我"><a href="#看见英文想吐就看我" class="headerlink" title="看见英文想吐就看我"></a>看见英文想吐就看我</h1><p><strong>还是练习练习吧，你知道六级给你查分的时候，我多紧张吗？</strong></p>
+<p>但是做题已经很不容易了，帮你一次吧。</p>
+<h2 id="AC"><a href="#AC" class="headerlink" title="AC"></a>AC</h2><pre><code>没毛病
+</code></pre><h2 id="PE"><a href="#PE" class="headerlink" title="PE"></a>PE</h2><pre><code>输出格式错了，是不是空格多了少了
+</code></pre><h2 id="WA"><a href="#WA" class="headerlink" title="WA"></a>WA</h2><pre><code>答案不对，是不是数据考虑不全面，多了少了，空格，大小写
+</code></pre><h2 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h2><pre><code>运行的时候错了，是不是数组越界了？还是少了一位啊
+</code></pre><h2 id="TLE"><a href="#TLE" class="headerlink" title="TLE"></a>TLE</h2><pre><code>CPU超算了，最外重是否忘记了scanf()==xx
+</code></pre><h2 id="MLE"><a href="#MLE" class="headerlink" title="MLE"></a>MLE</h2><pre><code>占了太多内存了
+</code></pre><h2 id="OLE"><a href="#OLE" class="headerlink" title="OLE"></a>OLE</h2><pre><code>写太多了？是否忘记了scanf()==xx  测试的//是不是没有加上 
+</code></pre><h2 id="CE"><a href="#CE" class="headerlink" title="CE"></a>CE</h2><pre><code>不能编译，是警告，点链接能看到原因
+</code></pre><h2 id="RF"><a href="#RF" class="headerlink" title="RF"></a>RF</h2><pre><code>调用受限函数？
+</code></pre><h2 id="IE"><a href="#IE" class="headerlink" title="IE"></a>IE</h2><pre><code>网络问题，稍后提交？
+</code></pre><h1 id="做题流程总结"><a href="#做题流程总结" class="headerlink" title="做题流程总结"></a>做题流程总结</h1><pre><code>所以我总结了一下对于刚接触九度OJ的同学算是一个入门的小教程。
+如果以前接触过acm的同学可以不用看了。
+
+1.网址：ac.jobdu.com
+
+2.如果以前是王道论坛的用户，直接输入那个账号和密码就行。
+  如果不是的话，可以在首页新注册一个。
+
+3.做题：在首页上方第二栏“在线练习”中点击“题库”，题目列表就出来了。
+4.题目的大体框架：
+(1)题目描述：会有一些小故事，或者要求你完成的任务。
+(2)输入：对于输入数据的格式及范围的描述。
+(3)输出：对于输出数据的格式及范围的描述。
+(4)样例输入：给出一个输入数据的例子。
+(5)样例输出：给出一个输出数据的例子，
+自己写完程序后可以拿“样例输入”中的例子测试一下自己的程序，看输出跟“样例输出”的结果是否一样
+一样的话就可以提交程序了。如果不一样，需要改程序直到一样。
+(6)提示：一般有一些需要注意的地方这里会说出来。
+
+5.程序的大体框架：
+拿1000：计算a+b举个例子，
+(1)一般常用到的头文件入下：
+#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;algorithm&gt;//算法库，有些排序程序会用到
+#include&lt;math.h&gt;//一些数学的函数会用到这个库
+#include&lt;string.h&gt;//字符串处理的时候会用到
+using namespace std;
+这些做一般的题目就都够了，有些题目也可以不用把这些头文件全部添加进去，
+不过我一般的做法是直接全加进去，反正不花钱，哈哈。
+(2)输入的时候需要注意，一般题目都是有多组测试样例，所以需要循环输入。
+比如1000这道题目输入a和b的时候，
+C++：        while(cin &gt;&gt; a &gt;&gt; b)
+        {...}
+C：        while(scanf(&quot;%d %d&quot;, &amp;a, &amp;b) != EOF)
+        {...}
+然后在大括号里面按照题目要求写程序就可以了。
+(3)输出：有的题目的输出有可能不是只让输出数字的答案，
+就按照它的要求加上需要输出的一些字符就行，
+比如：1046那道题目，printf(&quot;max=%d&quot;, &amp;ans);就行。
+(4)1000：计算a+b的完整代码(以后写题目可以作为参考，基本框架这里就有了)
+(对了，主函数main的返回值必须为int，然后在程序中return 0就行。)
+C++版本：
+#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;math.h&gt;
+#include&lt;string.h&gt;
+using namespace std;
+
+int main()
+{
+        int a, b;
+        while(cin &gt;&gt; a &gt;&gt; b)
+        {
+                int ans = a+b;
+                cout &lt;&lt; ans &lt;&lt; endl;
+        }
+
+        return 0;
+}
+C版本：
+#include&lt;iostream&gt;
+#include&lt;stdio.h&gt;
+#include&lt;stdlib.h&gt;
+#include&lt;algorithm&gt;
+#include&lt;math.h&gt;
+#include&lt;string.h&gt;
+using namespace std;
+
+int main()
+{
+        int a, b;
+        while(scanf(&quot;%d %d&quot;, &amp;a, &amp;b) != EOF)
+        {
+                int ans = a+b;
+                printf(&quot;%d\n&quot;, ans);
+        }
+
+        return 0;
+}
+
+6.题目写完后，点“提交就行了”，可以选择语言，在代码框中粘贴上你的代码，
+点“submit”就可以提交了。稍等一下刷新一下页面就能出现你的题目的返回结果了，
+一般返回结果会有以下几种情况：
+(1)Accepted : 程序通过!
+(2)Running &amp; Judging: 正在运行和判断.
+(3)Compiling : 正在编译.
+(4)Presentation Error : 答案基本正确，但是格式不对。
+(5)Wrong Answer : 答案不对，仅仅通过样例数据的测试并不一定是正确答案，
+一定还有你没想到的地方.
+这几个是比较常见的，还有一些返回结果可能以后做题会遇到，到时候再说就行。
+</code></pre><p>本文参考：</p>
+<p><a href="http://blog.csdn.net/wdkirchhoff/article/details/41849045" target="_blank" rel="external">http://blog.csdn.net/wdkirchhoff/article/details/41849045</a></p>
+<p><a href="http://www.cskaoyan.com/thread-79419-1-1.html" target="_blank" rel="external">http://www.cskaoyan.com/thread-79419-1-1.html</a></p>
 <p>本分类所有文章均为她复试准备刷题之用，多处借鉴网络博客大神思路代码，如有侵犯，请务必联系本人，做出处注明以及事宜商谈，如有冒昧，多多包涵。</p>
 
       
@@ -717,7 +851,7 @@ memset(a,0,sizeof(0)) （自己看看这是哪不对，给数组清零）
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模拟类型"><span class="nav-number">1.</span> <span class="nav-text">模拟类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串处理"><span class="nav-number">2.</span> <span class="nav-text">字符串处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数学问题："><span class="nav-number">3.</span> <span class="nav-text">数学问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#质数的判断："><span class="nav-number">3.1.</span> <span class="nav-text">质数的判断：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公约数公倍数："><span class="nav-number">3.2.</span> <span class="nav-text">公约数公倍数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的一些问题："><span class="nav-number">3.3.</span> <span class="nav-text">矩阵的一些问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进制转换"><span class="nav-number">3.4.</span> <span class="nav-text">进制转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精度计算"><span class="nav-number">3.5.</span> <span class="nav-text">高精度计算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的问题："><span class="nav-number">4.</span> <span class="nav-text">数组的问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的练习-："><span class="nav-number">5.</span> <span class="nav-text">栈的练习 #：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的练习："><span class="nav-number">6.</span> <span class="nav-text">队列的练习：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排序的练习："><span class="nav-number">7.</span> <span class="nav-text">排序的练习：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的排序问题："><span class="nav-number">7.1.</span> <span class="nav-text">简单的排序问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序："><span class="nav-number">7.2.</span> <span class="nav-text">归并排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序："><span class="nav-number">7.3.</span> <span class="nav-text">堆排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉排序："><span class="nav-number">7.4.</span> <span class="nav-text">二叉排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串排序："><span class="nav-number">7.5.</span> <span class="nav-text">字符串排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多级排序"><span class="nav-number">7.6.</span> <span class="nav-text">多级排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表、指针的问题："><span class="nav-number">8.</span> <span class="nav-text">链表、指针的问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树的练习"><span class="nav-number">9.</span> <span class="nav-text">树的练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树建树、遍历："><span class="nav-number">9.1.</span> <span class="nav-text">二叉树建树、遍历：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树概念的考察："><span class="nav-number">9.2.</span> <span class="nav-text">二叉树概念的考察：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉排序树的建树遍历："><span class="nav-number">9.3.</span> <span class="nav-text">二叉排序树的建树遍历：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#霍夫曼树"><span class="nav-number">9.4.</span> <span class="nav-text">霍夫曼树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-number">10.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图的概念问题："><span class="nav-number">10.1.</span> <span class="nav-text">图的概念问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最短路径问题"><span class="nav-number">10.2.</span> <span class="nav-text">最短路径问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Djs"><span class="nav-number">10.2.1.</span> <span class="nav-text">Djs:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fly"><span class="nav-number">10.2.2.</span> <span class="nav-text">Fly:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并查集的题"><span class="nav-number">10.2.3.</span> <span class="nav-text">并查集的题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小生成树："><span class="nav-number">10.2.4.</span> <span class="nav-text">最小生成树：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的搜索："><span class="nav-number">10.3.</span> <span class="nav-text">图的搜索：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#宽搜："><span class="nav-number">10.3.1.</span> <span class="nav-text">宽搜：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深搜："><span class="nav-number">10.3.2.</span> <span class="nav-text">深搜：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单递归："><span class="nav-number">11.</span> <span class="nav-text">简单递归：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单的递归和递推的区别在哪？"><span class="nav-number">12.</span> <span class="nav-text">简单的递归和递推的区别在哪？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单递归总是超时怎么办"><span class="nav-number">13.</span> <span class="nav-text">简单递归总是超时怎么办 ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#序列问题："><span class="nav-number">14.</span> <span class="nav-text">序列问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">14.1.</span> <span class="nav-text">基础:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背包问题："><span class="nav-number">14.2.</span> <span class="nav-text">背包问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-1背包："><span class="nav-number">14.2.1.</span> <span class="nav-text">0-1背包：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包："><span class="nav-number">14.2.2.</span> <span class="nav-text">完全背包：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包和0-1背包求解的区别？"><span class="nav-number">14.2.3.</span> <span class="nav-text">完全背包和0-1背包求解的区别？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不是经验的经验："><span class="nav-number">15.</span> <span class="nav-text">不是经验的经验：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附赠一些我经常犯的错误："><span class="nav-number">16.</span> <span class="nav-text">附赠一些我经常犯的错误：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模拟类型"><span class="nav-number">1.</span> <span class="nav-text">模拟类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串处理"><span class="nav-number">2.</span> <span class="nav-text">字符串处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数学问题："><span class="nav-number">3.</span> <span class="nav-text">数学问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#质数的判断："><span class="nav-number">3.1.</span> <span class="nav-text">质数的判断：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公约数公倍数："><span class="nav-number">3.2.</span> <span class="nav-text">公约数公倍数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#矩阵的一些问题："><span class="nav-number">3.3.</span> <span class="nav-text">矩阵的一些问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进制转换"><span class="nav-number">3.4.</span> <span class="nav-text">进制转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精度计算"><span class="nav-number">3.5.</span> <span class="nav-text">高精度计算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数组的问题："><span class="nav-number">4.</span> <span class="nav-text">数组的问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栈的练习-："><span class="nav-number">5.</span> <span class="nav-text">栈的练习 #：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#队列的练习："><span class="nav-number">6.</span> <span class="nav-text">队列的练习：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排序的练习："><span class="nav-number">7.</span> <span class="nav-text">排序的练习：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单的排序问题："><span class="nav-number">7.1.</span> <span class="nav-text">简单的排序问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序："><span class="nav-number">7.2.</span> <span class="nav-text">归并排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆排序："><span class="nav-number">7.3.</span> <span class="nav-text">堆排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉排序："><span class="nav-number">7.4.</span> <span class="nav-text">二叉排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串排序："><span class="nav-number">7.5.</span> <span class="nav-text">字符串排序：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多级排序"><span class="nav-number">7.6.</span> <span class="nav-text">多级排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#链表、指针的问题："><span class="nav-number">8.</span> <span class="nav-text">链表、指针的问题：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树的练习"><span class="nav-number">9.</span> <span class="nav-text">树的练习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树建树、遍历："><span class="nav-number">9.1.</span> <span class="nav-text">二叉树建树、遍历：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉树概念的考察："><span class="nav-number">9.2.</span> <span class="nav-text">二叉树概念的考察：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二叉排序树的建树遍历："><span class="nav-number">9.3.</span> <span class="nav-text">二叉排序树的建树遍历：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#霍夫曼树"><span class="nav-number">9.4.</span> <span class="nav-text">霍夫曼树</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-number">10.</span> <span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#图的概念问题："><span class="nav-number">10.1.</span> <span class="nav-text">图的概念问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最短路径问题"><span class="nav-number">10.2.</span> <span class="nav-text">最短路径问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Djs"><span class="nav-number">10.2.1.</span> <span class="nav-text">Djs:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fly"><span class="nav-number">10.2.2.</span> <span class="nav-text">Fly:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并查集的题"><span class="nav-number">10.2.3.</span> <span class="nav-text">并查集的题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小生成树："><span class="nav-number">10.2.4.</span> <span class="nav-text">最小生成树：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的搜索："><span class="nav-number">10.3.</span> <span class="nav-text">图的搜索：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#宽搜："><span class="nav-number">10.3.1.</span> <span class="nav-text">宽搜：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深搜："><span class="nav-number">10.3.2.</span> <span class="nav-text">深搜：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单递归："><span class="nav-number">11.</span> <span class="nav-text">简单递归：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单的递归和递推的区别在哪？"><span class="nav-number">12.</span> <span class="nav-text">简单的递归和递推的区别在哪？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简单递归总是超时怎么办"><span class="nav-number">13.</span> <span class="nav-text">简单递归总是超时怎么办 ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#序列问题："><span class="nav-number">14.</span> <span class="nav-text">序列问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">14.1.</span> <span class="nav-text">基础:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背包问题："><span class="nav-number">14.2.</span> <span class="nav-text">背包问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-1背包："><span class="nav-number">14.2.1.</span> <span class="nav-text">0-1背包：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包："><span class="nav-number">14.2.2.</span> <span class="nav-text">完全背包：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全背包和0-1背包求解的区别？"><span class="nav-number">14.2.3.</span> <span class="nav-text">完全背包和0-1背包求解的区别？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#不是经验的经验："><span class="nav-number">15.</span> <span class="nav-text">不是经验的经验：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附赠一些我经常犯的错误："><span class="nav-number">16.</span> <span class="nav-text">附赠一些我经常犯的错误：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码中可能出现的术语详解"><span class="nav-number">17.</span> <span class="nav-text">代码中可能出现的术语详解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Accepted-AC"><span class="nav-number">17.1.</span> <span class="nav-text">Accepted (AC)  :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Presentation-Error-PE"><span class="nav-number">17.2.</span> <span class="nav-text">Presentation Error (PE) :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wrong-Answer-WA"><span class="nav-number">17.3.</span> <span class="nav-text">Wrong Answer (WA) :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runtime-Error-RE"><span class="nav-number">17.4.</span> <span class="nav-text">Runtime Error (RE) :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Time-Limit-Exceeded-TLE"><span class="nav-number">17.5.</span> <span class="nav-text">Time Limit Exceeded (TLE) :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-Limit-Exceeded-MLE"><span class="nav-number">17.6.</span> <span class="nav-text">Memory Limit Exceeded (MLE) :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output-Limit-Exceeded-OLE"><span class="nav-number">17.7.</span> <span class="nav-text">Output Limit Exceeded (OLE):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Compilation-Error-CE"><span class="nav-number">17.8.</span> <span class="nav-text">Compilation Error (CE) :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Restricted-Function-RF"><span class="nav-number">17.9.</span> <span class="nav-text">Restricted Function (RF):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internal-Error-IE"><span class="nav-number">17.10.</span> <span class="nav-text">Internal Error (IE):</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#看见英文想吐就看我"><span class="nav-number">18.</span> <span class="nav-text">看见英文想吐就看我</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AC"><span class="nav-number">18.1.</span> <span class="nav-text">AC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PE"><span class="nav-number">18.2.</span> <span class="nav-text">PE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WA"><span class="nav-number">18.3.</span> <span class="nav-text">WA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RE"><span class="nav-number">18.4.</span> <span class="nav-text">RE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TLE"><span class="nav-number">18.5.</span> <span class="nav-text">TLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MLE"><span class="nav-number">18.6.</span> <span class="nav-text">MLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OLE"><span class="nav-number">18.7.</span> <span class="nav-text">OLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CE"><span class="nav-number">18.8.</span> <span class="nav-text">CE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RF"><span class="nav-number">18.9.</span> <span class="nav-text">RF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IE"><span class="nav-number">18.10.</span> <span class="nav-text">IE</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#做题流程总结"><span class="nav-number">19.</span> <span class="nav-text">做题流程总结</span></a></li></ol></div>
             
           </div>
         </section>
