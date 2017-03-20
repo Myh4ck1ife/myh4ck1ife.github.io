@@ -1,0 +1,771 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目描述：给定一个数n，要求判断其是否为素数（0,1，负数都是非素数）。
+输入：测试数据有多组，每组输入一个数n。
+输出：对于每组输入,若是素数则输出yes，否则输入no。
+样例输入：13
+样例输出：yes
+代码#include &amp;lt;iostream&amp;gt;
+using namespace std;
+bool IS(int n){
+    for(int i=2;i*i&amp;lt;=n;i++){">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九度oj-1047">
+<meta property="og:url" content="http://yoursite.com/2017/03/20/九度oj-1047/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="题目描述：给定一个数n，要求判断其是否为素数（0,1，负数都是非素数）。
+输入：测试数据有多组，每组输入一个数n。
+输出：对于每组输入,若是素数则输出yes，否则输入no。
+样例输入：13
+样例输出：yes
+代码#include &amp;lt;iostream&amp;gt;
+using namespace std;
+bool IS(int n){
+    for(int i=2;i*i&amp;lt;=n;i++){">
+<meta property="og:image" content="http://i.imgur.com/z91htxO.png">
+<meta property="og:updated_time" content="2017-03-20T07:56:26.708Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="九度oj-1047">
+<meta name="twitter:description" content="题目描述：给定一个数n，要求判断其是否为素数（0,1，负数都是非素数）。
+输入：测试数据有多组，每组输入一个数n。
+输出：对于每组输入,若是素数则输出yes，否则输入no。
+样例输入：13
+样例输出：yes
+代码#include &amp;lt;iostream&amp;gt;
+using namespace std;
+bool IS(int n){
+    for(int i=2;i*i&amp;lt;=n;i++){">
+<meta name="twitter:image" content="http://i.imgur.com/z91htxO.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 九度oj-1047 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                九度oj-1047
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-20T15:44:32+08:00" content="2017-03-20">
+              2017-03-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/20/九度oj-1047/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/20/九度oj-1047/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>给定一个数n，要求判断其是否为素数（0,1，负数都是非素数）。
+</code></pre><h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>测试数据有多组，每组输入一个数n。
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>对于每组输入,若是素数则输出yes，否则输入no。
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>13
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>yes
+</code></pre><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code>#include &lt;iostream&gt;
+using namespace std;
+bool IS(int n){
+    for(int i=2;i*i&lt;=n;i++){
+        if(n%i==0){
+            return false;
+        }
+    }
+    return true;
+}
+int main(){
+    int n;
+    while(cin&gt;&gt;n){
+        int flag = 1;
+        if(n&lt;0 || n==0 ||n==1){
+            cout&lt;&lt;&quot;no&quot;&lt;&lt;endl;
+            flag = 0;
+        }
+        if(n==2){
+            cout&lt;&lt;&quot;yes&quot;&lt;&lt;endl;
+            flag = 0;
+        }
+        if(flag){
+            if(IS(n)){
+                cout&lt;&lt;&quot;yes&quot;&lt;&lt;endl;
+            }
+            else{
+                cout&lt;&lt;&quot;no&quot;&lt;&lt;endl;
+            }
+        }
+    }
+    return 0;
+}
+</code></pre><h1 id="一只狗的提醒"><a href="#一只狗的提醒" class="headerlink" title="一只狗的提醒"></a>一只狗的提醒</h1><pre><code>网上都说这个题目水，但是我还是多翻了几个，有个人用java做的，他有两种方法，我也给你弄过来了。
+</code></pre><h1 id="java"><a href="#java" class="headerlink" title="java"></a>java</h1><h2 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h2><pre><code>试除法，把每一个比它小的数都除一遍
+</code></pre><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><pre><code>import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner cin = new Scanner(System.in);
+        int a;
+        boolean isPrime;
+        while(cin.hasNext()){
+            a = cin.nextInt();
+            isPrime = true;
+            if(a &lt; 2)//这里容易错，2是素数
+                isPrime = false;
+            else{
+                for(int i = 2 ; i &lt; a ; i++){
+                    if((a % i) == 0){
+                        isPrime = false;
+                        break;
+                    }                   
+                }
+            }
+            if(isPrime == true)
+                System.out.println(&quot;yes&quot;);
+            else
+                System.out.println(&quot;no&quot;); 
+        }
+    }
+}
+</code></pre><p><strong>改进：减少几个循环，只需除到√m即可<br>（原因：因为如果m能被2~m-1之间任一整数整除，其二个因子必定有一个小于或等于√m，另一个大于或等于√m）</strong></p>
+<pre><code>for(int i = 2 ; i &lt;= Math.sqrt(a) ; i++){
+</code></pre><h2 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h2><pre><code>费马小定理+素数表
+费马小定理：对于两个互质的素数N和P，必有：N^(P-1)%P=1
+问题来了，当N和P很大时，乘方运算结果很大，而int最大只有32位，怎么办？
+这时，可以把Y个X相乘再取模的过程分解开来，
+比如：(17^25)%29则可分解为：( ( 17 * 17 ) % 29 * ( 17 * 17 ) % 29 * ……
+这就是著名的“蒙格马利”快速幂模算法！
+还要用到积模分解公式：
+设有X、Y和Z三个正整数，则必有：(X*Y)%Z=((X%Z)*(Y%Z))%Z
+
+对于给定的N，从素数表中取出任意的素数对其进行费马测试，如果取了很多个素数，N仍未测试失败，
+那么则认为N是素数。当然，测试次数越多越准确，但一般来讲50次就足够了。
+
+参考：http://blog.csdn.net/arvonzhang/article/details/8564836
+和http://www.cnblogs.com/Knuth/archive/2009/09/04/1559949.html
+题目拓展：
+
+输入自然数n，要得到自然数n以内的全部素数
+
+筛选法。即埃拉托斯特尼筛法：要得到自然数n以内的全部素数，
+必须把不大于√n的所有素数的倍数剔除，剩下的就是素数。
+
+算法如下： 
+</code></pre><p><img src="http://i.imgur.com/z91htxO.png" alt=""></p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><pre><code>import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner cin = new Scanner(System.in);
+        int n = cin.nextInt();
+        int m = (int)Math.ceil(Math.sqrt(n));
+        //初始化数组值为0  0表示是素数，1表示不是素数
+        int[] arr = new int[n];
+        for(int i= 2 ; i &lt; m ; i++){
+            if(arr[i] == 0){
+                for(int j = 2*i ; j &lt; n ; j = j+i){
+                    arr[j] = 1;
+                }
+            }  
+        }
+        //输出结果
+       for(int k = 2 ; k &lt; n ; k++){
+            if(arr[k] == 0){
+                System.out.print(k + &quot; &quot;);
+            }
+       }
+    }
+}
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag">#c++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/20/九度oj-1046/" rel="next" title="九度oj-1046">
+                <i class="fa fa-chevron-left"></i> 九度oj-1046
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/20/九度oj-1048/" rel="prev" title="九度oj-1048">
+                九度oj-1048 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/20/九度oj-1047/"
+           data-title="九度oj-1047" data-url="http://yoursite.com/2017/03/20/九度oj-1047/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">74</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码"><span class="nav-number">6.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一只狗的提醒"><span class="nav-number">7.</span> <span class="nav-text">一只狗的提醒</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java"><span class="nav-number">8.</span> <span class="nav-text">java</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一种方法"><span class="nav-number">8.1.</span> <span class="nav-text">第一种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-1"><span class="nav-number">8.1.1.</span> <span class="nav-text">代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种方法"><span class="nav-number">8.2.</span> <span class="nav-text">第二种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码-2"><span class="nav-number">8.2.1.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
