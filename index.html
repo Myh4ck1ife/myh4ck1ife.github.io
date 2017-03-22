@@ -328,33 +328,13 @@
 
       
         
-          
-            <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>设a、b、c均是0到9之间的数字，abc、bcc是两个三位数，且有：abc+bcc=532。求满足条件的所有a、b、c的值。
-</code></pre><h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>题目没有任何输入。
-</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>请输出所有满足题目条件的a、b、c的值。
-a、b、c之间用空格隔开。
-每个输出占一行。
-</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code>#include &lt;iostream&gt;
-using namespace std;
-int main(){
-    for(int a=1;a&lt;=9;a++){
-        for(int b=1;b&lt;=9;b++){
-            int c = (532-100*a-110*b);
-            if(c%12==0){
-                c/=12;
-            }
-            else{
-                continue;
-            }
-            if(a!=b &amp;&amp;a!=c&amp;&amp;b!=c &amp;&amp;c&gt;0){
-                cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;&quot; &quot;&lt;&lt;c&lt;&lt;endl;
-            }
-        }
-    }
-    return 0;
-}
+          <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>设a、b、c均是0到9之间的数字，abc、bcc是两个三位数，且有：abc+bcc=532。求满足条件的所有a、b、c的值。
 </code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/22/九度oj-1059/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -471,37 +451,13 @@ int main(){
 
       
         
-          
-            <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>输入任意4个字符(如：abcd)， 并按反序输出(如：dcba)
-</code></pre><h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>题目可能包含多组用例，每组用例占一行，包含4个任意的字符。
-</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>对于每组输入,请输出一行反序后的字符串。
-具体可见样例。
-</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>Upin
-cvYj
-WJpw
-cXOA
-</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>nipU
-jYvc
-wpJW
-AOXc
-</code></pre><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre><code>#include&lt;stdlib.h&gt;  
-#include&lt;stdio.h&gt;  
-int main()  
-{  
-    char a[5];  
-    int i;  
-    while(scanf(&quot;%s&quot;,a)!=EOF)  
-    {  
-        for(i=strlen(a)-1;i&gt;=0;i--)  
-        {  
-            printf(&quot;%c&quot;,a[i]);  
-        }  
-        printf(&quot;\n&quot;);  
-    }  
-    return 0;  
-}
+          <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>输入任意4个字符(如：abcd)， 并按反序输出(如：dcba)
 </code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/22/九度oj-1058/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -618,53 +574,13 @@ int main()
 
       
         
-          
-            <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>输入20个数，每个数都在1-10之间，求1-10中的众数（众数就是出现次数最多的数，如果存在一样多次数的众数，则输出权值较小的那一个）。
-</code></pre><h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>测试数据有多组，每组输入20个1-10之间的数。
-</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>对于每组输入,请输出1-10中的众数。
-</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>5 1 5 10 3 5 3 4 8 6 8 3 6 5 10 7 10 2 6 2 
-</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>5
-</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code>#include&lt;iostream&gt;  
-#include&lt;stdio.h&gt;  
-using namespace std;  
-
-int main()  
-{  
-
-    while (1)  
-    {  
-        int num = 0;    //众数  
-        int a[11] = {0};  
-
-        //输入数据  
-        for (int i = 0; i &lt; 20; i ++)  
-        {  
-            if (scanf(&quot;%d&quot;, &amp;num) == EOF)  
-                return 0;  
-            a[num]++;  
-        }  
-
-        for (int i = 1; i &lt; 11; i ++)  
-        {  
-            if (a[i] &gt; a[num])  
-            {  
-                num = i;  
-            }  
-            else if(a[i] == a[num])  
-            {  
-                if (i &lt; num)  
-                {  
-                    num = i;    //相等时输出权值小的  
-                }  
-            }  
-
-        }  
-        cout&lt;&lt;num&lt;&lt;endl;  
-    }  
-    return 0;  
-}  
+          <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>输入20个数，每个数都在1-10之间，求1-10中的众数（众数就是出现次数最多的数，如果存在一样多次数的众数，则输出权值较小的那一个）。
 </code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/03/21/九度oj-1057/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
