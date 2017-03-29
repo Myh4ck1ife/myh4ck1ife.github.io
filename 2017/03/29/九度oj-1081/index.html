@@ -1,0 +1,727 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目描述：给定a0,a1,以及an=p*a(n-1) + q*a(n-2)中的p,q。这里n &amp;gt;= 2。 求第k个数对10000的模。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九度oj-1081">
+<meta property="og:url" content="http://yoursite.com/2017/03/29/九度oj-1081/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="题目描述：给定a0,a1,以及an=p*a(n-1) + q*a(n-2)中的p,q。这里n &amp;gt;= 2。 求第k个数对10000的模。">
+<meta property="og:image" content="http://www.rritw.com/uploads/allimg/2012-08-25/1345734841_2733.jpg">
+<meta property="og:image" content="http://www.rritw.com/uploads/allimg/2012-08-25/1345734530_4551.jpg">
+<meta property="og:image" content="http://www.rritw.com/uploads/allimg/2012-08-25/1345735509_9878.jpg">
+<meta property="og:updated_time" content="2017-03-29T15:15:56.926Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="九度oj-1081">
+<meta name="twitter:description" content="题目描述：给定a0,a1,以及an=p*a(n-1) + q*a(n-2)中的p,q。这里n &amp;gt;= 2。 求第k个数对10000的模。">
+<meta name="twitter:image" content="http://www.rritw.com/uploads/allimg/2012-08-25/1345734841_2733.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 九度oj-1081 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                九度oj-1081
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-29T23:02:08+08:00" content="2017-03-29">
+              2017-03-29
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/29/九度oj-1081/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/29/九度oj-1081/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>给定a0,a1,以及an=p*a(n-1) + q*a(n-2)中的p,q。这里n &gt;= 2。 求第k个数对10000的模。
+</code></pre><a id="more"></a>
+<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>输入包括5个整数：a0、a1、p、q、k。
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>第k个数a(k)对10000的模。
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>20 1 1 14 5
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>8359
+</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><p><strong>本题最直观的方法是根据公式一步一步求出ａ(ｋ)，如下</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main (void)
+{
+    unsigned long long int a,a0,a1,p,q;
+    int k;
+
+    while (scanf(&quot;%llu%llu%llu%llu%d&quot;,&amp;a0,&amp;a1,&amp;p,&amp;q,&amp;k) != EOF)
+    {
+    if (k == 0) a = a0;
+    if (k == 1) a = a1;
+    while ( k-1 &gt; 0)
+    {
+        if (a1 &gt; 10000) a1 %= 10000;
+        if (a0 &gt; 10000) a0 %= 10000;
+        a = p*a1 + q*a0;
+        a0 = a1; a1 = a;
+        --k;
+    }
+    printf (&quot;%llu\n&quot;,a % 10000);
+    }
+    return 0;
+}
+</code></pre><p><strong>对于ｋ比较小的情况，这种方法还可以，但是ｋ比较大时就不行了，代码提交上去会返回TLE（超时），这段代码的时间复杂度为O(n)，所以我们要想办法把时间复杂度降低。这里有一个比较好的办法就是采用矩阵的方法。以前学习线性代数的时候，对矩阵的认识不够深刻，所以一开始并没有体会到用矩阵会有什么用处。先来看看这个题和矩阵的关系。</strong></p>
+<p><img src="http://www.rritw.com/uploads/allimg/2012-08-25/1345734841_2733.jpg" alt=""><br>（1）</p>
+<p><img src="http://www.rritw.com/uploads/allimg/2012-08-25/1345734530_4551.jpg" alt=""><br>（2）</p>
+<p><strong>上面两个公式列出来，应该就会有所启发，会发现矩阵和乘法和数列递推公式之间的关系，那么，转化为矩阵之后有什么好处呢？我们要求一个数列的第n项，如果知道这个数列的通项公式就好了，可是这个递推公式的通项公式却不好求。转化为矩阵运算后，就可以很容易写出a(k),a(k-1)和a(0),a(1)之间的关系：</strong></p>
+<p><img src="http://www.rritw.com/uploads/allimg/2012-08-25/1345735509_9878.jpg" alt=""><br>（3）</p>
+<p><strong>这里出现了矩阵M的(k-1)次幂，这对我们是一个启发，这时候就可以用二分法进行计算，我对二分法举一个例子：</strong></p>
+<p><strong>M^5 = M<em>M</em>M<em>M</em>M; (5次乘法)</strong></p>
+<p><strong>M^5 = ((M^2)^2)*M; (3次乘法)</strong></p>
+<p><strong>第二种乘法运算就使用了二分法减少了乘法运算的次数。这样计算M^n算法时间复杂度可以从O(n)降低到O(lgn)，这正好符合前面提出的目标。</strong></p>
+<p><strong>相应的实现如下：</strong></p>
+<pre><code>#include &lt;stdio.h&gt;
+#define MOD 10000
+
+// m = m * n
+void MatrixMul ( int m[2][2], int n[2][2] )
+{
+    int s[2][2]={{0,0},{0,0}};
+    int i, j, k;
+    for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;2;j++)
+    for(k=0;k&lt;2;k++)
+    s[i][j]+=m[i][k]*n[k][j];
+    for(i=0;i&lt;2;i++)
+    for(j=0;j&lt;2;j++)
+    m[i][j]=s[i][j]%MOD;
+}
+
+// m = m^n
+void MatrixN ( int m[2][2], int n )
+{
+    int t[2][2]={{m[0][0],m[0][1]},{m[1][0],m[1][1]}};
+
+    if (n==1) return;
+    else if (n%2==0) 
+    { 
+    MatrixN(m,n/2); 
+    MatrixMul(m,m); 
+    }
+    else 
+    { 
+    MatrixN(m,n-1); 
+    MatrixMul(m,t);
+    }
+}
+
+int main(void)
+{
+    int a,a0,a1,p,q,k;
+    int m[2][2];
+
+    while (scanf(&quot;%d%d%d%d%d&quot;,&amp;a0,&amp;a1,&amp;p,&amp;q,&amp;k) != EOF)
+    {
+    if (k==0) a = a0;
+    else if (k==1) a = a1;
+    else
+    {
+        m[0][0] = p%MOD; m[0][1] = q%MOD;
+        m[1][0] = 1; m[1][1] = 0;
+    MatrixN(m,k-1);
+    a = m[0][0]*a1+m[0][1]*a0;
+    }
+    printf (&quot;%d\n&quot;, a%MOD);
+    }
+    return 0;
+}
+</code></pre><p><strong>实现很简单，和上面的公式是对应的，就不多说了，从这里我们也可以看出数学工具对思维的巨大帮助，有了矩阵这一工具，可以很大程度上减少思维上的困难，其实用矩阵也是作乘法加法运算，但是如果不使用矩阵，就不容易想像到这样的计算过程。当初学习线性代数的时候，并没有意识到矩阵的妙用，所以需要使用时也不会用。这给我提了一个醒，学习理论，一定要搞明白这种理论有什么用处，不然不算学明白了。而遇到实际的问题想不出来时，一定需要及时补充理论知识。</strong></p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag">#c++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/29/九度oj-1080/" rel="next" title="九度oj-1080">
+                <i class="fa fa-chevron-left"></i> 九度oj-1080
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/29/九度oj-1081/"
+           data-title="九度oj-1081" data-url="http://yoursite.com/2017/03/29/九度oj-1081/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">104</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">6.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
