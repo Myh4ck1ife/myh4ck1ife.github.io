@@ -1,0 +1,823 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目描述：在某条线路上有N个火车站，有三种距离的路程，L1，L2，L3,对应的价格为C1,C2,C3.其对应关系如下:
+距离s           票价
+0&amp;lt;S&amp;lt;=L1         C1
+L1&amp;lt;S&amp;lt;=L2        C2
+L2&amp;lt;S&amp;lt;=L3        C3
+输入保证0&amp;lt;L1&amp;lt;L2&amp;lt;L3&amp;lt;10^9,0&amp;lt;C1&amp;lt;C2&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九度oj-1086">
+<meta property="og:url" content="http://yoursite.com/2017/03/30/九度oj-1086/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="题目描述：在某条线路上有N个火车站，有三种距离的路程，L1，L2，L3,对应的价格为C1,C2,C3.其对应关系如下:
+距离s           票价
+0&amp;lt;S&amp;lt;=L1         C1
+L1&amp;lt;S&amp;lt;=L2        C2
+L2&amp;lt;S&amp;lt;=L3        C3
+输入保证0&amp;lt;L1&amp;lt;L2&amp;lt;L3&amp;lt;10^9,0&amp;lt;C1&amp;lt;C2&amp;lt">
+<meta property="og:updated_time" content="2017-03-30T14:25:19.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="九度oj-1086">
+<meta name="twitter:description" content="题目描述：在某条线路上有N个火车站，有三种距离的路程，L1，L2，L3,对应的价格为C1,C2,C3.其对应关系如下:
+距离s           票价
+0&amp;lt;S&amp;lt;=L1         C1
+L1&amp;lt;S&amp;lt;=L2        C2
+L2&amp;lt;S&amp;lt;=L3        C3
+输入保证0&amp;lt;L1&amp;lt;L2&amp;lt;L3&amp;lt;10^9,0&amp;lt;C1&amp;lt;C2&amp;lt">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 九度oj-1086 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                九度oj-1086
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-30T21:59:07+08:00" content="2017-03-30">
+              2017-03-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/03/30/九度oj-1086/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/30/九度oj-1086/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>在某条线路上有N个火车站，有三种距离的路程，L1，L2，L3,对应的价格为C1,C2,C3.其对应关系如下:
+距离s           票价
+0&lt;S&lt;=L1         C1
+L1&lt;S&lt;=L2        C2
+L2&lt;S&lt;=L3        C3
+输入保证0&lt;L1&lt;L2&lt;L3&lt;10^9,0&lt;C1&lt;C2&lt;C3&lt;10^9。
+每两个站之间的距离不超过L3。
+当乘客要移动的两个站的距离大于L3的时候，可以选择从中间一个站下车，然后买票再上车，所以乘客整个过程中至少会买两张票。
+现在给你一个 L1，L2，L3，C1，C2,C3。然后是A B的值，其分别为乘客旅程的起始站和终点站。
+然后输入N，N为该线路上的总的火车站数目，然后输入N-1个整数，分别代表从该线路上的第一个站，到第2个站，第3个站，……，第N个站的距离。
+根据输入，输出乘客从A到B站的最小花费。
+</code></pre><a id="more"></a>
+<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>以如下格式输入数据：
+L1  L2  L3  C1  C2  C3
+A  B
+N
+a[2]
+a[3]
+……
+a[N]
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>可能有多组测试数据，对于每一组数据，
+根据输入，输出乘客从A到B站的最小花费。
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>1 2 3 1 2 3
+1 2
+2
+2
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>2
+</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><pre><code>#include&lt;stdio.h&gt;  
+#define MAXN 2211686018427387904  
+#define MAXS 30000  
+long long l1,l2,l3,c1,c2,c3,rout[MAXS];  
+long long spe(int start,int end)//输入起始点与终点的站号，输出这俩站之间的花费。  
+{  
+    int temp=rout[end]-rout[start];  
+    if(temp&lt;=l1)return c1;  
+    if(temp&lt;=l2)return c2;  
+    if(temp&lt;=l3)return c3;  
+    return MAXN;  
+}  
+int main()  
+{  
+    long long temp,i,j,a,b,n,spend[MAXS];  
+    while(~scanf(&quot;%lld %lld %lld %lld %lld %lld&quot;,&amp;l1,&amp;l2,&amp;l3,&amp;c1,&amp;c2,&amp;c3))  
+    {  
+        for(i=temp=0;i&lt;MAXS;i++)rout[i]=spend[i]=MAXN;  
+        scanf(&quot;%lld %lld&quot;,&amp;a,&amp;b);  
+        scanf(&quot;%lld&quot;,&amp;n);  
+        rout[1]=0;  
+        for(i=2;i&lt;=n;i++)scanf(&quot;%lld&quot;,&amp;rout[i]);  
+        for(i=a,spend[a]=0;i&lt;b;i++)  
+        {  
+            for(j=i+1;rout[j]-rout[i]&lt;=l3&amp;&amp;j&lt;MAXS;j++)//保证下面spe函数的输入俩站间距离是小于等于l3的。  
+            {  
+                temp=spe(i,j);  
+                if(spend[j]&gt;spend[i]+temp)spend[j]=spend[i]+temp;  
+            }  
+        }  
+        printf(&quot;%lld\n&quot;,spend[b]);  
+    }  
+    return 0;  
+}  
+</code></pre><h1 id="翻了说有一篇思路很好，虽然是java也复制一下"><a href="#翻了说有一篇思路很好，虽然是java也复制一下" class="headerlink" title="翻了说有一篇思路很好，虽然是java也复制一下"></a>翻了说有一篇思路很好，虽然是java也复制一下</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code>package Test1;  
+
+import java.io.BufferedReader;  
+import java.io.IOException;  
+import java.io.InputStreamReader;  
+import java.io.StreamTokenizer;  
+
+public class Test15_1086 {  
+
+    /** 
+     * by qr jobdu 1086 2014-8-12 
+     * @throws IOException  
+     *  
+     * Accepted 70MS 
+     */  
+
+    static long L1,L2,L3,C1,C2,C3;  
+    public static void main(String[] args) throws IOException {  
+        StreamTokenizer st=new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));  
+
+        while((st.nextToken())!=StreamTokenizer.TT_EOF){  
+            L1=(long)st.nval;  //long型  
+
+            st.nextToken();  
+            L2=(long)st.nval;  
+
+            st.nextToken();  
+            L3=(long)st.nval;  
+
+            st.nextToken();  
+            C1=(long)st.nval;  
+
+            st.nextToken();  
+            C2=(long)st.nval;  
+
+            st.nextToken();  
+            C3=(long)st.nval;  
+
+            st.nextToken();  
+            int A=(int)st.nval;  
+
+            st.nextToken();  
+            int B=(int)st.nval;  
+
+            st.nextToken();  
+            int N=(int)st.nval;  
+
+            long a[]=new long[N+1];  //第一个站到第N个站的距离  
+            a[1]=0;  
+            for(int i=2;i&lt;=N;i++){  
+                st.nextToken();  
+                a[i]=(int)st.nval;  
+            }  
+
+            //get the min cost  
+            long disAB=a[B]-a[A];  
+            if(B==A)     //!!  
+                System.out.println(&quot;0&quot;);  
+            else if(disAB&lt;=L1)  
+                System.out.println(C1);  
+            else if(disAB&lt;=L2)  
+                System.out.println(C2);  
+            else if(disAB&lt;=L3)  
+                System.out.println(C3);  
+            else{       //&gt;L3  分段  动态规划思想  
+                long mincost[]=new long[B-A+1];  //0号元素是A ，1号元素是A+1。。。。。B-A号元素是B ，i号元素代表A站到第i站的最小花费  
+//              mincost[0]=0;  // do not necessary  初始就是0  
+                for(int i=A+1;i&lt;=B;i++){  //每for循环一次确定到一个站的最小花费  
+                    int count=0;  
+                    while( count &lt;= i-(A+1)&amp;&amp; a[i]-a[i-count-1] &lt;= L3 ){  //计算本站前面不超过L3的站有几个  第i站到A站  第i站和第A站之间最多有(i-(A+1))个站  
+                        count++;  
+                    }  
+
+                    long min=Long.MAX_VALUE;  
+                    for(int j=0;j&lt;count;j++){  //依次算出 到本站的最小花费。 实用动态规划的思想。  min为到第i站的最小花费  
+                        min=Math.min(min, mincost[i-(A+1)-j]+getCost(a[i]-a[i-j-1]));  
+                    }  
+
+                    mincost[i-A]=min;  
+                }  
+                System.out.println(mincost[B-A]);  
+            }  
+        }  
+    }  
+
+    static long getCost(long dis){  
+        if(dis==0)  
+            return 0;  
+        else if(dis&lt;=L1)  
+            return C1;  
+        else if(dis&lt;=L2)  
+            return C2;  
+        else   
+            return C3;  
+    }  
+}
+</code></pre><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><pre><code>http://www.cnblogs.com/love533/archive/2012/04/01/2429200.html    
+动态规划思想完全参照该篇博文
+
+这篇文章的做法非常巧妙，AC后时间和空间都是目前提交中最优的。
+
+mincost数组存储A站到B及A,B站之间的站的最小费用，从离A近的站开始求。
+每次求最小费用有两个步骤
+
+1.找到本站之前距离不超过L3的站的个数count
+
+2.循环count次，将费用分成两段，A站到中间站+中间站到所求站。找到最小的费用。
+A站到中间站存储在mincost中，中间站到所求站距离不超过L3，费用已知
+
+开始有个疑问是，A站到X站中有X1和X2站，将费用分成三段，A站到X1站+X1站到X2站+X2站到X站，
+三段费用才是最小费用，会不会出现这种情况？肯定不会，因为在求A到X站的最小费用时，
+肯定已经求出A站到X2站的最小费用了，不可能存在一个X1站使整体的费用更小。
+
+另外，不要忘记将费用分段，只有超出L3才用动态规划。
+
+另外Java中初始化数组会默认元素为0，则不必再为mincost[0]赋值为0
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag">#c++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/30/九度oj-1085/" rel="next" title="九度oj-1085">
+                <i class="fa fa-chevron-left"></i> 九度oj-1085
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/30/九度oj-1087/" rel="prev" title="九度oj-1087">
+                九度oj-1087 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/30/九度oj-1086/"
+           data-title="九度oj-1086" data-url="http://yoursite.com/2017/03/30/九度oj-1086/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">110</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">6.</span> <span class="nav-text">代码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#翻了说有一篇思路很好，虽然是java也复制一下"><span class="nav-number">7.</span> <span class="nav-text">翻了说有一篇思路很好，虽然是java也复制一下</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">7.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">7.2.</span> <span class="nav-text">思路</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
