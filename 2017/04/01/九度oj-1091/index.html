@@ -1,0 +1,802 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目描述：有一个6*6的棋盘，每个棋盘上都有一个数值，现在又一个起始位置和终止位置，请找出一个从起始位置到终止位置代价最小的路径：
+1、只能沿上下左右四个方向移动
+2、总代价是没走一步的代价之和
+3、每步（从a,b到c,d）的代价是c,d上的值与其在a,b上的状态的乘积
+4、初始状态为1
+
+每走一步，状态按如下公式变化：（走这步的代价%4）+1。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九度oj-1091">
+<meta property="og:url" content="http://yoursite.com/2017/04/01/九度oj-1091/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="题目描述：有一个6*6的棋盘，每个棋盘上都有一个数值，现在又一个起始位置和终止位置，请找出一个从起始位置到终止位置代价最小的路径：
+1、只能沿上下左右四个方向移动
+2、总代价是没走一步的代价之和
+3、每步（从a,b到c,d）的代价是c,d上的值与其在a,b上的状态的乘积
+4、初始状态为1
+
+每走一步，状态按如下公式变化：（走这步的代价%4）+1。">
+<meta property="og:updated_time" content="2017-04-01T13:05:15.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="九度oj-1091">
+<meta name="twitter:description" content="题目描述：有一个6*6的棋盘，每个棋盘上都有一个数值，现在又一个起始位置和终止位置，请找出一个从起始位置到终止位置代价最小的路径：
+1、只能沿上下左右四个方向移动
+2、总代价是没走一步的代价之和
+3、每步（从a,b到c,d）的代价是c,d上的值与其在a,b上的状态的乘积
+4、初始状态为1
+
+每走一步，状态按如下公式变化：（走这步的代价%4）+1。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 九度oj-1091 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                九度oj-1091
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-01T20:56:15+08:00" content="2017-04-01">
+              2017-04-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/01/九度oj-1091/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/01/九度oj-1091/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>有一个6*6的棋盘，每个棋盘上都有一个数值，现在又一个起始位置和终止位置，请找出一个从起始位置到终止位置代价最小的路径：
+1、只能沿上下左右四个方向移动
+2、总代价是没走一步的代价之和
+3、每步（从a,b到c,d）的代价是c,d上的值与其在a,b上的状态的乘积
+4、初始状态为1
+
+每走一步，状态按如下公式变化：（走这步的代价%4）+1。
+</code></pre><a id="more"></a>
+<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>第一行有一个正整数n，表示有n组数据。
+每组数据一开始为6*6的矩阵，矩阵的值为大于等于1小于等于10的值，然后四个整数表示起始坐标和终止坐标。
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>输出最小代价。
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 1 1 1
+0 0 5 5
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>23
+</code></pre><h1 id="BFS代码："><a href="#BFS代码：" class="headerlink" title="BFS代码："></a>BFS代码：</h1><pre><code>#include &lt;iostream&gt;  
+#include &lt;queue&gt;  
+using namespace std;  
+
+struct Node  
+{  
+    int x, y, sum, statu;  
+};  
+
+int ans;  
+int map[6][6];  
+int opt[6][6][4]; //记录最优解,剪枝条件。4中状态都要记录  
+Node start;  
+int ex, ey;  
+int cnt = 0;  
+int dir[4][2] = {{ 0, 1 },{ 1, 0 },{ 0, -1 },{ -1, 0 } };  
+queue&lt;Node&gt; q;  
+void bfs(Node n)  
+{  
+    q.push(n);  
+    int tempx, tempy, cost;  
+    while (!q.empty())  
+    {  
+        cnt++;  
+        Node tn = q.front();  
+        q.pop();  
+        for (int i = 0; i &lt; 4; i++)  
+        {  
+            tempx = tn.x + dir[i][0];  
+            tempy = tn.y + dir[i][1];  
+            if (tempx &gt;= 0 &amp;&amp; tempx &lt; 6 &amp;&amp; tempy &gt;= 0 &amp;&amp; tempy &lt; 6)  
+            {  
+                cost = tn.statu * map[tempx][tempy];  
+                //如果这一步比以前的某一步代价还大  或者 比到终点的代价还大  
+                if (tn.sum + cost &lt; opt[tempx][tempy][cost % 4 ] &amp;&amp; tn.sum + cost &lt; opt[ex][ey][cost % 4 ])  
+                {  
+                    opt[tempx][tempy][cost % 4] = tn.sum + cost;  
+                    Node temp;  
+                    temp.x = tempx;  
+                    temp.y = tempy;  
+                    temp.sum = tn.sum + cost;  
+                    temp.statu = cost % 4 + 1;  
+                    q.push(temp);  
+                }  
+            }  
+        }  
+    }  
+
+}  
+
+int main()  
+{  
+    int k;  
+    cin &gt;&gt; k;  
+    while (k--)  
+    {  
+        for (int i = 0; i &lt; 6; i++)  
+            for (int j = 0; j &lt; 6; j++)  
+            {  
+                cin &gt;&gt; map[i][j];  
+                for(int k=0; k&lt;4; k++)  
+                    opt[i][j][k] = 100000;  
+            }  
+        start.sum = 0;  
+        start.statu = 1;  
+        ans = 100000;  
+        cin &gt;&gt; start.x &gt;&gt; start.y &gt;&gt; ex &gt;&gt; ey;  
+        bfs(start);  
+        for (int i = 0; i &lt; 4; i++)  
+        {  
+            if (ans &gt; opt[ex][ey][i])  
+                ans = opt[ex][ey][i];  
+        }  
+        //cout &lt;&lt; cnt &lt;&lt; endl;  
+        cout &lt;&lt; ans &lt;&lt; endl;  
+    }  
+    return 0;  
+}  
+</code></pre><h1 id="DFS代码："><a href="#DFS代码：" class="headerlink" title="DFS代码："></a>DFS代码：</h1><pre><code>#include &lt;iostream&gt;  
+using namespace std;  
+int map[6][6];  
+int sx,sy,ex,ey,ans;  
+int cnt = 0;  
+int dir[4][2] = { {0,1},{1,0},{0,-1},{-1,0} };  
+bool visit[6][6];  
+void dfs(int x,int y,int sum,int statu){  
+    cnt ++;  
+    if(sum &lt; ans){  
+        if(x == ex &amp;&amp; y == ey){  
+                 ans = sum;  
+                return;  
+        }  
+        for(int i=0; i&lt;4; i++){  
+            int tempx = x + dir[i][0];  
+            int tempy = y + dir[i][1];  
+            if(visit[tempx][tempy] &amp;&amp; tempx &gt;=0 &amp;&amp; tempx &lt; 6 &amp;&amp; tempy &gt;=0 &amp;&amp; tempy &lt; 6){  
+                int cost = statu * map[tempx][tempy];  
+                visit[tempx][tempy] = false;  
+                dfs(tempx, tempy, sum+cost, cost % 4 + 1);  
+                visit[tempx][tempy] = true;  
+            }  
+        }  
+    }  
+}  
+
+int main() {  
+    int k;  
+    cin &gt;&gt; k;  
+    while(k--){  
+        for(int i=0; i&lt;6; i++)  
+            for(int j=0; j&lt;6; j++){  
+                 cin &gt;&gt; map[i][j];  
+                 visit[i][j] = true;  
+            }  
+        cin &gt;&gt; sx &gt;&gt; sy &gt;&gt; ex &gt;&gt; ey;  
+        ans = 1000000;  
+        dfs(sx,sy,0,1);  
+        //cout  &lt;&lt; cnt &lt;&lt; endl;  
+        cout &lt;&lt; ans &lt;&lt; endl;  
+    }  
+    return 0;  
+}  
+</code></pre><h1 id="作者提醒："><a href="#作者提醒：" class="headerlink" title="作者提醒："></a>作者提醒：</h1><pre><code>DFS利用递归，不必使用多余的数据结构，实现简单。但要注意剪枝。
+
+BFS借助队列，往往在求最优解时使用。总是能找到最优解，某些情况下也要剪枝。
+
+这两种方法根据具体问题来使用。
+
+以此题为例，DFS和BFS都可求解。
+
+由于是求最优解，用BFS更为直接。
+
+由于此题的不确定性，必须要考虑所有可能情况，结合剪枝。
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag">#c++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/01/九度oj-1090/" rel="next" title="九度oj-1090">
+                <i class="fa fa-chevron-left"></i> 九度oj-1090
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/01/九度oj-1092/" rel="prev" title="九度oj-1092">
+                九度oj-1092 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/01/九度oj-1091/"
+           data-title="九度oj-1091" data-url="http://yoursite.com/2017/04/01/九度oj-1091/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">116</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BFS代码："><span class="nav-number">6.</span> <span class="nav-text">BFS代码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DFS代码："><span class="nav-number">7.</span> <span class="nav-text">DFS代码：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作者提醒："><span class="nav-number">8.</span> <span class="nav-text">作者提醒：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
