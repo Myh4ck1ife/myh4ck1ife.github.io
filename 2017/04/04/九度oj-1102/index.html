@@ -1,0 +1,746 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="c++," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目描述：一个N*M的矩阵，找出这个矩阵中所有元素的和不小于K的面积最小的子矩阵（矩阵中元素个数为矩阵面积）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="九度oj-1102">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/九度oj-1102/index.html">
+<meta property="og:site_name" content="Myh4ck1ife">
+<meta property="og:description" content="题目描述：一个N*M的矩阵，找出这个矩阵中所有元素的和不小于K的面积最小的子矩阵（矩阵中元素个数为矩阵面积）">
+<meta property="og:updated_time" content="2017-04-04T14:17:38.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="九度oj-1102">
+<meta name="twitter:description" content="题目描述：一个N*M的矩阵，找出这个矩阵中所有元素的和不小于K的面积最小的子矩阵（矩阵中元素个数为矩阵面积）">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 九度oj-1102 | Myh4ck1ife </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Myh4ck1ife</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">争取不被吊打de小淘气</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-赞助作者">
+          <a href="/赞助作者" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            menu.赞助作者
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                九度oj-1102
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-04T22:10:21+08:00" content="2017-04-04">
+              2017-04-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/九度oj/" itemprop="url" rel="index">
+                    <span itemprop="name">九度oj</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/04/04/九度oj-1102/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/04/九度oj-1102/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a>题目描述：</h1><pre><code>一个N*M的矩阵，找出这个矩阵中所有元素的和不小于K的面积最小的子矩阵（矩阵中元素个数为矩阵面积）
+</code></pre><a id="more"></a>
+<h1 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h1><pre><code>每个案例第一行三个正整数N,M&lt;=100，表示矩阵大小，和一个整数K
+接下来N行，每行M个数，表示矩阵每个元素的值
+</code></pre><h1 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h1><pre><code>输出最小面积的值。如果出现任意矩阵的和都小于K，直接输出-1。
+</code></pre><h1 id="样例输入："><a href="#样例输入：" class="headerlink" title="样例输入："></a>样例输入：</h1><pre><code>4 4 10
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+</code></pre><h1 id="样例输出："><a href="#样例输出：" class="headerlink" title="样例输出："></a>样例输出：</h1><pre><code>1
+</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><p>本题是一道非常好的题目，在我看来，所有动态规划解得题目都是十分精妙的。</p>
+<p>首先，撇开题目不看，来做这样一道题，就是求一维数组里，大于等于给定任意正整数K的最短连续子序列的长度。</p>
+<p>也就是说，这个数组里最短的连续多少个数加起来的值会超过K。这个问题，乍一看，会想到一个O(n*2)的解法，两个for循环搞定。</p>
+<p>这里贴出一种DP解法，时间复杂度为O(n)</p>
+<pre><code>#include &lt;iostream&gt;  
+using namespace std;  
+
+int main(){      //找出数组a中大于等于K的最短连续子序列的长度   
+    int a[4];  
+    for(int i=0;i&lt;4;i++)  
+        cin&gt;&gt;a[i];  
+    int K;  
+    cin&gt;&gt;K;  
+    int start = 0,end = 0;  
+    int len = sizeof(a)/sizeof(int);  
+    int ans = len + 1;  
+    int sum = 0;  
+    while(end &lt; len){  
+        if(sum &lt; K)  
+            sum += a[end];  
+        while(sum &gt;= K){  
+            ans = min(ans,end-start+1);  
+            sum -= a[start++];      //当出现和大于K时，start指针后移   
+        }  
+        end ++;   
+    }  
+    cout&lt;&lt;ans&lt;&lt;endl;  
+    return 0;  
+}  
+</code></pre><p>大致思路是，用两个指针初始化指向头部，然后end指针逐渐后移，直到符合条件的子序列出现，记录当前的长度，然后前指针后移，直到sum&lt;K,之后end指针继续后移。一遍下来就可以完成目标。</p>
+<p>这里要注意的是，如果for循环里面的sum&gt;=K,一次都没执行，说明所有的数加起来都没K大，特殊情况最好说明下。</p>
+<p>好，至此，已经完成了所有的铺垫。</p>
+<p>这道比较快捷的方法是，将高维数组降维，也就是说，选出任意两列，将这两列之间每行的元素相加，得到一个一维数组，对这个一维数组运用上面的最短连续子序列和的算法。时间为O(n),选择任意两列的时候，两个for循环，时间为O(n*2)</p>
+<p>求出每种情况的子序列的 长度，得到方块数=(j-i+1)*findShorest(), 说明j表示第j列，i表示第i列(j&gt;i)</p>
+<p>对于每种情况的方块数，保留一个最小值即可。</p>
+<pre><code>#include &lt;iostream&gt;  
+#include &lt;cstring&gt;  
+using namespace std;  
+
+int matrix[110][110];  
+int num[110];  
+int N,M;  
+int K;  
+
+void merge(int i,int j){  
+    for(int p=0;p&lt;N;p++){  
+        for(int k=i;k&lt;=j;k++){  
+            num[p] += matrix[p][k];  //合并成一维数组   
+        }  
+    }  
+}  
+
+int findShortest(){  
+    int start = 0,end = 0;  
+    int sum = 0;  
+    int len = N;  
+    int ans = len + 1;   
+    bool flag = false;  
+    while(end &lt; len){  
+        if(sum &lt; K){  
+            sum += num[end];  
+        }  
+        while(sum &gt;= K){  
+            flag = true;  
+            ans = min(ans,end-start+1);  
+            sum -= num[start++];  
+        }  
+        end ++;  
+    }  
+    if(flag)  
+        return ans;  
+    else  
+        return N*M;    //全部加起来值都没超过K   
+}  
+
+int main(){  
+    while(cin&gt;&gt;N&gt;&gt;M){  
+        cin&gt;&gt;K;  
+        int sum = 0;  
+        for(int i=0;i&lt;N;i++){  
+            for(int j=0;j&lt;M;j++){  
+                cin&gt;&gt;matrix[i][j];  
+                sum += matrix[i][j];  
+            }  
+        }  
+        if(sum &lt; K)  
+            cout&lt;&lt;-1&lt;&lt;endl;  
+        else{  
+            int min_element = N*M;  
+            for(int i=0;i&lt;M;i++){  
+                for(int j=i;j&lt;M;j++){  
+                    memset(num,0,sizeof(num));  
+                    merge(i,j);  
+                    int temp = findShortest();  
+                    temp = (j - i + 1) * temp;  
+                    if(temp &lt; min_element)  
+                        min_element = temp;  
+                }  
+            }  
+            cout&lt;&lt;min_element&lt;&lt;endl;  
+        }     
+    }  
+    return 0;  
+}  
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag">#c++</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/04/九度oj-1101/" rel="next" title="九度oj-1101">
+                <i class="fa fa-chevron-left"></i> 九度oj-1101
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/04/九度oj-1103/" rel="prev" title="九度oj-1103">
+                九度oj-1103 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/04/04/九度oj-1102/"
+           data-title="九度oj-1102" data-url="http://yoursite.com/2017/04/04/九度oj-1102/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Myh4ck1ife" />
+          <p class="site-author-name" itemprop="name">Myh4ck1ife</p>
+          <p class="site-description motion-element" itemprop="description">学习总结 思考感悟 知识管理</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">126</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入："><span class="nav-number">2.</span> <span class="nav-text">输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出："><span class="nav-number">3.</span> <span class="nav-text">输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入："><span class="nav-number">4.</span> <span class="nav-text">样例输入：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出："><span class="nav-number">5.</span> <span class="nav-text">样例输出：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码："><span class="nav-number">6.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Myh4ck1ife</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"myh4ck1ife"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
